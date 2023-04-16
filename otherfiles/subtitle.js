@@ -24,4 +24,4 @@ var subtitle = [
 ] ;
 var titleindex = getRandomIntInclusive(0,subtitle.length-1);
 			
-titleobj.innerHTML = title2[titleindex];
+subtitleobj.innerHTML = subtitle[titleindex];
