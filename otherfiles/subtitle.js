@@ -3,7 +3,8 @@ min = Math.ceil(min);
 max = Math.floor(max);
 return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
 }
-			
+
+var subtitleobjblogger = document.getElementsByClassName("description")[0].firstChild;			
 var subtitleobj = document.getElementsByClassName("site-subtitle")[0];
 			
 
@@ -23,5 +24,6 @@ var subtitle = [
 "永远年轻，永远热泪盈眶。——《达摩流浪者》"
 ] ;
 var titleindex = getRandomIntInclusive(0,subtitle.length-1);
-			
+
+subtitleobjblogger.innerHTML = subtitle[titleindex];			
 subtitleobj.innerHTML = subtitle[titleindex];
