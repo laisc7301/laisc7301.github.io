@@ -45,8 +45,6 @@
 <title>SpringBoot显示图片 | 睿虎的博客</title>
   
 
-  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
-  <script async src="https://hm.baidu.com/hm.js?43cc608fa8c33581f0fb84bda2690e6d"></script>
 
 
 
@@ -250,8 +248,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <p>SpringBoot显示图片其实很简单，代码如下：</p>
+    <div class="post-body" itemprop="articleBody"><p>SpringBoot显示图片其实很简单，代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/getimage&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">getimage</span><span class="params">(HttpServletResponse response)</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">    <span class="type">BufferedImage</span> <span class="variable">image</span> <span class="operator">=</span> ImageIO.read(Files.newInputStream(Paths.get(<span class="string">&quot;D:\\laiscdata\\1.png&quot;</span>)));</span><br><span class="line">    response.setHeader(<span class="string">&quot;Cache-Control&quot;</span>, <span class="string">&quot;no-store,no-cache&quot;</span>);</span><br><span class="line">    response.setContentType(<span class="string">&quot;image/jpeg&quot;</span>);</span><br><span class="line">    <span class="type">ServletOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> response.getOutputStream();</span><br><span class="line">    ImageIO.write(image,<span class="string">&quot;jpg&quot;</span>,out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -343,6 +340,7 @@
 <script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script>
 
   
+
 
 
 
