@@ -34,7 +34,9 @@ var subtitle = [
 
 	"生活不可能像你想象得那么好，但也不会像你想象得那么糟。我觉得人的脆弱和坚强都超乎自己的想象。有时，我可能脆弱得一句话就泪流满面，有时，也发现自己咬着牙走了很长的路。 ——莫泊桑",
 	
-	"不是所有的虫子都能变成蝴蝶，因为有的是他娘的蛆"
+	"不是所有的虫子都能变成蝴蝶，因为有的是他娘的蛆",
+	
+	"你能在浪费时间中获得乐趣，就不是浪费时间一一罗素"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
