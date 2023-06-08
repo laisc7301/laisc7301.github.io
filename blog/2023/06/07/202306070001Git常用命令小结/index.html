@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"laisc7301.github.io","root":"/blog/","images":"/blog/images","scheme":"Pisces","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqusjs","storage":true,"lazyload":false,"nav":{"disqusjs":{"text":"Disqus","order":1},"waline":{"text":"Waline","order":2}},"activeClass":"disqusjs"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content=".f1{                 font-size:40px;                 position: relative;                 top:-18px;             }                function myonopen(id){                 var myopen &#x3D; docume">
+    <meta name="description" content=".f1{                 font-size:40px;                 position: relative;                 top:-18px;             }             .redcolor{                 color:red;             }">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git常用命令小结">
 <meta property="og:url" content="https://laisc7301.github.io/blog/2023/06/07/202306070001Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/index.html">
 <meta property="og:site_name" content="睿虎的博客">
-<meta property="og:description" content=".f1{                 font-size:40px;                 position: relative;                 top:-18px;             }                function myonopen(id){                 var myopen &#x3D; docume">
+<meta property="og:description" content=".f1{                 font-size:40px;                 position: relative;                 top:-18px;             }             .redcolor{                 color:red;             }">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202306070000%E5%B1%95%E5%BC%80.svg">
 <meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202306070000%E6%94%B6%E8%B5%B7.svg">
@@ -266,6 +266,9 @@
                 position: relative;
                 top:-18px;
             }
+            .redcolor{
+                color:red;
+            }
 
 </style>
 <script>
@@ -365,8 +368,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> .gitignore</span> </span><br><span class="line">*.[oa] </span><br><span class="line">*~</span><br></pre></td></tr></table></figure>
 
 <p>第一行告诉 Git 忽略所有以 .o 或 .a 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的。 第二 行告诉 Git 忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副 本。 </p>
-<p> 文件 .gitignore 的格式规范如下：<br> • 所有空行或者以 ＃ 开头的行都会被 Git 忽略。<br> • 可以使用标准的 glob 模式匹配。<br> • 匹配模式可以以（&#x2F;）开头防止递归。<br> • 匹配模式可以以（&#x2F;）结尾指定目录。<br> • 要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。</p>
-<p>所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。 星号（*）匹配零个或多个任意字符；[abc] 匹配 任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）；问号（? ）只匹配一个任意字符；如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配 （比如 [0-9] 表示匹配所有 0 到 9 的数字）。 使用两个星号（*) 表示匹配任意中间目录，比如 a&#x2F;**&#x2F;z 可以匹 配 a&#x2F;z , a&#x2F;b&#x2F;z 或 a&#x2F;b&#x2F;c&#x2F;z 等。 </p>
+<p> 文件 <span class="redcolor">.gitignore</span> 的格式规范如下：<br> • 所有空行或者以 <span class="redcolor">＃</span>  开头的行都会被 Git 忽略。<br> • 可以使用标准的 glob 模式匹配。<br> • 匹配模式可以以（<span class="redcolor">&#x2F;</span>）开头防止递归。<br> • 匹配模式可以以（<span class="redcolor">&#x2F;</span>）结尾指定目录。<br> • 要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（<span class="redcolor">!</span>）取反。</p>
+<p>所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。 星号（<span class="redcolor">*</span>）匹配零个或多个任意字符；<span class="redcolor">[abc]</span> 匹配 任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）；问号（<span class="redcolor">?</span> ）只匹配一个任意字符；如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配 （比如 <span class="redcolor">[0-9]</span> 表示匹配所有 0 到 9 的数字）。 使用两个星号（<span class="redcolor">*</span>) 表示匹配任意中间目录，比如 <span class="redcolor">a&#x2F;**&#x2F;z</span> 可以匹配 <span class="redcolor">a&#x2F;z</span> , <span class="redcolor">a&#x2F;b&#x2F;z</span> 或 <span class="redcolor">a&#x2F;b&#x2F;c&#x2F;z</span> 等。 </p>
 <p> 我们再看一个 .gitignore 文件的例子：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">no .a files</span></span><br><span class="line">*.a</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">but <span class="keyword">do</span> track lib.a, even though you<span class="string">&#x27;re ignoring .a files above</span></span></span><br><span class="line">!lib.a</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">only ignore the TODO file in the current directory, not subdir/TODO</span></span></span><br><span class="line">/TODO</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">ignore all files in the build/ directory</span></span></span><br><span class="line">build/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">ignore doc/notes.txt, but not doc/server/arch.txt</span></span></span><br><span class="line">doc/*.txt</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">ignore all .pdf files in the doc/ directory</span></span></span><br><span class="line">doc/**/*.pdf</span><br></pre></td></tr></table></figure>
 
@@ -475,7 +478,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag &lt;标签名字&gt;</span><br></pre></td></tr></table></figure>
 <p>创建轻量标签</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</span><br></pre></td></tr></table></figure>
-<p>配置验证信息：生成SSH Key<br>会在~&#x2F;下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。<br>验证是否配置成功：ssh -T <a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#103;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a><br>更多帮助：<a target="_blank" rel="noopener" href="https://help.github.com/cn/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">https://help.github.com/cn/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</a></p>
+<p>配置验证信息：生成SSH Key<br>会在~&#x2F;下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。<br>验证是否配置成功：ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a><br>更多帮助：<a target="_blank" rel="noopener" href="https://help.github.com/cn/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">https://help.github.com/cn/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;远端仓库路径&gt;   &lt;分支名&gt;</span><br></pre></td></tr></table></figure>
 <p>将文件推送到远程仓库</p>
 <div class="myexpand">
@@ -495,7 +498,7 @@
 </div>
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add [shortname] [url]</span><br></pre></td></tr></table></figure>
-<p>指定一个简单的名字，以便将来引用该仓库<br>如：git remote add origin <a href="mailto:&#103;&#105;&#116;&#x40;&#103;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#103;&#105;&#116;&#x40;&#103;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>:mojombo&#x2F;grit.git</p>
+<p>指定一个简单的名字，以便将来引用该仓库<br>如：git remote add origin <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;</a>:mojombo&#x2F;grit.git</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
 <p>执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm [别名]</span><br></pre></td></tr></table></figure>
