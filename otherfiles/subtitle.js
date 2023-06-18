@@ -36,7 +36,9 @@ var subtitle = [
 	
 	"不是所有的虫子都能变成蝴蝶，因为有的是他娘的蛆",
 	
-	"你能在浪费时间中获得乐趣，就不是浪费时间一一罗素"
+	"你能在浪费时间中获得乐趣，就不是浪费时间 —— 罗素",
+	
+	"最重要的东西，是肉眼看不见的。 —— 《小王子》"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
