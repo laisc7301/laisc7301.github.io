@@ -827,6 +827,25 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Termux启动后自动运行脚本</title>
+    <url>/blog/2023/07/02/202307020000Termux%E5%90%AF%E5%8A%A8%E5%90%8E%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<p>在Termux中输入：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nano  ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>里面的内容就是打开新会话时自动执行的脚本。</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Android</category>
+        <category>Termux</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Android</tag>
+        <tag>Termux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于</title>
     <url>/blog/about/index.html</url>
     <content><![CDATA[<p>作者：睿虎<br>我的Blogger：<a href="https://laisc7301.blogspot.com/">https://laisc7301.blogspot.com/</a><br>我的邮箱：<a href="mailto:&#108;&#97;&#105;&#x73;&#x63;&#55;&#x33;&#x30;&#49;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#108;&#97;&#105;&#x73;&#x63;&#55;&#x33;&#x30;&#49;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a></p>
