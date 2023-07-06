@@ -869,6 +869,22 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>如何运行.jar文件</title>
+    <url>/blog/2023/07/06/202307060001%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C.jar%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>像这样运行命令即可：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">java -jar test.jar</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于</title>
     <url>/blog/about/index.html</url>
     <content><![CDATA[<p>作者：睿虎<br>我的Blogger：<a href="https://laisc7301.blogspot.com/">https://laisc7301.blogspot.com/</a><br>我的邮箱：<a href="mailto:&#108;&#97;&#105;&#x73;&#x63;&#55;&#x33;&#x30;&#49;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#108;&#97;&#105;&#x73;&#x63;&#55;&#x33;&#x30;&#49;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a></p>
