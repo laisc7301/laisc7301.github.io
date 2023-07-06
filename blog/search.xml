@@ -846,6 +846,24 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>SpringBoot创建项目</title>
+    <url>/blog/2023/07/06/202307060000SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<p>按照以下的步骤创建项目：</p>
+<p><img src="https://laisc7301.github.io/files/img/2023/202307060000_SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE1.png"></p>
+<p><img src="https://laisc7301.github.io/files/img/2023/202307060000_SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE2.png"></p>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Java</category>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于</title>
     <url>/blog/about/index.html</url>
     <content><![CDATA[<p>作者：睿虎<br>我的Blogger：<a href="https://laisc7301.blogspot.com/">https://laisc7301.blogspot.com/</a><br>我的邮箱：<a href="mailto:&#108;&#97;&#105;&#x73;&#x63;&#55;&#x33;&#x30;&#49;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#108;&#97;&#105;&#x73;&#x63;&#55;&#x33;&#x30;&#49;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a></p>
