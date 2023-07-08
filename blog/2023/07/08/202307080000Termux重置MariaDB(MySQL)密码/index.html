@@ -271,7 +271,7 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>按顺序执行命令即可：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysqld_safe --user=mysql --skip-grant-tables --skip-networking &amp;</span><br><span class="line"></span><br><span class="line">mysql -u root</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysqld_safe --user=mysql --skip-grant-tables --skip-networking &amp;</span><br><span class="line"></span><br><span class="line">mysql -u root</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br><span class="line"></span><br><span class="line">set password for &#x27;root&#x27;@&#x27;localhost&#x27;=password(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;uesrname&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password&#x27; WITH GRANT OPTION;#添加可以被外网访问的用户</span><br><span class="line"></span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
 
@@ -280,7 +280,7 @@
 
 
 <p>重启设备，如果打开mysql出错，提示<code>ERROR 2002 (HY000): Can&#39;t connect to local server through socket &#39;/data/data/com.termux/files/usr/var/run/mysqld.sock&#39; (2)</code>，使用以下命令启动mysql：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup mysqld &amp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">nohup</span> mysqld &amp;</span><br></pre></td></tr></table></figure>
 
 
     </div>
