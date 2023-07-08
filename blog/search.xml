@@ -885,6 +885,33 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Termux重置MariaDB(MySQL)密码</title>
+    <url>/blog/2023/07/08/202307080000Termux%E9%87%8D%E7%BD%AEMariaDB(MySQL)%E5%AF%86%E7%A0%81/</url>
+    <content><![CDATA[<p>按顺序执行命令即可：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysqld_safe --user=mysql --skip-grant-tables --skip-networking &amp;</span><br><span class="line"></span><br><span class="line">mysql -u root</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">flush privileges;</span><br><span class="line"></span><br><span class="line">set password for &#x27;root&#x27;@&#x27;localhost&#x27;=password(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;uesrname&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password&#x27; WITH GRANT OPTION;#添加可以被外网访问的用户</span><br><span class="line"></span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>重启设备，如果打开mysql出错，提示ERROR 2002 (HY000): Can’t connect to local server through socket ‘&#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;var&#x2F;run&#x2F;mysqld.sock’ (2) ，使用以下命令启动mysql：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup mysqld &amp;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Shell</category>
+        <category>Termux</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Termux</tag>
+        <tag>Shell</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于</title>
     <url>/blog/about/index.html</url>
     <content><![CDATA[<p>作者：睿虎<br>我的Blogger：<a href="https://laisc7301.blogspot.com/">https://laisc7301.blogspot.com/</a><br>我的邮箱：<a href="mailto:&#108;&#97;&#105;&#x73;&#x63;&#55;&#x33;&#x30;&#49;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#108;&#97;&#105;&#x73;&#x63;&#55;&#x33;&#x30;&#49;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a></p>
