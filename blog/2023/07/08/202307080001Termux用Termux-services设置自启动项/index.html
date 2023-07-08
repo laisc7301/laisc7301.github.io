@@ -19,34 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"laisc7301.github.io","root":"/blog/","images":"/blog/images","scheme":"Pisces","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqusjs","storage":true,"lazyload":false,"nav":{"disqusjs":{"text":"Disqus","order":1},"waline":{"text":"Waline","order":2}},"activeClass":"disqusjs"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="按照以下的步骤创建项目：   然后在 application.properties 文件中写入以下内容： 123456789101112131415161718spring.thymeleaf.prefix&#x3D;classpath:&#x2F;templates&#x2F;server.port&#x3D;8010spring.servlet.multipart.max-file-size&#x3D;100MBspring.servlet.">
+    <meta name="description" content="安装Termux-services： 1pkg install termux-services -y  配置Termux-services下的服务启动文件： 12mkdir -p $PREFIX&#x2F;var&#x2F;service&#x2F;服务名vim $PREFIX&#x2F;var&#x2F;service&#x2F;服务名&#x2F;run  将下面命令粘贴进$PREFIX&#x2F;var&#x2F;service&#x2F;服务名&#x2F;run文件： 12#!&#x2F;data&#x2F;data&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot创建项目">
-<meta property="og:url" content="https://laisc7301.github.io/blog/2023/07/06/202307060000SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/index.html">
+<meta property="og:title" content="Termux用Termux-services设置自启动项">
+<meta property="og:url" content="https://laisc7301.github.io/blog/2023/07/08/202307080001Termux%E7%94%A8Termux-services%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8%E9%A1%B9/index.html">
 <meta property="og:site_name" content="睿虎的博客">
-<meta property="og:description" content="按照以下的步骤创建项目：   然后在 application.properties 文件中写入以下内容： 123456789101112131415161718spring.thymeleaf.prefix&#x3D;classpath:&#x2F;templates&#x2F;server.port&#x3D;8010spring.servlet.multipart.max-file-size&#x3D;100MBspring.servlet.">
+<meta property="og:description" content="安装Termux-services： 1pkg install termux-services -y  配置Termux-services下的服务启动文件： 12mkdir -p $PREFIX&#x2F;var&#x2F;service&#x2F;服务名vim $PREFIX&#x2F;var&#x2F;service&#x2F;服务名&#x2F;run  将下面命令粘贴进$PREFIX&#x2F;var&#x2F;service&#x2F;服务名&#x2F;run文件： 12#!&#x2F;data&#x2F;data&#x2F;">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202307060000_SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE1.png">
-<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202307060000_SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE2.png">
-<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202307060000_SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE3.png">
-<meta property="article:published_time" content="2023-07-06T07:27:34.000Z">
-<meta property="article:modified_time" content="2023-07-06T07:27:34.000Z">
+<meta property="article:published_time" content="2023-07-08T11:32:59.000Z">
+<meta property="article:modified_time" content="2023-07-08T11:32:59.000Z">
 <meta property="article:author" content="睿虎">
 <meta property="article:tag" content="编程">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="SpringBoot">
+<meta property="article:tag" content="Termux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://laisc7301.github.io/files/img/2023/202307060000_SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE1.png">
 
 
-<link rel="canonical" href="https://laisc7301.github.io/blog/2023/07/06/202307060000SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/">
+<link rel="canonical" href="https://laisc7301.github.io/blog/2023/07/08/202307080001Termux%E7%94%A8Termux-services%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8%E9%A1%B9/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://laisc7301.github.io/blog/2023/07/06/202307060000SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/","path":"2023/07/06/202307060000SpringBoot创建项目/","title":"SpringBoot创建项目"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://laisc7301.github.io/blog/2023/07/08/202307080001Termux%E7%94%A8Termux-services%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8%E9%A1%B9/","path":"2023/07/08/202307080001Termux用Termux-services设置自启动项/","title":"Termux用Termux-services设置自启动项"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>SpringBoot创建项目 | 睿虎的博客</title>
+<title>Termux用Termux-services设置自启动项 | 睿虎的博客</title>
   
 
 
@@ -207,7 +202,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2023/07/06/202307060000SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2023/07/08/202307080001Termux%E7%94%A8Termux-services%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8%E9%A1%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -220,12 +215,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="SpringBoot创建项目 | 睿虎的博客">
+      <meta itemprop="name" content="Termux用Termux-services设置自启动项 | 睿虎的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          SpringBoot创建项目
+          Termux用Termux-services设置自启动项
         </h1>
 
         <div class="post-meta-container">
@@ -236,7 +231,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-07-06 15:27:34" itemprop="dateCreated datePublished" datetime="2023-07-06T15:27:34+08:00">2023-07-06</time>
+      <time title="Created: 2023-07-08 19:32:59" itemprop="dateCreated datePublished" datetime="2023-07-08T19:32:59+08:00">2023-07-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,11 +243,7 @@
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Termux/" itemprop="url" rel="index"><span itemprop="name">Termux</span></a>
         </span>
     </span>
 
@@ -265,8 +256,8 @@
     </span>
     <span class="post-meta-item-text">Waline: </span>
   
-    <a title="waline" href="/blog/2023/07/06/202307060000SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2023/07/06/202307060000SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/2023/07/08/202307080001Termux%E7%94%A8Termux-services%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8%E9%A1%B9/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2023/07/08/202307080001Termux%E7%94%A8Termux-services%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8%E9%A1%B9/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -279,14 +270,28 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>按照以下的步骤创建项目：</p>
-<p><img src="https://laisc7301.github.io/files/img/2023/202307060000_SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE1.png"></p>
-<p><img src="https://laisc7301.github.io/files/img/2023/202307060000_SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE2.png"></p>
-<p>然后在 application.properties 文件中写入以下内容：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring.thymeleaf.prefix</span>=classpath:/templates/</span><br><span class="line"><span class="attr">server.port</span>=<span class="number">8010</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">spring.servlet.multipart.max-file-size</span>=<span class="number">100</span>MB</span><br><span class="line"><span class="attr">spring.servlet.multipart.max-request-size</span>=<span class="number">1000</span>MB</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">spring.datasource.url</span>=jdbc:mysql://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">3306</span>/paper?characterEncoding=utf-<span class="number">8</span>&amp;useSSL=<span class="literal">false</span></span><br><span class="line"><span class="attr">spring.datasource.driver-class-name</span>=com.mysql.cj.jdbc.Driver</span><br><span class="line"><span class="attr">spring.datasource.username</span>=root</span><br><span class="line"><span class="attr">spring.datasource.password</span>=yourpassword</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">mybatis.mapper-locations</span>=classpath:mapper/*.xml</span><br><span class="line"><span class="attr">mybatis.configuration.map-underscore-to-camel-case</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><p>安装Termux-services：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install termux-services -y</span><br></pre></td></tr></table></figure>
 
-<p>最后创建相关目录：</p>
-<p><img src="https://laisc7301.github.io/files/img/2023/202307060000_SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE3.png"></p>
+<p>配置Termux-services下的服务启动文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p $PREFIX/var/service/服务名</span><br><span class="line">vim $PREFIX/var/service/服务名/run</span><br></pre></td></tr></table></figure>
+
+<p>将下面命令粘贴进<code>$PREFIX/var/service/服务名/run</code>文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/data/data/com.termux/files/usr/bin/sh</span></span><br><span class="line">exec 启动命令 &amp;</span><br></pre></td></tr></table></figure>
+
+<p>配置服务日志文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p $PREFIX/var/service/服务名/log</span><br><span class="line">vim $PREFIX/var/service/服务名/log/run</span><br></pre></td></tr></table></figure>
+
+<p>将下面命令粘贴进<code>$PREFIX/var/service/服务名/log/run</code>文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/data/data/com.termux/files/usr/bin/sh</span></span><br><span class="line">svlogger=&quot;/data/data/com.termux/files/usr/share/termux-services/svlogger&quot;</span><br><span class="line">exec &quot;$&#123;svlogger&#125;&quot; &quot;$@&quot;</span><br></pre></td></tr></table></figure>
+
+<p>保存，赋予脚本执行权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x $PREFIX/var/service/服务名/run &amp;&amp;chmod +x $PREFIX/var/service/服务名/log/run</span><br></pre></td></tr></table></figure>
+
+<p>相关命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sv-enable 服务名		#将服务设为自启动</span><br><span class="line">sv-disable 服务名		#取消自启动</span><br><span class="line">sv down 服务名			#临时关闭自启动服务，本次Termux运行过程中将不再重启</span><br><span class="line">						#但不会关闭正在运行的服务</span><br><span class="line">pkill 服务名			#杀死服务，但如果自启动为生效状态，服务会立即重启</span><br><span class="line">sv up 服务名			#启动服务，同时使自启动设置生效</span><br><span class="line">sv start 服务名		#临时启动服务，但不改变自启动设置状态</span><br><span class="line">sv status 服务名		#查看服务运行状态</span><br></pre></td></tr></table></figure>
+
+<p>日志文件在<code>$PREFIX/var/log/sv/服务名/current</code>中。</p>
 
     </div>
 
@@ -297,22 +302,18 @@
     <footer class="post-footer">
           <div class="post-tags">
               <a href="/blog/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
-              <a href="/blog/tags/Java/" rel="tag"># Java</a>
-              <a href="/blog/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+              <a href="/blog/tags/Termux/" rel="tag"># Termux</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/2023/07/02/202307020000Termux%E5%90%AF%E5%8A%A8%E5%90%8E%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC/" rel="prev" title="Termux启动后自动运行脚本">
-                  <i class="fa fa-chevron-left"></i> Termux启动后自动运行脚本
+                <a href="/blog/2023/07/08/202307080000Termux%E9%87%8D%E7%BD%AEMariaDB(MySQL)%E5%AF%86%E7%A0%81/" rel="prev" title="Termux重置MariaDB(MySQL)密码">
+                  <i class="fa fa-chevron-left"></i> Termux重置MariaDB(MySQL)密码
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/2023/07/06/202307060001%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C.jar%E6%96%87%E4%BB%B6/" rel="next" title="如何运行.jar文件">
-                  如何运行.jar文件 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -392,7 +393,7 @@
 
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"my-git-hub-blog-comment.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/2023/07/06/202307060000SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"my-git-hub-blog-comment.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/2023/07/08/202307080001Termux%E7%94%A8Termux-services%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8%E9%A1%B9/"}</script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {

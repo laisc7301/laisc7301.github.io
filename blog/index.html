@@ -158,18 +158,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -186,6 +186,123 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2023/07/08/202307080001Termux%E7%94%A8Termux-services%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8%E9%A1%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="睿虎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/07/08/202307080001Termux%E7%94%A8Termux-services%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8%E9%A1%B9/" class="post-title-link" itemprop="url">Termux用Termux-services设置自启动项</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-07-08 19:32:59" itemprop="dateCreated datePublished" datetime="2023-07-08T19:32:59+08:00">2023-07-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Termux/" itemprop="url" rel="index"><span itemprop="name">Termux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/blog/2023/07/08/202307080001Termux%E7%94%A8Termux-services%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8%E9%A1%B9/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2023/07/08/202307080001Termux%E7%94%A8Termux-services%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8%E9%A1%B9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>安装Termux-services：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install termux-services -y</span><br></pre></td></tr></table></figure>
+
+<p>配置Termux-services下的服务启动文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p $PREFIX/var/service/服务名</span><br><span class="line">vim $PREFIX/var/service/服务名/run</span><br></pre></td></tr></table></figure>
+
+<p>将下面命令粘贴进<code>$PREFIX/var/service/服务名/run</code>文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/data/data/com.termux/files/usr/bin/sh</span></span><br><span class="line">exec 启动命令 &amp;</span><br></pre></td></tr></table></figure>
+
+<p>配置服务日志文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p $PREFIX/var/service/服务名/log</span><br><span class="line">vim $PREFIX/var/service/服务名/log/run</span><br></pre></td></tr></table></figure>
+
+<p>将下面命令粘贴进<code>$PREFIX/var/service/服务名/log/run</code>文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/data/data/com.termux/files/usr/bin/sh</span></span><br><span class="line">svlogger=&quot;/data/data/com.termux/files/usr/share/termux-services/svlogger&quot;</span><br><span class="line">exec &quot;$&#123;svlogger&#125;&quot; &quot;$@&quot;</span><br></pre></td></tr></table></figure>
+
+<p>保存，赋予脚本执行权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x $PREFIX/var/service/服务名/run &amp;&amp;chmod +x $PREFIX/var/service/服务名/log/run</span><br></pre></td></tr></table></figure>
+
+<p>相关命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sv-enable 服务名		#将服务设为自启动</span><br><span class="line">sv-disable 服务名		#取消自启动</span><br><span class="line">sv down 服务名			#临时关闭自启动服务，本次Termux运行过程中将不再重启</span><br><span class="line">						#但不会关闭正在运行的服务</span><br><span class="line">pkill 服务名			#杀死服务，但如果自启动为生效状态，服务会立即重启</span><br><span class="line">sv up 服务名			#启动服务，同时使自启动设置生效</span><br><span class="line">sv start 服务名		#临时启动服务，但不改变自启动设置状态</span><br><span class="line">sv status 服务名		#查看服务运行状态</span><br></pre></td></tr></table></figure>
+
+<p>日志文件在<code>$PREFIX/var/log/sv/服务名/current</code>中。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -236,11 +353,7 @@
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Shell/Termux/" itemprop="url" rel="index"><span itemprop="name">Termux</span></a>
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Termux/" itemprop="url" rel="index"><span itemprop="name">Termux</span></a>
         </span>
     </span>
 
@@ -277,7 +390,7 @@
 
 
 
-<p>重启设备，如果打开mysql出错，提示ERROR 2002 (HY000): Can’t connect to local server through socket ‘&#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;var&#x2F;run&#x2F;mysqld.sock’ (2) ，使用以下命令启动mysql：</p>
+<p>重启设备，如果打开mysql出错，提示<code>ERROR 2002 (HY000): Can&#39;t connect to local server through socket &#39;/data/data/com.termux/files/usr/var/run/mysqld.sock&#39; (2)</code>，使用以下命令启动mysql：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup mysqld &amp;</span><br></pre></td></tr></table></figure>
 
 
@@ -1078,107 +1191,6 @@
     <div class="post-body" itemprop="articleBody">
           <p><img src="https://laisc7301.github.io/files/img/2023/202306140000The.Shawshank.Redemption.1994.%E8%82%96%E7%94%B3%E5%85%8B%E7%9A%84%E6%95%91%E8%B5%8E.%E5%8F%8C%E8%AF%AD%E5%AD%97%E5%B9%95_2.png"></p>
 <p>阿里云盘：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/jWdn7d8ZDmU">https://www.aliyundrive.com/s/jWdn7d8ZDmU</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2023/06/12/202306092100%E6%AF%95%E5%8A%A0%E7%B4%A2%E7%9A%84%E8%89%BA%E6%9C%AF%E8%9C%95%E5%8F%98%E4%B9%8B%E8%B7%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="睿虎">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="睿虎的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 睿虎的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/06/12/202306092100%E6%AF%95%E5%8A%A0%E7%B4%A2%E7%9A%84%E8%89%BA%E6%9C%AF%E8%9C%95%E5%8F%98%E4%B9%8B%E8%B7%AF/" class="post-title-link" itemprop="url">[1080P] CCTV9 毕加索的艺术蜕变之路 下载</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-06-12 19:38:27" itemprop="dateCreated datePublished" datetime="2023-06-12T19:38:27+08:00">2023-06-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">视频</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E8%A7%86%E9%A2%91/%E7%BA%AA%E5%BD%95%E7%89%87/" itemprop="url" rel="index"><span itemprop="name">纪录片</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E8%A7%86%E9%A2%91/%E7%BA%AA%E5%BD%95%E7%89%87/CCTV9/" itemprop="url" rel="index"><span itemprop="name">CCTV9</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2023/06/12/202306092100%E6%AF%95%E5%8A%A0%E7%B4%A2%E7%9A%84%E8%89%BA%E6%9C%AF%E8%9C%95%E5%8F%98%E4%B9%8B%E8%B7%AF/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2023/06/12/202306092100%E6%AF%95%E5%8A%A0%E7%B4%A2%E7%9A%84%E8%89%BA%E6%9C%AF%E8%9C%95%E5%8F%98%E4%B9%8B%E8%B7%AF/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://laisc7301.github.io/files/img/2023/202306092100%E6%AF%95%E5%8A%A0%E7%B4%A2%E7%9A%84%E8%89%BA%E6%9C%AF%E8%9C%95%E5%8F%98%E4%B9%8B%E8%B7%AF_2.png"></p>
-<p>阿里云盘：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/evy5iZx63So">https://www.aliyundrive.com/s/evy5iZx63So</a></p>
 
       
     </div>
