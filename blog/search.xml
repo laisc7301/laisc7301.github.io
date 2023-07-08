@@ -947,6 +947,24 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>SpringBoot处理动态URL</title>
+    <url>/blog/2023/07/08/202307080002SpringBoot%E5%A4%84%E7%90%86%E5%8A%A8%E6%80%81URL/</url>
+    <content><![CDATA[<p>可以像下面这样写：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/info/&#123;id&#125;/&#123;username&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">info</span><span class="params">(Model model, <span class="meta">@PathVariable(&quot;id&quot;)</span> Integer id, <span class="meta">@PathVariable(&quot;username&quot;)</span> String username)</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> id.toString()+<span class="string">&quot; : &quot;</span>+username;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Java</category>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>油猴脚本：记住Google搜索语言设置</title>
     <url>/blog/Tampermonkey-remember-Google-search-language-settings/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305300000%E8%AE%B0%E4%BD%8FGoogle%E6%90%9C%E7%B4%A2%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE.png"></p>
