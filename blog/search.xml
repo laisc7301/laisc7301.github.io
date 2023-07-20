@@ -1003,6 +1003,22 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Termux安装pure-ftpd</title>
+    <url>/blog/2023/07/20/202307200001Termux%E5%AE%89%E8%A3%85pure-ftpd/</url>
+    <content><![CDATA[<p>输入以下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pkg install pure-ftpd</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line"></span><br><span class="line">pure-pw useradd laiscdata -u 1001 -g 1001 -d /data/data/com.termux</span><br><span class="line"><span class="comment">#建立用户，用户名 laiscdata ，用户uid 1001 ，用户gid 1001 ，用户根目录 /data/data/com.termux，这里回车后需要设置密码，输入两遍</span></span><br><span class="line"></span><br><span class="line">pure-pw mkdb</span><br><span class="line"><span class="comment">#建立数据库，每次更改完密码都要重建一次数据库</span></span><br><span class="line"></span><br><span class="line">pure-ftpd -B -E -l puredb:<span class="variable">$PREFIX</span>/etc/pureftpd.pdb -S 0.0.0.0,3721</span><br><span class="line"><span class="comment">#启动 -B 后台运行 -E 禁止匿名登陆 -l 配置文件位置 -S 绑定ip和端口</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Termux</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Termux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>油猴脚本：记住Google搜索语言设置</title>
     <url>/blog/Tampermonkey-remember-Google-search-language-settings/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305300000%E8%AE%B0%E4%BD%8FGoogle%E6%90%9C%E7%B4%A2%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE.png"></p>
