@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"laisc7301.github.io","root":"/blog/","images":"/blog/images","scheme":"Pisces","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqusjs","storage":true,"lazyload":false,"nav":{"disqusjs":{"text":"Disqus","order":1},"waline":{"text":"Waline","order":2}},"activeClass":"disqusjs"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="1.cmd进入命令行，进入apache安装目录的bin目录。 2.执行命令：set OPENSSL_CONF&#x3D;..\conf\openssl.cnf  3.生成服务端的key文件 执行命令：openssl genrsa -out server.key 2048  4.生成签署申请 执行命令：openssl req -new -out server.csr -key server.key">
+    <meta name="description" content="1.cmd进入命令行，进入apache安装目录的bin目录。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows下为apache生成https证书">
 <meta property="og:url" content="https://laisc7301.github.io/blog/2023/09/10/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A6/index.html">
 <meta property="og:site_name" content="睿虎的博客">
-<meta property="og:description" content="1.cmd进入命令行，进入apache安装目录的bin目录。 2.执行命令：set OPENSSL_CONF&#x3D;..\conf\openssl.cnf  3.生成服务端的key文件 执行命令：openssl genrsa -out server.key 2048  4.生成签署申请 执行命令：openssl req -new -out server.csr -key server.key">
+<meta property="og:description" content="1.cmd进入命令行，进入apache安装目录的bin目录。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A61.png">
 <meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202309100001windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A62.png">
@@ -281,6 +281,8 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>1.cmd进入命令行，进入apache安装目录的bin目录。<br><img src="https://laisc7301.github.io/files/img/2023/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A61.png"></p>
+<span id="more"></span>
+
 <p>2.执行命令：set OPENSSL_CONF&#x3D;..\conf\openssl.cnf</p>
 <p><img src="https://laisc7301.github.io/files/img/2023/202309100001windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A62.png"></p>
 <p>3.生成服务端的key文件</p>

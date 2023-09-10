@@ -1145,6 +1145,8 @@ myonload(8);
     <title>windows下为apache生成https证书</title>
     <url>/blog/2023/09/10/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A6/</url>
     <content><![CDATA[<p>1.cmd进入命令行，进入apache安装目录的bin目录。<br><img src="https://laisc7301.github.io/files/img/2023/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A61.png"></p>
+<span id="more"></span>
+
 <p>2.执行命令：set OPENSSL_CONF&#x3D;..\conf\openssl.cnf</p>
 <p><img src="https://laisc7301.github.io/files/img/2023/202309100001windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A62.png"></p>
 <p>3.生成服务端的key文件</p>
