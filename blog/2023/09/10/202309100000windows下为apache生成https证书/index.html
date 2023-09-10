@@ -19,31 +19,39 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"laisc7301.github.io","root":"/blog/","images":"/blog/images","scheme":"Pisces","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqusjs","storage":true,"lazyload":false,"nav":{"disqusjs":{"text":"Disqus","order":1},"waline":{"text":"Waline","order":2}},"activeClass":"disqusjs"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="下载地址：https:&#x2F;&#x2F;laisc7301.github.io&#x2F;files&#x2F;files&#x2F;2023&#x2F;202306150000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86_%E5%B7%B2%E6%95%B4%E7%90%86.zip">
+    <meta name="description" content="1.cmd进入命令行，进入apache安装目录的bin目录。 2.执行命令：set OPENSSL_CONF&#x3D;..\conf\openssl.cnf  3.生成服务端的key文件 执行命令：openssl genrsa -out server.key 2048  4.生成签署申请 执行命令：openssl req -new -out server.csr -key server.key">
 <meta property="og:type" content="article">
-<meta property="og:title" content="余华中篇小说集 下载">
-<meta property="og:url" content="https://laisc7301.github.io/blog/2023/06/16/202306160000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86/index.html">
+<meta property="og:title" content="windows下为apache生成https证书">
+<meta property="og:url" content="https://laisc7301.github.io/blog/2023/09/10/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A6/index.html">
 <meta property="og:site_name" content="睿虎的博客">
-<meta property="og:description" content="下载地址：https:&#x2F;&#x2F;laisc7301.github.io&#x2F;files&#x2F;files&#x2F;2023&#x2F;202306150000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86_%E5%B7%B2%E6%95%B4%E7%90%86.zip">
+<meta property="og:description" content="1.cmd进入命令行，进入apache安装目录的bin目录。 2.执行命令：set OPENSSL_CONF&#x3D;..\conf\openssl.cnf  3.生成服务端的key文件 执行命令：openssl genrsa -out server.key 2048  4.生成签署申请 执行命令：openssl req -new -out server.csr -key server.key">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202306160000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86.png">
-<meta property="article:published_time" content="2023-06-16T08:33:04.000Z">
-<meta property="article:modified_time" content="2023-06-16T08:33:04.000Z">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A61.png">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202309100001windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A62.png">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202309100002windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A63.png">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202309100003windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A64.png">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202309100004windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A65.png">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202309100005windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A66.png">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202309100006windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A67.png">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202309100007windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A68.png">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2023/202309100008windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A69.png">
+<meta property="article:published_time" content="2023-09-10T11:18:37.000Z">
+<meta property="article:modified_time" content="2023-09-10T11:18:37.000Z">
 <meta property="article:author" content="睿虎">
-<meta property="article:tag" content="文学">
-<meta property="article:tag" content="小说">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="Apache">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://laisc7301.github.io/files/img/2023/202306160000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86.png">
+<meta name="twitter:image" content="https://laisc7301.github.io/files/img/2023/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A61.png">
 
 
-<link rel="canonical" href="https://laisc7301.github.io/blog/2023/06/16/202306160000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86/">
+<link rel="canonical" href="https://laisc7301.github.io/blog/2023/09/10/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A6/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://laisc7301.github.io/blog/2023/06/16/202306160000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86/","path":"2023/06/16/202306160000余华中篇小说集/","title":"余华中篇小说集 下载"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://laisc7301.github.io/blog/2023/09/10/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A6/","path":"2023/09/10/202309100000windows下为apache生成https证书/","title":"windows下为apache生成https证书"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>余华中篇小说集 下载 | 睿虎的博客</title>
+<title>windows下为apache生成https证书 | 睿虎的博客</title>
   
 
 
@@ -204,7 +212,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2023/06/16/202306160000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86/">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2023/09/10/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -217,12 +225,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="余华中篇小说集 下载 | 睿虎的博客">
+      <meta itemprop="name" content="windows下为apache生成https证书 | 睿虎的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          余华中篇小说集 下载
+          windows下为apache生成https证书
         </h1>
 
         <div class="post-meta-container">
@@ -233,7 +241,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-06-16 16:33:04" itemprop="dateCreated datePublished" datetime="2023-06-16T16:33:04+08:00">2023-06-16</time>
+      <time title="Created: 2023-09-10 19:18:37" itemprop="dateCreated datePublished" datetime="2023-09-10T19:18:37+08:00">2023-09-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -241,11 +249,11 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E6%96%87%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">文学</span></a>
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E6%96%87%E5%AD%A6/%E5%B0%8F%E8%AF%B4/" itemprop="url" rel="index"><span itemprop="name">小说</span></a>
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Apache/" itemprop="url" rel="index"><span itemprop="name">Apache</span></a>
         </span>
     </span>
 
@@ -258,8 +266,8 @@
     </span>
     <span class="post-meta-item-text">Waline: </span>
   
-    <a title="waline" href="/blog/2023/06/16/202306160000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2023/06/16/202306160000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/2023/09/10/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A6/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2023/09/10/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A6/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -272,8 +280,34 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><img src="https://laisc7301.github.io/files/img/2023/202306160000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86.png"></p>
-<p>下载地址：<a href="https://laisc7301.github.io/files/files/2023/202306150000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86_%E5%B7%B2%E6%95%B4%E7%90%86.zip">https://laisc7301.github.io/files/files/2023/202306150000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86_%E5%B7%B2%E6%95%B4%E7%90%86.zip</a></p>
+    <div class="post-body" itemprop="articleBody"><p>1.cmd进入命令行，进入apache安装目录的bin目录。<br><img src="https://laisc7301.github.io/files/img/2023/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A61.png"></p>
+<p>2.执行命令：set OPENSSL_CONF&#x3D;..\conf\openssl.cnf</p>
+<p><img src="https://laisc7301.github.io/files/img/2023/202309100001windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A62.png"></p>
+<p>3.生成服务端的key文件</p>
+<p>执行命令：openssl genrsa -out server.key 2048</p>
+<p><img src="https://laisc7301.github.io/files/img/2023/202309100002windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A63.png"></p>
+<p>4.生成签署申请</p>
+<p>执行命令：openssl req -new -out server.csr -key server.key</p>
+<p><img src="https://laisc7301.github.io/files/img/2023/202309100003windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A64.png"></p>
+<p>5.生成CA的key文件</p>
+<p>执行命令：openssl genrsa -out ca.key 2048</p>
+<p><img src="https://laisc7301.github.io/files/img/2023/202309100004windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A65.png"></p>
+<p>6.生成CA自签署证书</p>
+<p>执行命令：openssl req -new -x509 -days 365 -key ca.key -out ca.crt</p>
+<p><img src="https://laisc7301.github.io/files/img/2023/202309100005windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A66.png"></p>
+<p>完成后，会在目录bin下生成ca.crt文件，此处填写的信息与步骤4中类似。</p>
+<p>7.执行以下操作：</p>
+<p>在bin下新建demoCA文件夹<br>bin&#x2F;demoCA</p>
+<p>在demoCA下新建index.txt<br>bin&#x2F;demoCA&#x2F;index.txt</p>
+<p>在demoCA下新建serial.txt，其内容为01,重命名删除.txt后缀<br>bin&#x2F;demoCA&#x2F;serial</p>
+<p>在demoCA下新建newcerts文件夹<br>bin&#x2F;demoCA&#x2F;newcerts</p>
+<p>8.生成CA的服务器签署证书</p>
+<p>执行命令：openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key </p>
+<p><img src="https://laisc7301.github.io/files/img/2023/202309100006windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A67.png"></p>
+<p>9.完成后，demoCA目录下文件如下：</p>
+<p><img src="https://laisc7301.github.io/files/img/2023/202309100007windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A68.png"></p>
+<p>bin目录下会生成下面五个文件：（为了方便展示，已经把这五个文件移动到了另一个文件夹）</p>
+<p><img src="https://laisc7301.github.io/files/img/2023/202309100008windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A69.png"></p>
 
     </div>
 
@@ -283,22 +317,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/%E6%96%87%E5%AD%A6/" rel="tag"># 文学</a>
-              <a href="/blog/tags/%E5%B0%8F%E8%AF%B4/" rel="tag"># 小说</a>
+              <a href="/blog/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/blog/tags/Apache/" rel="tag"># Apache</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/2023/06/15/202306150000%E8%9C%BB%E8%9C%93%E5%B0%91%E5%B9%B4/" rel="prev" title="[转] [816P] 蜻蜓少年 下载">
-                  <i class="fa fa-angle-left"></i> [转] [816P] 蜻蜓少年 下载
+                <a href="/blog/2023/09/06/202309060000FL_Studio_Producer_Edition_21.1.0_Build_3713_%E7%A0%B4%E8%A7%A3%E7%89%88/" rel="prev" title="FL Studio Producer Edition 21.1.0 Build 3713 破解版 下载">
+                  <i class="fa fa-angle-left"></i> FL Studio Producer Edition 21.1.0 Build 3713 破解版 下载
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/2023/06/19/202306162000%E6%B5%B7%E6%98%8F%E5%80%99/" rel="next" title="[1080P] CCTV9 海昏候 全3集 下载">
-                  [1080P] CCTV9 海昏候 全3集 下载 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -377,7 +408,7 @@
 
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"my-git-hub-blog-comment.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/2023/06/16/202306160000%E4%BD%99%E5%8D%8E%E4%B8%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%9B%86/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"my-git-hub-blog-comment.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/2023/09/10/202309100000windows%E4%B8%8B%E4%B8%BAapache%E7%94%9F%E6%88%90https%E8%AF%81%E4%B9%A6/"}</script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
