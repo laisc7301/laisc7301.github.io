@@ -1228,7 +1228,7 @@ myonload(8);
 <p>在最后一行插入这样一句</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.host:/shared  /mnt/hgfs/vmshared   fuse.vmhgfs-fuse     allow_other,defaults         0       0</span><br></pre></td></tr></table></figure>
 
-<p>share是自己设置的文件夹名称，&#x2F;mnt&#x2F;hgfs&#x2F;vmshared是挂载点，fuse.vmhgfs-fuse挂载方法</p>
+<p>shared是自己设置的文件夹名称，&#x2F;mnt&#x2F;hgfs&#x2F;vmshared是挂载点，fuse.vmhgfs-fuse挂载方法</p>
 <p><img src="https://laisc7301.github.io/files/img/2023/202309130000%E5%9C%A8VMware%E4%B8%8A%E7%9A%84Ubuntu%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9.png"></p>
 <h2 id="4-最后保存退出"><a href="#4-最后保存退出" class="headerlink" title="4.最后保存退出"></a>4.最后保存退出</h2>]]></content>
       <categories>
