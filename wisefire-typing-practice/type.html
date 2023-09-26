@@ -20,6 +20,8 @@
 
 				background-color: lightskyblue;
 
+				overflow: auto;
+
 				/* border-style: solid;
 				border-width: 5px;
 				border-color: white; */
@@ -30,13 +32,7 @@
 
 			.footer {
 				text-align: center;
-			}
-
-			.cube1 {
-				width: 30px;
-				height: 33px;
-				background-color: blue;
-
+				background-color: lightskyblue;
 			}
 
 
@@ -44,7 +40,7 @@
 				background-color: deepskyblue;
 				font-size: 20px;
 				text-align: center;
-				position: fixed;
+
 				top: 0;
 				left: 0;
 				border-style: none none solid none;
@@ -137,6 +133,8 @@
 				fontsize = fontsize0;
 			}
 
+			//var backspacemark = false;
+
 
 			//var isfinfshdialogshowed = false;
 		</script>
@@ -144,7 +142,6 @@
 	</head>
 	<body>
 		<div class="main">
-			<div class="cube1"></div>
 			<div class="title1">
 				标题栏
 			</div>
@@ -154,9 +151,10 @@
 				</div>
 				<div class="main3">
 				</div>
-				<div class="footer">
-					由 睿虎 开发
-				</div>
+
+			</div>
+			<div class="footer">
+				由 睿虎 开发
 			</div>
 
 		</div>
@@ -217,7 +215,8 @@
 				font-weight: bold;
 				font-size: 20px;
 			}
-			.settingdialog-tip1{
+
+			.settingdialog-tip1 {
 				border-style: solid none solid none;
 				border-width: 7px;
 				border-color: #F4FFEF;
@@ -243,13 +242,22 @@
 	<script>
 		function createpage0() {
 			let windowwidth = window.innerWidth;
-			//let windowheight = window.innerHeight;
+			let windowheight = window.innerHeight;
+
 			$(".title1").width(windowwidth);
 			//$(".main").width(windowwidth-25);
 			let title1 = document.getElementsByClassName("title1")[0];
-			$(".cube1").height(title1.clientHeight);
+			let footer = document.getElementsByClassName("footer")[0];
+			//$(".cube1").height(title1.clientHeight);
+			let main2height = windowheight - title1.clientHeight - footer.clientHeight - footer.clientHeight;
 
-			var int = self.setInterval("mytime()", 1000);
+			if (main2height <= 0) {
+				main2height = 1;
+			}
+
+			$(".main2").height(main2height);
+
+
 
 			//$(".entertext").resize(100);
 			// var entertextcss = document.querySelector('.entertext');
@@ -257,6 +265,11 @@
 
 		}
 		createpage0();
+
+		function starttimer() {
+			var int = self.setInterval("mytime()", 1000);
+		}
+		starttimer();
 
 
 
@@ -282,7 +295,7 @@
 					let myline = article.substring(i, i2);
 					$(".texttest1").html(myline);
 					if (texttest.scrollWidth > texttest.clientWidth) {
-						i2 -= 3;
+						i2 -= 3; //微调每行长度
 						if (i2 <= 0) {
 							break;
 						}
@@ -409,8 +422,7 @@
 			myinputobj[focusline].focus();
 
 			writetitle(articletitle, time, getcorrectrate());
-			let title1 = document.getElementsByClassName("title1")[0];
-			$(".cube1").height(title1.clientHeight);
+			createpage0();
 		}
 		loadtipandinput();
 
@@ -480,13 +492,15 @@
 		}
 
 		function getifneedenter(index) {
-			return myinputobj[index].getAttribute("ifneedenter");
+			let booleanstr = myinputobj[index].getAttribute("ifneedenter");
+			let myboolean = (booleanstr == "true");
+			return myboolean;
 		}
 
 		function getentercontent(index) {
 			let nowentered = myinputobj[index].getAttribute("nowentered");
 			let enteredtip = myinputobj[index].getAttribute("enteredtip");
-			let ifneedenter = (getifneedenter(index) == "true");
+			let ifneedenter = getifneedenter(index);
 			let enteredtiplength = enteredtip.length;
 			if (nowentered.length == enteredtiplength) {
 				if (ifneedenter) {
@@ -498,6 +512,17 @@
 				return nowentered;
 			}
 		}
+
+		function getendline() {
+			for (let i = list.length - 1; i >= 0; i--) {
+				if (myinputobj[i].value != "") {
+					return i;
+				}
+
+			}
+			return 0;
+		}
+
 		//console.log(getentercontent(4)+"123");
 
 		function oninput(myobj) {
@@ -591,8 +616,8 @@
 		}
 
 		function onkeydown(event, myobj) {
-			//console.log(event.keyCode);
-			if (event.keyCode == 13) {
+			console.log(event.keyCode);
+			if (event.keyCode == 13) { // Enter键
 				if (nowfocus < list.length - 1) {
 					nowfocus++;
 					myinputobj[nowfocus].focus();
@@ -600,14 +625,68 @@
 					//到达最后一行
 					onfinish();
 				}
+				//console.log(getendline());
 			}
 
-			if (event.keyCode == 8) {
+			if (event.keyCode == 8) { // Backspace键
 				//console.log(myobj.selectionEnd);
 				if (myobj.selectionEnd == 0 && nowfocus > 0) {
-					//backspace = true;
+					nowfocus--;
+
+					myinputobj[nowfocus].focus();
+					event.preventDefault();
+					let l = myinputobj[nowfocus].value.length;
+					myinputobj[nowfocus].setSelectionRange(l, l);
+				}
+			}
+
+			if (event.keyCode == 40) { // 下方向键
+				if (nowfocus < list.length - 1) { // 如果不是最后一行
+					nowfocus++;
+					myinputobj[nowfocus].focus();
+				}
+			}
+			if (event.keyCode == 38) { // 上方向键
+				if (nowfocus > 0) { // 如果不是第一行
 					nowfocus--;
 					myinputobj[nowfocus].focus();
+				}
+			}
+			if (event.keyCode == 16) { // shift键
+				console.log(myinputobj[nowfocus].selectionEnd);
+
+			}
+
+			if (event.keyCode == 39) { // 右方向键
+				if (myinputobj[nowfocus].selectionEnd == myinputobj[nowfocus].value.length) {
+					if (myinputobj[nowfocus].selectionStart == myinputobj[nowfocus].selectionEnd) {
+						if (nowfocus < getendline()) {
+							nowfocus++;
+							myinputobj[nowfocus].focus();
+						} else if (nowfocus == getendline()) {
+							if (getifneedenter(nowfocus) == false) {
+								nowfocus++;
+								myinputobj[nowfocus].focus();
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+			if (event.keyCode == 37) { // 左方向键
+				if (myinputobj[nowfocus].selectionStart == 0) {
+					if (myinputobj[nowfocus].selectionStart == myinputobj[nowfocus].selectionEnd) {
+						if (nowfocus > 0) { // 如果不是第一行
+							nowfocus--;
+							myinputobj[nowfocus].focus();
+							event.preventDefault();
+							let l = myinputobj[nowfocus].value.length;
+							myinputobj[nowfocus].setSelectionRange(l, l);
+						}
+					}
 				}
 			}
 
@@ -724,8 +803,7 @@
 			let windowwidth = window.innerWidth;
 			//window.innerHeight
 			$(".title1").width(windowwidth);
-			let title1 = document.getElementsByClassName("title1")[0];
-			$(".cube1").height(title1.clientHeight);
+			createpage0();
 		}
 
 		function gettotalinput() {
