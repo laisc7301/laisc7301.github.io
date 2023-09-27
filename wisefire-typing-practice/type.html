@@ -539,8 +539,10 @@
 					if (autonextline == true) {
 
 						if (nowfocus < list.length - 1) { //如果不是最后一行
-							nowfocus++;
-							myinputobj[nowfocus].focus();
+							if (myobj.selectionStart >= myobj.value.length) {
+								nowfocus++;
+								myinputobj[nowfocus].focus();
+							}
 						}
 					} else {
 						let endstr = myobj.value.substring(myobj.value.length - 1, myobj.value.length);
@@ -556,8 +558,10 @@
 							// console.log('该字符串不是英文' + endstr);
 							// myobj.value = myobj.value.substring(0, myobj.value.length - 1);
 							if (nowfocus + 1 < list.length) {
-								nowfocus++;
-								myinputobj[nowfocus].focus();
+								if (myobj.selectionStart >= myobj.value.length) {
+									nowfocus++;
+									myinputobj[nowfocus].focus();
+								}
 							}
 						}
 					}
@@ -571,7 +575,9 @@
 						//onfinish();
 
 						if (autonextline == true) {
-							onfinish();
+							if (myobj.selectionStart >= myobj.value.length) {
+								onfinish();
+							}
 						} else {
 							let endstr = myobj.value.substring(myobj.value.length - 1, myobj.value.length);
 							var myregular = new RegExp("[A-Za-zü']+");
@@ -580,7 +586,9 @@
 							} else {
 								// console.log('该字符串不是英文' + endstr);
 								// myobj.value = myobj.value.substring(0, myobj.value.length - 1);
-								onfinish();
+								if (myobj.selectionStart >= myobj.value.length) {
+									onfinish();
+								}
 							}
 						}
 					}
@@ -590,6 +598,8 @@
 			entered = getallentercontent();
 			let str = replacehhftobr(entered);
 			setCookie("entered", str, 36500);
+
+			console.log(myobj.selectionStart + "," + myobj.selectionEnd);
 
 
 			// if(backspace){
