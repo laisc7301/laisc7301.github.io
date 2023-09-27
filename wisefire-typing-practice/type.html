@@ -133,10 +133,8 @@
 				fontsize = fontsize0;
 			}
 
-			//var backspacemark = false;
 
-
-			//var isfinfshdialogshowed = false;
+			// var isfinfshdialogshowed = false;
 		</script>
 
 	</head>
@@ -599,7 +597,7 @@
 			let str = replacehhftobr(entered);
 			setCookie("entered", str, 36500);
 
-			console.log(myobj.selectionStart + "," + myobj.selectionEnd);
+			//console.log(myobj.selectionStart + "," + myobj.selectionEnd);
 
 
 			// if(backspace){
@@ -626,7 +624,7 @@
 		}
 
 		function onkeydown(event, myobj) {
-			console.log(event.keyCode);
+			//console.log(event.keyCode);
 			if (event.keyCode == 13) { // Enter键
 				if (nowfocus < list.length - 1) {
 					nowfocus++;
@@ -704,6 +702,7 @@
 
 		function onfinish() { //打字完成时运行此处
 			isinputing = false;
+			
 			let usedtime = secondstotime(time);
 			$(".finfshdialog-usedtime").html("用时：" + usedtime);
 			let correctrate = getcorrectrate();
@@ -720,9 +719,6 @@
 
 			finfshdialog.style.top = parseInt((windowheight - finfshdialogheight) / 2) + "px";
 			finfshdialog.style.left = parseInt((windowwidth - finfshdialogwidth) / 2) + "px";
-
-
-
 
 
 		}
@@ -772,6 +768,15 @@
 			// console.log(event.altKey);
 			if (event.altKey && event.keyCode == 80) { // Alt+P
 				isinputing = false;
+			}
+
+			if (event.keyCode == 13) { // Enter键
+				// console.log(111);
+				// event.preventDefault();
+				// if(isfinfshdialogshowed){
+				// 	$(".finfshdialog").hide();
+				// 	isfinfshdialogshowed=false;
+				// }
 			}
 		}
 
