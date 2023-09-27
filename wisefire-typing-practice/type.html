@@ -134,7 +134,8 @@
 			}
 
 
-			// var isfinfshdialogshowed = false;
+			// var isfinishdialogshowed = false;
+			// var issettingdialogshowed = false;
 		</script>
 
 	</head>
@@ -157,7 +158,7 @@
 
 		</div>
 		<style>
-			.finfshdialog {
+			.finishdialog {
 				top: 0;
 				left: 0;
 				/* right: 0;
@@ -172,25 +173,25 @@
 
 			}
 
-			.finfshdialog-title {
+			.finishdialog-title {
 				font-weight: bold;
 			}
 
-			.finfshdialog-okbutton {
+			.finishdialog-okbutton {
 				text-align: center;
 			}
 		</style>
-		<div class="finfshdialog">
-			<div class="finfshdialog-title">打字完成！</div>
+		<div class="finishdialog">
+			<div class="finishdialog-title">打字完成！</div>
 			<br />
-			<div class="finfshdialog-usedtime">用时：</div>
-			<div class="finfshdialog-correctrate">正确率：</div>
-			<div class="finfshdialog-totalinput">输入字数：</div>
+			<div class="finishdialog-usedtime">用时：</div>
+			<div class="finishdialog-correctrate">正确率：</div>
+			<div class="finishdialog-totalinput">输入字数：</div>
 
 			<br />
-			<div class="finfshdialog-okbutton">
+			<div class="finishdialog-okbutton">
 
-				<button class="btn btn-primary" onclick="onfinfshdialogok()">确定</button>
+				<button class="btn btn-primary" onclick="onfinishdialogok()">确定</button>
 			</div>
 		</div>
 
@@ -702,23 +703,24 @@
 
 		function onfinish() { //打字完成时运行此处
 			isinputing = false;
-			
+			// isfinishdialogshowed = true;
+
 			let usedtime = secondstotime(time);
-			$(".finfshdialog-usedtime").html("用时：" + usedtime);
+			$(".finishdialog-usedtime").html("用时：" + usedtime);
 			let correctrate = getcorrectrate();
 			writetitle(articletitle, time, correctrate);
-			$(".finfshdialog-correctrate").html("正确率：" + correctrate + "%");
-			$(".finfshdialog-totalinput").html("输入字数：" + getallentercontent().length);
+			$(".finishdialog-correctrate").html("正确率：" + correctrate + "%");
+			$(".finishdialog-totalinput").html("输入字数：" + getallentercontent().length);
 
-			$(".finfshdialog").show();
+			$(".finishdialog").show();
 			let windowwidth = window.innerWidth;
 			let windowheight = window.innerHeight;
-			let finfshdialog = document.getElementsByClassName("finfshdialog")[0];
-			let finfshdialogwidth = finfshdialog.scrollWidth;
-			let finfshdialogheight = finfshdialog.scrollHeight;
+			let finishdialog = document.getElementsByClassName("finishdialog")[0];
+			let finishdialogwidth = finishdialog.scrollWidth;
+			let finishdialogheight = finishdialog.scrollHeight;
 
-			finfshdialog.style.top = parseInt((windowheight - finfshdialogheight) / 2) + "px";
-			finfshdialog.style.left = parseInt((windowwidth - finfshdialogwidth) / 2) + "px";
+			finishdialog.style.top = parseInt((windowheight - finishdialogheight) / 2) + "px";
+			finishdialog.style.left = parseInt((windowwidth - finishdialogwidth) / 2) + "px";
 
 
 		}
@@ -763,6 +765,8 @@
 			}
 		}
 
+		var finishdialogshowtype = "first";
+
 		function windowonkeydown(event) {
 			// console.log(event.keyCode);
 			// console.log(event.altKey);
@@ -773,9 +777,15 @@
 			if (event.keyCode == 13) { // Enter键
 				// console.log(111);
 				// event.preventDefault();
-				// if(isfinfshdialogshowed){
-				// 	$(".finfshdialog").hide();
-				// 	isfinfshdialogshowed=false;
+				// if (isfinishdialogshowed) {
+				// 	if (finishdialogshowtype == "first") {
+				// 		finishdialogshowtype = "second";
+				// 	} else if (finishdialogshowtype == "second") {
+				// 		$(".finishdialog").hide();
+				// 		isfinishdialogshowed = false;
+				// 		finishdialogshowtype = "first";
+				// 	}
+
 				// }
 			}
 		}
@@ -826,8 +836,8 @@
 		}
 
 
-		function onfinfshdialogok() {
-			$(".finfshdialog").hide();
+		function onfinishdialogok() {
+			$(".finishdialog").hide();
 		}
 
 		function autonextlineopen() {
@@ -849,12 +859,12 @@
 
 			let windowwidth = window.innerWidth;
 			let windowheight = window.innerHeight;
-			let finfshdialog = document.getElementsByClassName("settingdialog")[0];
-			let finfshdialogwidth = finfshdialog.scrollWidth;
-			let finfshdialogheight = finfshdialog.scrollHeight;
+			let finishdialog = document.getElementsByClassName("settingdialog")[0];
+			let finishdialogwidth = finishdialog.scrollWidth;
+			let finishdialogheight = finishdialog.scrollHeight;
 
-			finfshdialog.style.top = parseInt((windowheight - finfshdialogheight) / 2) + "px";
-			finfshdialog.style.left = parseInt((windowwidth - finfshdialogwidth) / 2) + "px";
+			finishdialog.style.top = parseInt((windowheight - finishdialogheight) / 2) + "px";
+			finishdialog.style.left = parseInt((windowwidth - finishdialogwidth) / 2) + "px";
 		}
 
 		function onsettingdialogok() { //"fontsize"
