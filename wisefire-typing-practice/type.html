@@ -37,7 +37,10 @@
 
 
 			.title1 {
-				background-color: deepskyblue;
+				/* background-color: deepskyblue; */
+				background-color: #00bfff;
+				/* background-color: red; */
+				/* deepskyblue */
 				font-size: 20px;
 				text-align: center;
 
@@ -68,14 +71,22 @@
 				color: red;
 			} */
 
-			.bggreen {
-				background-color: chartreuse;
-				border-color: chartreuse;
+
+
+			.bgline1 {
+				/* background-color: lightskyblue;
+				border-color: lightskyblue; */
+				background-color: #87cefa;
+				/* lightskyblue */
+				border-color: #87cefa;
 			}
 
-			.bgblue {
-				background-color: lightskyblue;
-				border-color: lightskyblue;
+			.bgline2 {
+				/* background-color: chartreuse;
+				border-color: chartreuse; */
+				background-color: #87cefa;
+				/* lightskyblue */
+				border-color: #87cefa;
 			}
 
 			.fblack {
@@ -133,6 +144,37 @@
 				fontsize = fontsize0;
 			}
 
+			var defaulttitlecolor = "#00bfff";
+			//var defaulttitlecolor = "green";
+
+			let titlecolor0 = getCookie("titlecolor");
+			var titlecolor = defaulttitlecolor;
+			if (titlecolor0 == "") {
+				titlecolor = defaulttitlecolor;
+			} else {
+				titlecolor = titlecolor0;
+			}
+
+			var defaultline1color = "#87cefa";
+			let line1color0 = getCookie("line1color");
+			var line1color = defaultline1color;
+			if (line1color0 == "") {
+				line1color = defaultline1color;
+			} else {
+				line1color = line1color0;
+			}
+
+
+			var defaultline2color = "#87cefa";
+			let line2color0 = getCookie("line2color");
+			var line2color = defaultline2color;
+			if (line2color0 == "") {
+				line2color = defaultline2color;
+			} else {
+				line2color = line2color0;
+			}
+
+			var iscolorreg = /^#[0-9A-F]{6}$/i;
 
 			// var isfinishdialogshowed = false;
 			// var issettingdialogshowed = false;
@@ -220,7 +262,39 @@
 				border-width: 7px;
 				border-color: #F4FFEF;
 			}
+
+			.colortext {
+				display: inline;
+				width: 120px;
+
+			}
 		</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<div class="settingdialog">
 			<div class="settingdialog-title">设置</div>
 
@@ -230,12 +304,55 @@
 					aria-describedby="inputGroup-sizing-default"><span class="settingdialog-tip1">（默认30）</span>
 			</div>
 
+			<!-- is-invalid -->
+
+			<div>标题栏颜色：<input class="form-control form-control-sm colortext colortext-title"
+					oninput="onchangetitlecolortext()" />
+
+				<button type="button" class="btn btn-primary"
+					style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+					onclick="titlecolortodefault()">
+					恢复默认
+				</button>
+
+				<input type="color" class="form-control form-control-color titlecolorset" value="#ff0000" title="标题栏颜色"
+					oninput="onchangetitlecolor(this)" />
+			</div>
+
+			<div>单数行颜色：<input class="form-control form-control-sm colortext colortext-line1"
+					oninput="onchangeline1colortext()" />
+
+				<button type="button" class="btn btn-primary"
+					style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+					onclick="line1colortodefault()">
+					恢复默认
+				</button>
+
+				<input type="color" class="form-control form-control-color line1colorset" value="#ff0000" title="单数行颜色"
+					oninput="onchangeline1color(this)" />
+			</div>
+
+			<div>双数行颜色：<input class="form-control form-control-sm colortext colortext-line2" oninput="onchangeline2colortext()" />
+
+				<button type="button" class="btn btn-primary"
+					style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+					onclick="line2colortodefault()">
+					恢复默认
+				</button>
+
+				<input type="color" class="form-control form-control-color line2colorset" value="#ff0000" title="双数行颜色"
+					oninput="onchangeline2color(this)" />
+			</div>
+
+
 			<button type="button" class="btn btn-primary floatright" onclick="onsettingdialogok()">确定</button><span
 				class="floatright">&nbsp;&nbsp;</span>
 			<button type="button" class="btn btn-secondary floatright" onclick="onsettingdialogcancel()">取消</button>
 
 		</div>
+		<script>
 
+		</script>
 
 	</body>
 	<script>
@@ -256,6 +373,10 @@
 
 			$(".main2").height(main2height);
 
+			let mytitle = document.getElementsByClassName("title1")[0];
+			mytitle.style.backgroundColor = titlecolor;
+			setline1color(line1color);
+			setline2color(line2color);
 
 
 			//$(".entertext").resize(100);
@@ -318,12 +439,13 @@
 				inputtip.style.fontSize = "50px";
 				inputtip.innerHTML = "11";
 				inputtip.className = "entertext inputtipdiv inputtipdiv" + i;
-				if (i % 2 === 0) {
+				if ((i + 1) % 2 === 0) {
 					//console.log('是偶数');
-					inputtip.className += " bggreen";
+					//inputtip.className += " bggreen";
+					inputtip.className += " bgline2";
 				} else {
 					//console.log('是奇数');
-					inputtip.className += " bgblue";
+					inputtip.className += " bgline1";
 				}
 				inputtip.setAttribute("lineid", i);
 
@@ -853,7 +975,18 @@
 		}
 
 		function onopensetting() { //settingdialog
-			$(".setting-fontsize").val(fontsize)
+			$(".setting-fontsize").val(fontsize);
+			let mytitlecolor = document.getElementsByClassName("titlecolorset")[0];
+			mytitlecolor.value = titlecolor;
+			$(".colortext-title").val(titlecolor);
+
+			let myline1color = document.getElementsByClassName("line1colorset")[0];
+			myline1color.value = line1color;
+			$(".colortext-line1").val(line1color);
+
+			let myline2color = document.getElementsByClassName("line2colorset")[0];
+			myline2color.value = line2color;
+			$(".colortext-line2").val(line2color);
 
 			$(".settingdialog").show();
 
@@ -867,14 +1000,210 @@
 			finishdialog.style.left = parseInt((windowwidth - finishdialogwidth) / 2) + "px";
 		}
 
+
 		function onsettingdialogok() { //"fontsize"
-			setCookie("fontsize", $(".setting-fontsize").val(), 36500)
+			let colortexttitle = document.getElementsByClassName("colortext-title")[0];
+			if (colortexttitle.getAttribute("isinvalid") == "yes") {
+				return;
+			}
+			
+			let colortextline1 = document.getElementsByClassName("colortext-line1")[0];
+			if (colortextline1.getAttribute("isinvalid") == "yes") {
+				return;
+			}
+			
+			let colortextline2 = document.getElementsByClassName("colortext-line2")[0];
+			if (colortextline2.getAttribute("isinvalid") == "yes") {
+				return;
+			}
+
+
+
+			setCookie("fontsize", $(".setting-fontsize").val(), 36500);
+
+			let mytitlecolor = document.getElementsByClassName("colortext-title")[0].value;
+
+			if (mytitlecolor != defaulttitlecolor) {
+				setCookie("titlecolor", mytitlecolor, 36500);
+			} else {
+				setCookie("titlecolor", "", 0);
+			}
+
+			let myline1color = document.getElementsByClassName("colortext-line1")[0].value;
+			if (myline1color != defaultline1color) {
+				setCookie("line1color", myline1color, 36500);
+			} else {
+				setCookie("line1color", "", 0);
+			}
+
+			let myline2color = document.getElementsByClassName("line2colorset")[0].value;
+			if (myline2color != defaultline2color) {
+				setCookie("line2color", myline2color, 36500);
+			} else {
+				setCookie("line2color", "", 0);
+			}
+
+
 			location.reload();
 			$(".settingdialog").hide();
 		}
 
 		function onsettingdialogcancel() {
+
+			settitlecolor(titlecolor);
+			setline1color(line1color);
+			setline2color(line2color);
+
 			$(".settingdialog").hide();
+		}
+
+		function onchangetitlecolor(myobj) {
+			settitlecolor(myobj.value);
+			$(".colortext-title").val(myobj.value);
+			checktitlecolortext();
+
+		}
+
+		function settitlecolor(color) {
+			let mytitle = document.getElementsByClassName("title1")[0];
+			mytitle.style.backgroundColor = color;
+		}
+
+		function titlecolortodefault() {
+			let mycolor = document.getElementsByClassName("titlecolorset")[0];
+			mycolor.value = defaulttitlecolor;
+			settitlecolor(defaulttitlecolor);
+			$(".colortext-title").val(defaulttitlecolor);
+			checktitlecolortext();
+		}
+
+		function onchangeline1color(myobj) {
+			setline1color(myobj.value);
+			$(".colortext-line1").val(myobj.value);
+			checkline1colortext();
+		}
+
+		function setline1color(color) {
+			//inputtipobj
+			for (let i = 0; i < inputtipobj.length; i++) {
+				if ((i + 1) % 2 === 0) {
+					//console.log('是偶数');
+				} else {
+					//console.log('是奇数');
+					inputtipobj[i].style.backgroundColor = color;
+					inputtipobj[i].style.borderColor = color;
+				}
+			}
+		}
+
+		function onchangeline2color(myobj) {
+			setline2color(myobj.value);
+			$(".colortext-line2").val(myobj.value);
+			checkline2colortext();
+		}
+
+		function setline2color(color) {
+			//inputtipobj
+			for (let i = 0; i < inputtipobj.length; i++) {
+				if ((i + 1) % 2 === 0) {
+					//console.log('是偶数');
+					inputtipobj[i].style.backgroundColor = color;
+					inputtipobj[i].style.borderColor = color;
+				} else {
+					//console.log('是奇数');
+				}
+			}
+		}
+
+		function line1colortodefault() {
+			let line1colorset = document.getElementsByClassName("line1colorset")[0];
+			line1colorset.value = defaultline1color;
+			$(".colortext-line1").val(defaultline1color);
+			checkline1colortext();
+			setline1color(defaultline1color);
+		}
+
+		function line2colortodefault() {
+			let line2colorset = document.getElementsByClassName("line2colorset")[0];
+			line2colorset.value = defaultline2color;
+			$(".colortext-line2").val(defaultline2color);
+			checkline2colortext();
+			setline2color(defaultline2color);
+			
+		}
+
+		function iscolortext(val) {
+			return iscolorreg.test(val);
+		}
+
+		function onchangetitlecolortext() {
+			checktitlecolortext();
+			let colortexttitle = document.getElementsByClassName("colortext-title")[0];
+			let mytitlecolorset = document.getElementsByClassName("titlecolorset")[0];
+			if (colortexttitle.getAttribute("isinvalid") == "no") {
+				mytitlecolorset.value = colortexttitle.value;
+				settitlecolor(colortexttitle.value);
+			}
+		}
+
+		function checktitlecolortext() {
+
+			let titlecolorclass = "form-control form-control-sm colortext colortext-title";
+			let colortexttitle = document.getElementsByClassName("colortext-title")[0];
+			if (iscolortext(colortexttitle.value)) {
+				colortexttitle.className = titlecolorclass;
+				colortexttitle.setAttribute("isinvalid", "no");
+			} else {
+				colortexttitle.className = titlecolorclass + " is-invalid";
+				colortexttitle.setAttribute("isinvalid", "yes");
+			}
+		}
+
+		function onchangeline1colortext() {
+			checkline1colortext();
+
+			let colortextline1 = document.getElementsByClassName("colortext-line1")[0];
+			let myline1colorset = document.getElementsByClassName("line1colorset")[0];
+			if (colortextline1.getAttribute("isinvalid") == "no") {
+				myline1colorset.value = colortextline1.value;
+				setline1color(colortextline1.value);
+				
+			}
+		}
+
+		function checkline1colortext() {
+			let line1colorclass = "form-control form-control-sm colortext colortext-line1";
+			let colortextline1 = document.getElementsByClassName("colortext-line1")[0];
+			if (iscolortext(colortextline1.value)) {
+				colortextline1.className = line1colorclass;
+				colortextline1.setAttribute("isinvalid", "no");
+			} else {
+				colortextline1.className = line1colorclass + " is-invalid";
+				colortextline1.setAttribute("isinvalid", "yes");
+			}
+		}
+		
+		function onchangeline2colortext() {
+			checkline2colortext();
+		
+			let colortextline2 = document.getElementsByClassName("colortext-line2")[0];
+			let myline2colorset = document.getElementsByClassName("line2colorset")[0];
+			if (colortextline2.getAttribute("isinvalid") == "no") {
+				myline2colorset.value = colortextline2.value;
+				setline2color(colortextline2.value);
+			}
+		}
+		
+		function checkline2colortext() {
+			let line2colorclass = "form-control form-control-sm colortext colortext-line2";
+			let colortextline2 = document.getElementsByClassName("colortext-line2")[0];
+			if (iscolortext(colortextline2.value)) {
+				colortextline2.className = line2colorclass;
+				colortextline2.setAttribute("isinvalid", "no");
+			} else {
+				colortextline2.className = line2colorclass + " is-invalid";
+				colortextline2.setAttribute("isinvalid", "yes");
+			}
 		}
 	</script>
 </html>
