@@ -195,7 +195,7 @@
 
 			</div>
 			<div class="footer">
-				由 睿虎 开发
+				由&nbsp;<a href="https://laisc7301.github.io/blog/" target="_blank">睿虎</a>&nbsp;开发&nbsp;v1.0.0&nbsp;<a href="https://github.com/laisc7301/wisefire-typing-practice/" target="_blank">源代码</a>
 			</div>
 
 		</div>
@@ -644,7 +644,7 @@
 						// 	nowfocus++;
 						// 	myinputobj[nowfocus].focus();
 						// }
-						var myregular = new RegExp("[A-Za-zü']+");
+						var myregular = /[A-Za-zü']+/;
 						if (myregular.test(endstr)) {
 							// console.log('该字符串是英文' + endstr);
 						} else {
@@ -673,7 +673,7 @@
 							}
 						} else {
 							let endstr = myobj.value.substring(myobj.value.length - 1, myobj.value.length);
-							var myregular = new RegExp("[A-Za-zü']+");
+							var myregular = /[A-Za-zü']+/;
 							if (myregular.test(endstr)) {
 								// console.log('该字符串是英文' + endstr);
 							} else {
