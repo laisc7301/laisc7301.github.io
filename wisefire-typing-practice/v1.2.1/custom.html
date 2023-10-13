@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>睿火打字练习 - 自定义</title>
+
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+		<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+
+		<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+		<script src="./js/cookie.js"></script>
+		<script src="./js/replacehhf.js"></script>
+	</head>
+	<body>
+		<div>
+			<div class="main1">
+				<div class="main2">
+					<div class="titlebar">
+						<label for="exampleFormControlTextarea1" class="form-label">要打字的内容：</label>
+					</div>
+					<div class="mb-3">
+						<textarea class="form-control myarticle" id="exampleFormControlTextarea1" rows="3"></textarea>
+					</div>
+					<div class="buttonbar">
+						<button type="button" class="btn btn-primary" onclick="myStart()">开始！</button>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		function createPage() {
+			let titlebar = document.getElementsByClassName("titlebar")[0];
+			let myarticle = document.getElementsByClassName("myarticle")[0];
+			let buttonbar = document.getElementsByClassName("buttonbar")[0];
+
+			let windowheight = window.innerHeight;
+			let titlebarheight = titlebar.scrollHeight;
+			let buttonbarheight = buttonbar.scrollHeight;
+			let myarticleheight = windowheight - titlebarheight - buttonbarheight - 50;
+			let myarticleheightmix = 1;
+			if (myarticleheight < myarticleheightmix) {
+				myarticleheight = myarticleheightmix;
+			}
+
+			$(".myarticle").height(myarticleheight);
+
+
+		}
+		createPage();
+
+		window.onresize = function() {
+			createPage();
+		}
+		
+		function myStart(){
+			let article = $(".myarticle").val();
+			//console.log(myarticle);
+			let articlehhftobr = replacehhftobr(article);
+			localStorage.setItem("article",articlehhftobr);
+			localStorage.setItem("entered","");
+			localStorage.setItem("articletitle","自定义打字");
+			localStorage.setItem("time", 0);
+			localStorage.setItem("autonextline",true);
+			window.location.href = "type.html";
+		}
+
+		// setCookie("bl",true,36500);
+		// console.log(getCookie("bl"));
+		// console.log(true);
+	</script>
+</html>
