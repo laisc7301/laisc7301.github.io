@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/blog/2023/04/01/202304010000hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>[1080P] CCTV9 鲸鱼行走的时代——深时之旅 下载</title>
     <url>/blog/2023/04/06/202304022200%E9%B2%B8%E9%B1%BC%E8%A1%8C%E8%B5%B0%E7%9A%84%E6%97%B6%E4%BB%A3%E2%80%94%E2%80%94%E6%B7%B1%E6%97%B6%E4%B9%8B%E6%97%85/</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304022200%E9%B2%B8%E9%B1%BC%E8%A1%8C%E8%B5%B0%E7%9A%84%E6%97%B6%E4%BB%A3%E2%80%94%E2%80%94%E6%B7%B1%E6%97%B6%E4%B9%8B%E6%97%85_2.png"></p>
@@ -35,20 +17,22 @@
       </tags>
   </entry>
   <entry>
-    <title>[1080P] CCTV9 突破感官极限 全2集 下载</title>
-    <url>/blog/2023/04/14/202304062100%E7%AA%81%E7%A0%B4%E6%84%9F%E5%AE%98%E6%9E%81%E9%99%90/</url>
-    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304062100%E7%AA%81%E7%A0%B4%E6%84%9F%E5%AE%98%E6%9E%81%E9%99%90_2.png"></p>
-<h2 id="阿里云盘：https-www-aliyundrive-com-s-V5avBXRoxn4"><a href="#阿里云盘：https-www-aliyundrive-com-s-V5avBXRoxn4" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/V5avBXRoxn4"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/V5avBXRoxn4">https://www.aliyundrive.com/s/V5avBXRoxn4</a></h2>]]></content>
-      <categories>
-        <category>视频</category>
-        <category>纪录片</category>
-        <category>CCTV9</category>
-      </categories>
-      <tags>
-        <tag>视频</tag>
-        <tag>纪录片</tag>
-        <tag>CCTV9</tag>
-      </tags>
+    <title>Hello World</title>
+    <url>/blog/2023/04/01/202304010000hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>[1080P] CCTV9 动物守护行动 全5集 下载</title>
@@ -83,10 +67,10 @@
       </tags>
   </entry>
   <entry>
-    <title>[1080P] CCTV9 消失的尼安德特人 下载</title>
-    <url>/blog/2023/04/12/202304092200%E6%B6%88%E5%A4%B1%E7%9A%84%E5%B0%BC%E5%AE%89%E5%BE%B7%E7%89%B9%E4%BA%BA/</url>
-    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304092200%E6%B6%88%E5%A4%B1%E7%9A%84%E5%B0%BC%E5%AE%89%E5%BE%B7%E7%89%B9%E4%BA%BA_2.png"></p>
-<h2 id="阿里云盘：https-www-aliyundrive-com-s-8bVtELqbT3o"><a href="#阿里云盘：https-www-aliyundrive-com-s-8bVtELqbT3o" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/8bVtELqbT3o"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/8bVtELqbT3o">https://www.aliyundrive.com/s/8bVtELqbT3o</a></h2>]]></content>
+    <title>[1080P] CCTV9 突破感官极限 全2集 下载</title>
+    <url>/blog/2023/04/14/202304062100%E7%AA%81%E7%A0%B4%E6%84%9F%E5%AE%98%E6%9E%81%E9%99%90/</url>
+    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304062100%E7%AA%81%E7%A0%B4%E6%84%9F%E5%AE%98%E6%9E%81%E9%99%90_2.png"></p>
+<h2 id="阿里云盘：https-www-aliyundrive-com-s-V5avBXRoxn4"><a href="#阿里云盘：https-www-aliyundrive-com-s-V5avBXRoxn4" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/V5avBXRoxn4"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/V5avBXRoxn4">https://www.aliyundrive.com/s/V5avBXRoxn4</a></h2>]]></content>
       <categories>
         <category>视频</category>
         <category>纪录片</category>
@@ -103,6 +87,22 @@
     <url>/blog/2023/04/15/202304131920%E7%99%BD%E6%B0%B4%E7%8B%AC%E9%BE%99%E6%B1%9F/</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304131920%E7%99%BD%E6%B0%B4%E7%8B%AC%E9%BE%99%E6%B1%9F_2.png"></p>
 <h2 id="阿里云盘：https-www-aliyundrive-com-s-gbmfYoSzR2k"><a href="#阿里云盘：https-www-aliyundrive-com-s-gbmfYoSzR2k" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/gbmfYoSzR2k"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/gbmfYoSzR2k">https://www.aliyundrive.com/s/gbmfYoSzR2k</a></h2>]]></content>
+      <categories>
+        <category>视频</category>
+        <category>纪录片</category>
+        <category>CCTV9</category>
+      </categories>
+      <tags>
+        <tag>视频</tag>
+        <tag>纪录片</tag>
+        <tag>CCTV9</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[1080P] CCTV9 消失的尼安德特人 下载</title>
+    <url>/blog/2023/04/12/202304092200%E6%B6%88%E5%A4%B1%E7%9A%84%E5%B0%BC%E5%AE%89%E5%BE%B7%E7%89%B9%E4%BA%BA/</url>
+    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304092200%E6%B6%88%E5%A4%B1%E7%9A%84%E5%B0%BC%E5%AE%89%E5%BE%B7%E7%89%B9%E4%BA%BA_2.png"></p>
+<h2 id="阿里云盘：https-www-aliyundrive-com-s-8bVtELqbT3o"><a href="#阿里云盘：https-www-aliyundrive-com-s-8bVtELqbT3o" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/8bVtELqbT3o"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/8bVtELqbT3o">https://www.aliyundrive.com/s/8bVtELqbT3o</a></h2>]]></content>
       <categories>
         <category>视频</category>
         <category>纪录片</category>
@@ -147,6 +147,22 @@
       </tags>
   </entry>
   <entry>
+    <title>[1080P] CCTV9 我与星空有个约会 全5集 下载</title>
+    <url>/blog/2023/04/27/202304191950%E6%88%91%E4%B8%8E%E6%98%9F%E7%A9%BA%E6%9C%89%E4%B8%AA%E7%BA%A6%E4%BC%9A/</url>
+    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304191950%E6%88%91%E4%B8%8E%E6%98%9F%E7%A9%BA%E6%9C%89%E4%B8%AA%E7%BA%A6%E4%BC%9A1_2.png"></p>
+<h2 id="阿里云盘：https-www-aliyundrive-com-s-R5YWufFyFTE"><a href="#阿里云盘：https-www-aliyundrive-com-s-R5YWufFyFTE" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/R5YWufFyFTE"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/R5YWufFyFTE">https://www.aliyundrive.com/s/R5YWufFyFTE</a></h2>]]></content>
+      <categories>
+        <category>视频</category>
+        <category>纪录片</category>
+        <category>CCTV9</category>
+      </categories>
+      <tags>
+        <tag>视频</tag>
+        <tag>纪录片</tag>
+        <tag>CCTV9</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[1080P] CCTV9 书店，遇见你 全3集 下载</title>
     <url>/blog/2023/04/27/202304211920%E4%B9%A6%E5%BA%97%EF%BC%8C%E9%81%87%E8%A7%81%E4%BD%A0/</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304211920%E4%B9%A6%E5%BA%97%EF%BC%8C%E9%81%87%E8%A7%81%E4%BD%A01_2.png"></p>
@@ -163,10 +179,10 @@
       </tags>
   </entry>
   <entry>
-    <title>[1080P] CCTV9 我与星空有个约会 全5集 下载</title>
-    <url>/blog/2023/04/27/202304191950%E6%88%91%E4%B8%8E%E6%98%9F%E7%A9%BA%E6%9C%89%E4%B8%AA%E7%BA%A6%E4%BC%9A/</url>
-    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304191950%E6%88%91%E4%B8%8E%E6%98%9F%E7%A9%BA%E6%9C%89%E4%B8%AA%E7%BA%A6%E4%BC%9A1_2.png"></p>
-<h2 id="阿里云盘：https-www-aliyundrive-com-s-R5YWufFyFTE"><a href="#阿里云盘：https-www-aliyundrive-com-s-R5YWufFyFTE" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/R5YWufFyFTE"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/R5YWufFyFTE">https://www.aliyundrive.com/s/R5YWufFyFTE</a></h2>]]></content>
+    <title>[1080P] CCTV9 跟史蒂芬·霍金一起探索宇宙 下载</title>
+    <url>/blog/2023/04/27/202304232200%E8%B7%9F%E5%8F%B2%E8%92%82%E8%8A%AC%C2%B7%E9%9C%8D%E9%87%91%E4%B8%80%E8%B5%B7%E6%8E%A2%E7%B4%A2%E5%AE%87%E5%AE%99/</url>
+    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304232200%E8%B7%9F%E5%8F%B2%E8%92%82%E8%8A%AC%C2%B7%E9%9C%8D%E9%87%91%E4%B8%80%E8%B5%B7%E6%8E%A2%E7%B4%A2%E5%AE%87%E5%AE%99_2.png"></p>
+<h2 id="阿里云盘：https-www-aliyundrive-com-s-hUZYer91umU"><a href="#阿里云盘：https-www-aliyundrive-com-s-hUZYer91umU" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/hUZYer91umU"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/hUZYer91umU">https://www.aliyundrive.com/s/hUZYer91umU</a></h2>]]></content>
       <categories>
         <category>视频</category>
         <category>纪录片</category>
@@ -199,22 +215,6 @@
     <url>/blog/2023/05/06/202304281950%E9%9D%92%E6%98%A5%E4%B8%87%E5%B2%81/</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304281950%E9%9D%92%E6%98%A5%E4%B8%87%E5%B2%811_2.png"></p>
 <h2 id="阿里云盘：https-www-aliyundrive-com-s-dt5cKNDKRi1"><a href="#阿里云盘：https-www-aliyundrive-com-s-dt5cKNDKRi1" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/dt5cKNDKRi1"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/dt5cKNDKRi1">https://www.aliyundrive.com/s/dt5cKNDKRi1</a></h2>]]></content>
-      <categories>
-        <category>视频</category>
-        <category>纪录片</category>
-        <category>CCTV9</category>
-      </categories>
-      <tags>
-        <tag>视频</tag>
-        <tag>纪录片</tag>
-        <tag>CCTV9</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[1080P] CCTV9 跟史蒂芬·霍金一起探索宇宙 下载</title>
-    <url>/blog/2023/04/27/202304232200%E8%B7%9F%E5%8F%B2%E8%92%82%E8%8A%AC%C2%B7%E9%9C%8D%E9%87%91%E4%B8%80%E8%B5%B7%E6%8E%A2%E7%B4%A2%E5%AE%87%E5%AE%99/</url>
-    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202304232200%E8%B7%9F%E5%8F%B2%E8%92%82%E8%8A%AC%C2%B7%E9%9C%8D%E9%87%91%E4%B8%80%E8%B5%B7%E6%8E%A2%E7%B4%A2%E5%AE%87%E5%AE%99_2.png"></p>
-<h2 id="阿里云盘：https-www-aliyundrive-com-s-hUZYer91umU"><a href="#阿里云盘：https-www-aliyundrive-com-s-hUZYer91umU" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/hUZYer91umU"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/hUZYer91umU">https://www.aliyundrive.com/s/hUZYer91umU</a></h2>]]></content>
       <categories>
         <category>视频</category>
         <category>纪录片</category>
@@ -277,22 +277,6 @@
       </tags>
   </entry>
   <entry>
-    <title>[1080P] CCTV9 伊比利亚猞猁 下载</title>
-    <url>/blog/2023/05/17/202305142200%E4%BC%8A%E6%AF%94%E5%88%A9%E4%BA%9A%E7%8C%9E%E7%8C%81/</url>
-    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305142200%E4%BC%8A%E6%AF%94%E5%88%A9%E4%BA%9A%E7%8C%9E%E7%8C%81_2.png"></p>
-<h2 id="阿里云盘：https-www-aliyundrive-com-s-1tPgFyzFsby"><a href="#阿里云盘：https-www-aliyundrive-com-s-1tPgFyzFsby" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/1tPgFyzFsby"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/1tPgFyzFsby">https://www.aliyundrive.com/s/1tPgFyzFsby</a></h2>]]></content>
-      <categories>
-        <category>视频</category>
-        <category>纪录片</category>
-        <category>CCTV9</category>
-      </categories>
-      <tags>
-        <tag>视频</tag>
-        <tag>纪录片</tag>
-        <tag>CCTV9</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Anaconda环境切换</title>
     <url>/blog/2023/05/19/202305190000Anaconda%E7%8E%AF%E5%A2%83%E5%88%87%E6%8D%A2/</url>
     <content><![CDATA[<h4 id="1、查看已有的虚拟环境"><a href="#1、查看已有的虚拟环境" class="headerlink" title="1、查看已有的虚拟环境"></a>1、查看已有的虚拟环境</h4><p>conda env list</p>
@@ -307,6 +291,22 @@
         <tag>编程</tag>
         <tag>Python</tag>
         <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[1080P] CCTV9 伊比利亚猞猁 下载</title>
+    <url>/blog/2023/05/17/202305142200%E4%BC%8A%E6%AF%94%E5%88%A9%E4%BA%9A%E7%8C%9E%E7%8C%81/</url>
+    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305142200%E4%BC%8A%E6%AF%94%E5%88%A9%E4%BA%9A%E7%8C%9E%E7%8C%81_2.png"></p>
+<h2 id="阿里云盘：https-www-aliyundrive-com-s-1tPgFyzFsby"><a href="#阿里云盘：https-www-aliyundrive-com-s-1tPgFyzFsby" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/1tPgFyzFsby"></a>阿里云盘：<a href="https://www.aliyundrive.com/s/1tPgFyzFsby">https://www.aliyundrive.com/s/1tPgFyzFsby</a></h2>]]></content>
+      <categories>
+        <category>视频</category>
+        <category>纪录片</category>
+        <category>CCTV9</category>
+      </categories>
+      <tags>
+        <tag>视频</tag>
+        <tag>纪录片</tag>
+        <tag>CCTV9</tag>
       </tags>
   </entry>
   <entry>
@@ -603,7 +603,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git tag &lt;标签名字&gt;</span><br></pre></td></tr></table></figure>
 <p>创建轻量标签</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail@example.com&quot;</span></span><br></pre></td></tr></table></figure>
-<p>配置验证信息：生成SSH Key<br>会在~&#x2F;下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。<br>验证是否配置成功：ssh -T <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;</a><br>更多帮助：<a href="https://help.github.com/cn/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">https://help.github.com/cn/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</a></p>
+<p>配置验证信息：生成SSH Key<br>会在~&#x2F;下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。<br>验证是否配置成功：ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a><br>更多帮助：<a href="https://help.github.com/cn/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">https://help.github.com/cn/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</a></p>
 <p><img src="https://laisc7301.github.io/files/img/2023/202306070000收藏_red.svg" alt="" width="50" height="50" align=left><div class="focus0"><span class="focus1">重点</span><span class="focus2">↓</span></div><br/></p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git push &lt;远端仓库路径&gt;   &lt;分支名&gt;</span><br></pre></td></tr></table></figure>
 <p>将文件推送到远程仓库</p>
@@ -624,7 +624,7 @@
 </div>
 
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote add [shortname] [url]</span><br></pre></td></tr></table></figure>
-<p>指定一个简单的名字，以便将来引用该仓库<br>如：git remote add origin <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#46;&#99;&#111;&#x6d;">&#103;&#105;&#116;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#46;&#99;&#111;&#x6d;</a>:mojombo&#x2F;grit.git</p>
+<p>指定一个简单的名字，以便将来引用该仓库<br>如：git remote add origin <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#109;">&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#109;</a>:mojombo&#x2F;grit.git</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
 <p>执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote <span class="built_in">rm</span> [别名]</span><br></pre></td></tr></table></figure>
@@ -766,10 +766,10 @@ myonload(8);
       </tags>
   </entry>
   <entry>
-    <title>[转] [800P] 断片之险途夺宝 下载</title>
-    <url>/blog/2023/06/14/202306140001%E6%96%AD%E7%89%87%E4%B9%8B%E9%99%A9%E9%80%94%E5%A4%BA%E5%AE%9D/</url>
-    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202306140001%E6%96%AD%E7%89%87%E4%B9%8B%E9%99%A9%E9%80%94%E5%A4%BA%E5%AE%9D_2.png"></p>
-<p>阿里云盘：<a href="https://www.aliyundrive.com/s/NuhddZUJikc">https://www.aliyundrive.com/s/NuhddZUJikc</a></p>
+    <title>[转] [816P] 蜻蜓少年 下载</title>
+    <url>/blog/2023/06/15/202306150000%E8%9C%BB%E8%9C%93%E5%B0%91%E5%B9%B4/</url>
+    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202306150000%E8%9C%BB%E8%9C%93%E5%B0%91%E5%B9%B4.Rural.Summer.Vacation.2019.%E5%9B%BD%E8%AF%AD%E4%B8%AD%E5%AD%97_2.png"></p>
+<p>阿里云盘：<a href="https://www.aliyundrive.com/s/9DJzGFvyzG6">https://www.aliyundrive.com/s/9DJzGFvyzG6</a></p>
 ]]></content>
       <categories>
         <category>视频</category>
@@ -781,10 +781,10 @@ myonload(8);
       </tags>
   </entry>
   <entry>
-    <title>[转] [816P] 蜻蜓少年 下载</title>
-    <url>/blog/2023/06/15/202306150000%E8%9C%BB%E8%9C%93%E5%B0%91%E5%B9%B4/</url>
-    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202306150000%E8%9C%BB%E8%9C%93%E5%B0%91%E5%B9%B4.Rural.Summer.Vacation.2019.%E5%9B%BD%E8%AF%AD%E4%B8%AD%E5%AD%97_2.png"></p>
-<p>阿里云盘：<a href="https://www.aliyundrive.com/s/9DJzGFvyzG6">https://www.aliyundrive.com/s/9DJzGFvyzG6</a></p>
+    <title>[转] [800P] 断片之险途夺宝 下载</title>
+    <url>/blog/2023/06/14/202306140001%E6%96%AD%E7%89%87%E4%B9%8B%E9%99%A9%E9%80%94%E5%A4%BA%E5%AE%9D/</url>
+    <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202306140001%E6%96%AD%E7%89%87%E4%B9%8B%E9%99%A9%E9%80%94%E5%A4%BA%E5%AE%9D_2.png"></p>
+<p>阿里云盘：<a href="https://www.aliyundrive.com/s/NuhddZUJikc">https://www.aliyundrive.com/s/NuhddZUJikc</a></p>
 ]]></content>
       <categories>
         <category>视频</category>
@@ -1003,22 +1003,6 @@ myonload(8);
       </tags>
   </entry>
   <entry>
-    <title>Termux安装pure-ftpd</title>
-    <url>/blog/2023/07/20/202307200001Termux%E5%AE%89%E8%A3%85pure-ftpd/</url>
-    <content><![CDATA[<p>输入以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pkg install pure-ftpd</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line"></span><br><span class="line">pure-pw useradd laiscdata -u 1001 -g 1001 -d /data/data/com.termux</span><br><span class="line"><span class="comment">#建立用户，用户名 laiscdata ，用户uid 1001 ，用户gid 1001 ，用户根目录 /data/data/com.termux，这里回车后需要设置密码，输入两遍</span></span><br><span class="line"></span><br><span class="line">pure-pw mkdb</span><br><span class="line"><span class="comment">#建立数据库，每次更改完密码都要重建一次数据库</span></span><br><span class="line"></span><br><span class="line">pure-ftpd -B -E -l puredb:<span class="variable">$PREFIX</span>/etc/pureftpd.pdb -S 0.0.0.0,3721</span><br><span class="line"><span class="comment">#启动 -B 后台运行 -E 禁止匿名登陆 -l 配置文件位置 -S 绑定ip和端口</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>编程</category>
-        <category>Termux</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>Termux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[1080i] 成都大运会开幕式 下载</title>
     <url>/blog/2023/08/06/202308060000%E6%88%90%E9%83%BD%E5%A4%A7%E8%BF%90%E4%BC%9A%E5%BC%80%E5%B9%95%E5%BC%8F/</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202308060000Chengdu.2021.FISU.World.University.Games.Opening.Ceremony.20230728.1080i.FEED.H.264-FLTTH_2.png"></p>
@@ -1033,6 +1017,22 @@ myonload(8);
         <tag>视频</tag>
         <tag>运动会</tag>
         <tag>开幕式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Termux安装pure-ftpd</title>
+    <url>/blog/2023/07/20/202307200001Termux%E5%AE%89%E8%A3%85pure-ftpd/</url>
+    <content><![CDATA[<p>输入以下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pkg install pure-ftpd</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line"></span><br><span class="line">pure-pw useradd laiscdata -u 1001 -g 1001 -d /data/data/com.termux</span><br><span class="line"><span class="comment">#建立用户，用户名 laiscdata ，用户uid 1001 ，用户gid 1001 ，用户根目录 /data/data/com.termux，这里回车后需要设置密码，输入两遍</span></span><br><span class="line"></span><br><span class="line">pure-pw mkdb</span><br><span class="line"><span class="comment">#建立数据库，每次更改完密码都要重建一次数据库</span></span><br><span class="line"></span><br><span class="line">pure-ftpd -B -E -l puredb:<span class="variable">$PREFIX</span>/etc/pureftpd.pdb -S 0.0.0.0,3721</span><br><span class="line"><span class="comment">#启动 -B 后台运行 -E 禁止匿名登陆 -l 配置文件位置 -S 绑定ip和端口</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Termux</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Termux</tag>
       </tags>
   </entry>
   <entry>
@@ -1286,8 +1286,18 @@ myonload(8);
   <entry>
     <title>关于</title>
     <url>/blog/about/index.html</url>
-    <content><![CDATA[<p>作者：睿虎<br>我的Blogger：<a href="https://laisc7301.blogspot.com/">https://laisc7301.blogspot.com/</a><br>我的邮箱：<a href="mailto:&#x6c;&#x61;&#105;&#115;&#x63;&#x37;&#51;&#48;&#49;&#64;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#x61;&#105;&#115;&#x63;&#x37;&#51;&#48;&#49;&#64;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;</a></p>
+    <content><![CDATA[<p>作者：睿虎<br>我的Blogger：<a href="https://laisc7301.blogspot.com/">https://laisc7301.blogspot.com/</a><br>我的邮箱：<a href="mailto:&#x6c;&#x61;&#105;&#x73;&#x63;&#x37;&#51;&#48;&#x31;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#x6c;&#x61;&#105;&#x73;&#x63;&#x37;&#51;&#48;&#x31;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>文章分类</title>
+    <url>/blog/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/blog/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>火狐浏览器扩展——音量增强小工具</title>
@@ -1299,20 +1309,10 @@ myonload(8);
 ]]></content>
   </entry>
   <entry>
-    <title>文章分类</title>
-    <url>/blog/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>睿火正则小工具</title>
     <url>/blog/wisefire-regular-tool/index.html</url>
     <content><![CDATA[<h1 id="睿火正则小工具"><a href="#睿火正则小工具" class="headerlink" title="睿火正则小工具"></a>睿火正则小工具</h1><p><img src="https://laisc7301.github.io/blog/wisefire-regular-tool/wisefire-regular-tool-v1.4.6.png" alt="wisefire-regular-tool-v1.4.6.png"><br><img src="https://laisc7301.github.io/blog/wisefire-regular-tool/wisefire-regular-tool-v1.4.6_2.png" alt="wisefire-regular-tool-v1.4.6_2.png"><br><img src="https://laisc7301.github.io/blog/wisefire-regular-tool/wisefire-regular-tool-v1.4.6_3.png" alt="wisefire-regular-tool-v1.4.6_3.png"><br><img src="https://laisc7301.github.io/blog/wisefire-regular-tool/wisefire-regular-tool-v1.4.6_4.png" alt="wisefire-regular-tool-v1.4.6_4.png"><br><img src="https://laisc7301.github.io/blog/wisefire-regular-tool/wisefire-regular-tool-v1.4.6_5.png" alt="wisefire-regular-tool-v1.4.6_5.png"></p>
 <p>睿火正则小工具，解决正则查找、匹配、替换等的需要。</p>
 <h2 id="软件下载：https-github-com-laisc7301-wisefire-regular-tool-releases"><a href="#软件下载：https-github-com-laisc7301-wisefire-regular-tool-releases" class="headerlink" title="软件下载：https://github.com/laisc7301/wisefire-regular-tool/releases"></a>软件下载：<a href="https://github.com/laisc7301/wisefire-regular-tool/releases">https://github.com/laisc7301/wisefire-regular-tool/releases</a></h2><h2 id="源代码：https-github-com-laisc7301-wisefire-regular-tool"><a href="#源代码：https-github-com-laisc7301-wisefire-regular-tool" class="headerlink" title="源代码：https://github.com/laisc7301/wisefire-regular-tool"></a>源代码：<a href="https://github.com/laisc7301/wisefire-regular-tool">https://github.com/laisc7301/wisefire-regular-tool</a></h2>]]></content>
-  </entry>
-  <entry>
-    <title>标签</title>
-    <url>/blog/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
