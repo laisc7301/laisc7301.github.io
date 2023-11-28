@@ -1358,6 +1358,28 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>解决Nodejs http模块返回内容中文乱码问题</title>
+    <url>/blog/2023/11/28/202311280000%E8%A7%A3%E5%86%B3Nodejs_http%E6%A8%A1%E5%9D%97%E8%BF%94%E5%9B%9E%E5%86%85%E5%AE%B9%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>只需要一行代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">res.<span class="title function_">writeHead</span>(<span class="number">200</span>, &#123;<span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;text/plain; charset=utf-8&#x27;</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>完整的代码示例：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">&#x27;util&#x27;</span>);</span><br><span class="line"></span><br><span class="line">http.<span class="title function_">createServer</span>(<span class="keyword">function</span>(<span class="params">req, res</span>)&#123;</span><br><span class="line">    res.<span class="title function_">writeHead</span>(<span class="number">200</span>, &#123;<span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;text/plain; charset=utf-8&#x27;</span>&#125;);</span><br><span class="line">    <span class="comment">// 解析 url 参数</span></span><br><span class="line">    <span class="keyword">var</span> params = url.<span class="title function_">parse</span>(req.<span class="property">url</span>, <span class="literal">true</span>).<span class="property">query</span>;</span><br><span class="line">    res.<span class="title function_">write</span>(<span class="string">&quot;网站名：&quot;</span> + params.<span class="property">name</span>);</span><br><span class="line">    res.<span class="title function_">write</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    res.<span class="title function_">write</span>(<span class="string">&quot;网站 URL：&quot;</span> + params.<span class="property">url</span>);</span><br><span class="line">    res.<span class="title function_">end</span>();</span><br><span class="line"></span><br><span class="line">&#125;).<span class="title function_">listen</span>(<span class="number">8888</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://laisc7301.github.io/files/img/2023/202311280000%E8%A7%A3%E5%86%B3Nodejs_http%E6%A8%A1%E5%9D%97%E8%BF%94%E5%9B%9E%E5%86%85%E5%AE%B9%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98.png"></p>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Node.js</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>油猴脚本：记住Google搜索语言设置</title>
     <url>/blog/Tampermonkey-remember-Google-search-language-settings/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305300000%E8%AE%B0%E4%BD%8FGoogle%E6%90%9C%E7%B4%A2%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE.png"></p>
