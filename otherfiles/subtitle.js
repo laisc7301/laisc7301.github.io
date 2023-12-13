@@ -50,7 +50,9 @@ var subtitle = [
 	
 	"阳光这么好，何必自寻烦恼",
 	
-	"初心易得，始终难守"
+	"初心易得，始终难守",
+	
+	"反者道之动，弱者道之用——《道德经》"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
