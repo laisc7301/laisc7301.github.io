@@ -1380,6 +1380,25 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Ubuntu创建目录快捷方式</title>
+    <url>/blog/2023/12/20/202312200000Ubuntu%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<p>ln -s [绝对路径] ~&#x2F;桌面&#x2F;[快捷方式文件名]</p>
+<p>如：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ln -s /mnt/hgfs/vmshared ~/桌面/shared</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>软件</category>
+        <category>系统</category>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>软件</tag>
+        <tag>系统</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>油猴脚本：记住Google搜索语言设置</title>
     <url>/blog/Tampermonkey-remember-Google-search-language-settings/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305300000%E8%AE%B0%E4%BD%8FGoogle%E6%90%9C%E7%B4%A2%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE.png"></p>
