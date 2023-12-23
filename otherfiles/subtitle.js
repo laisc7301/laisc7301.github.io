@@ -52,7 +52,9 @@ var subtitle = [
 	
 	"初心易得，始终难守",
 	
-	"反者道之动，弱者道之用——《道德经》"
+	"反者道之动，弱者道之用——《道德经》",
+	
+	"保持热爱，奔赴山海，忠于自己，热爱生活。"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
