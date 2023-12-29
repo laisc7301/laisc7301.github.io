@@ -1427,6 +1427,47 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Hexo草稿的使用</title>
+    <url>/blog/2023/12/29/202312290000Hexo%E8%8D%89%E7%A8%BF%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="预备知识："><a href="#预备知识：" class="headerlink" title="预备知识："></a>预备知识：</h1><p>你可以执行下列命令来创建一篇新文章或者新的页面。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>比如：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new page MyPage</span><br></pre></td></tr></table></figure>
+
+<p>这样可以创建一个路径为MyPage的页面。</p>
+<p>再比如：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new doc MyPost</span><br></pre></td></tr></table></figure>
+
+<p>这样可以使用doc作为模板创建一个路径为MyPost的文章。</p>
+<h1 id="建立文章草稿"><a href="#建立文章草稿" class="headerlink" title="建立文章草稿"></a>建立文章草稿</h1><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当然也可以写作：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo n draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="将草稿发布为正式文章"><a href="#将草稿发布为正式文章" class="headerlink" title="将草稿发布为正式文章"></a>将草稿发布为正式文章</h1><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="本机预览草稿"><a href="#本机预览草稿" class="headerlink" title="本机预览草稿"></a>本机预览草稿</h1><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo S --draft</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="本机预览"><a href="#本机预览" class="headerlink" title="本机预览"></a>本机预览</h1><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo S</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>油猴脚本：记住Google搜索语言设置</title>
     <url>/blog/Tampermonkey-remember-Google-search-language-settings/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305300000%E8%AE%B0%E4%BD%8FGoogle%E6%90%9C%E7%B4%A2%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE.png"></p>
