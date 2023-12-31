@@ -1540,17 +1540,17 @@ myonload(8);
   <entry>
     <title>将C/C++程序编译成汇编文件</title>
     <url>/blog/2023/12/31/202312310000%E5%B0%86C_C++%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E6%88%90%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<p>如果要将C语言转换为汇编语言，该这样写：</p>
+    <content><![CDATA[<p>如果要将C语言转换为汇编语言，就这样写：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">gcc -S &lt;filename&gt;</span><br></pre></td></tr></table></figure>
 
 
 
-<p>如果要将C++语言转换为汇编语言，该这样写：</p>
+<p>如果要将C++语言转换为汇编语言，就这样写：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">g++ -S &lt;filename&gt;</span><br></pre></td></tr></table></figure>
 
 
 
-<p>比如：这里有个example.c的文件，该这样写：</p>
+<p>比如：这里有个example.c的文件，就这样写：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">gcc -S ./example.c</span><br></pre></td></tr></table></figure>
 
 
