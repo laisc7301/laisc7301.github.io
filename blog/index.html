@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-count">65</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -186,6 +186,157 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2024/01/03/202401030000SpringBoot%E5%85%A5%E9%97%A81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="睿虎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2024/01/03/202401030000SpringBoot%E5%85%A5%E9%97%A81/" class="post-title-link" itemprop="url">SpringBoot入门</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-01-03 19:34:12" itemprop="dateCreated datePublished" datetime="2024-01-03T19:34:12+08:00">2024-01-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/blog/2024/01/03/202401030000SpringBoot%E5%85%A5%E9%97%A81/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/01/03/202401030000SpringBoot%E5%85%A5%E9%97%A81/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>首先按照图示新建项目：</p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202401030000SpringBoot%E5%85%A5%E9%97%A81_1.png"></p>
+<p>添加以下依赖：</p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202401030000SpringBoot%E5%85%A5%E9%97%A81_2.png"></p>
+<p>找到application.properties文件，并写入下面内容：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server.port</span>=<span class="number">8001</span></span><br></pre></td></tr></table></figure>
+
+<p>这样服务的端口就由默认的8080变成了8001</p>
+<p>整个项目的文件结构如下图所示：</p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202401030000SpringBoot%E5%85%A5%E9%97%A81_3.png"></p>
+<p>首先，static下的文件是网站的静态文件，里面的文件会直接显示出来，就像静态网站一样。</p>
+<p>里面的index.html内容如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">Hello, world!</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>此时如果直接访问<a target="_blank" rel="noopener" href="http://localhost:8001/%EF%BC%8C%E5%B0%B1%E4%BC%9A%E7%9C%8B%E5%88%B0Hello">http://localhost:8001/，就会看到Hello</a>, world!页面。</p>
+<p>先把TestController的代码放出来：</p>
+<p>TestController.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc.example1.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.laisc.example1.entity.MyData1;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/test&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestController</span> &#123;</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello, SpringBoot!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/test1&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">test1</span><span class="params">(<span class="meta">@RequestParam(&quot;vara&quot;)</span> String vara)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;vara = &quot;</span> + vara;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/test2&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">test2</span><span class="params">(<span class="meta">@RequestBody</span> MyData1 myData1)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;myData1 = &quot;</span> + myData1.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/test3/&#123;text1&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">test3</span><span class="params">(<span class="meta">@PathVariable(&quot;text1&quot;)</span> String text11)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;text1 = &quot;</span> + text11;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/test4&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test4</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">requestUrl</span> <span class="operator">=</span> request.getRequestURL().toString();<span class="comment">//得到请求的URL地址</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">requestUri</span> <span class="operator">=</span> request.getRequestURI();<span class="comment">//得到请求的资源</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">queryString</span> <span class="operator">=</span> request.getQueryString();<span class="comment">//得到请求的URL地址中附带的参数</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">method</span> <span class="operator">=</span> request.getMethod();<span class="comment">//得到请求URL地址时使用的方法</span></span><br><span class="line"></span><br><span class="line">        response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);<span class="comment">//设置将字符以&quot;UTF-8&quot;编码输出到客户端浏览器</span></span><br><span class="line">        <span class="comment">//通过设置响应头控制浏览器以UTF-8的编码显示数据，如果不加这句话，那么浏览器显示的将是乱码</span></span><br><span class="line">        response.setHeader(<span class="string">&quot;content-type&quot;</span>, <span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> response.getWriter();</span><br><span class="line">        out.write(<span class="string">&quot;获取到的客户机信息如下：&quot;</span>);</span><br><span class="line">        out.write(<span class="string">&quot;&lt;hr/&gt;&quot;</span>);</span><br><span class="line">        out.write(<span class="string">&quot;请求的URL地址：&quot;</span>+requestUrl);</span><br><span class="line">        out.write(<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span><br><span class="line">        out.write(<span class="string">&quot;请求的资源：&quot;</span>+requestUri);</span><br><span class="line">        out.write(<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span><br><span class="line">        out.write(<span class="string">&quot;请求的URL地址中附带的参数：&quot;</span>+queryString);</span><br><span class="line">        out.write(<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span><br><span class="line">        out.write(<span class="string">&quot;请求使用的方法：&quot;</span>+method);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>看这一段：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/hello&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Hello, SpringBoot!&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此时如果访问<a target="_blank" rel="noopener" href="http://localhost:8001/test/hello%EF%BC%8C%E4%BC%9A%E7%9C%8B%E5%88%B0">http://localhost:8001/test/hello，会看到</a> Hello, SpringBoot! 文字。</p>
+<p>看这一段：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/test1&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">test1</span><span class="params">(<span class="meta">@RequestParam(&quot;vara&quot;)</span> String vara)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;vara = &quot;</span> + vara;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此时如果访问<a target="_blank" rel="noopener" href="http://localhost:8001/test/test1?vara=123">http://localhost:8001/test/test1?vara=123</a> ，会看到 vara &#x3D; 123 文字。</p>
+<p>看这一段：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/test2&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">test2</span><span class="params">(<span class="meta">@RequestBody</span> MyData1 myData1)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;myData1 = &quot;</span> + myData1.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这一段略微复杂一点，浏览器需要提交json数据。</p>
+<p>先来看看MyData1的代码：</p>
+<p>MyData1.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc.example1.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyData1</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> String username=<span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> String password=<span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyData1</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyData1</span><span class="params">(<span class="type">int</span> id, String username, String password)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(<span class="type">int</span> id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUsername</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsername</span><span class="params">(String username)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getPassword</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPassword</span><span class="params">(String password)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;MyData1&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;id=&quot;</span> + id +</span><br><span class="line">                <span class="string">&quot;, username=&#x27;&quot;</span> + username + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, password=&#x27;&quot;</span> + password + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>看到MyData1里面有3个变量：id、username、password，这就是要提交的json数据。</p>
+<p>比如提交下面数据到<a target="_blank" rel="noopener" href="http://localhost:8001/test/test2%EF%BC%9A">http://localhost:8001/test/test2：</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;123&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;username&quot;</span><span class="punctuation">:</span><span class="string">&quot;abc&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;password&quot;</span><span class="punctuation">:</span><span class="string">&quot;def&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>你会得到下面结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myData1 = MyData1&#123;id=<span class="number">123</span>, username=<span class="string">&#x27;abc&#x27;</span>, password=<span class="string">&#x27;def&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>看这一段：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/test3/&#123;text1&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">test3</span><span class="params">(<span class="meta">@PathVariable(&quot;text1&quot;)</span> String text11)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;text1 = &quot;</span> + text11;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这时如果访问<a target="_blank" rel="noopener" href="http://localhost:8001/test/test3/12345%EF%BC%8C%E5%B0%B1%E4%BC%9A%E7%9C%8B%E5%88%B0%E7%BB%93%E6%9E%9C%EF%BC%9Atext1">http://localhost:8001/test/test3/12345，就会看到结果：text1</a> &#x3D; 12345</p>
+<p>最后一段不难，就是字有点多。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/test4&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test4</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">String</span> <span class="variable">requestUrl</span> <span class="operator">=</span> request.getRequestURL().toString();<span class="comment">//得到请求的URL地址</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">requestUri</span> <span class="operator">=</span> request.getRequestURI();<span class="comment">//得到请求的资源</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">queryString</span> <span class="operator">=</span> request.getQueryString();<span class="comment">//得到请求的URL地址中附带的参数</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">method</span> <span class="operator">=</span> request.getMethod();<span class="comment">//得到请求URL地址时使用的方法</span></span><br><span class="line"></span><br><span class="line">    response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);<span class="comment">//设置将字符以&quot;UTF-8&quot;编码输出到客户端浏览器</span></span><br><span class="line">    <span class="comment">//通过设置响应头控制浏览器以UTF-8的编码显示数据，如果不加这句话，那么浏览器显示的将是乱码</span></span><br><span class="line">    response.setHeader(<span class="string">&quot;content-type&quot;</span>, <span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> response.getWriter();</span><br><span class="line">    out.write(<span class="string">&quot;获取到的客户机信息如下：&quot;</span>);</span><br><span class="line">    out.write(<span class="string">&quot;&lt;hr/&gt;&quot;</span>);</span><br><span class="line">    out.write(<span class="string">&quot;请求的URL地址：&quot;</span>+requestUrl);</span><br><span class="line">    out.write(<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span><br><span class="line">    out.write(<span class="string">&quot;请求的资源：&quot;</span>+requestUri);</span><br><span class="line">    out.write(<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span><br><span class="line">    out.write(<span class="string">&quot;请求的URL地址中附带的参数：&quot;</span>+queryString);</span><br><span class="line">    out.write(<span class="string">&quot;&lt;br/&gt;&quot;</span>);</span><br><span class="line">    out.write(<span class="string">&quot;请求使用的方法：&quot;</span>+method);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>访问<a target="_blank" rel="noopener" href="http://localhost:8001/test/test4?aaa=123%EF%BC%8C%E7%9C%8B%E7%BB%93%E6%9E%9C%E3%80%82">http://localhost:8001/test/test4?aaa=123，看结果。</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1211,107 +1362,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2023/11/14/202311140000AE%E6%8F%92%E4%BB%B6%EF%BC%9ATrapcode_Suite_2024.0.0_Win/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="睿虎">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="睿虎的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 睿虎的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/11/14/202311140000AE%E6%8F%92%E4%BB%B6%EF%BC%9ATrapcode_Suite_2024.0.0_Win/" class="post-title-link" itemprop="url">AE插件：Trapcode Suite 2024.0.0 Win 下载</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-11-14 14:11:40" itemprop="dateCreated datePublished" datetime="2023-11-14T14:11:40+08:00">2023-11-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E8%BD%AF%E4%BB%B6/Adobe/" itemprop="url" rel="index"><span itemprop="name">Adobe</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E8%BD%AF%E4%BB%B6/Adobe/AE/" itemprop="url" rel="index"><span itemprop="name">AE</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2023/11/14/202311140000AE%E6%8F%92%E4%BB%B6%EF%BC%9ATrapcode_Suite_2024.0.0_Win/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2023/11/14/202311140000AE%E6%8F%92%E4%BB%B6%EF%BC%9ATrapcode_Suite_2024.0.0_Win/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://laisc7301.github.io/files/img/2023/202311140000AE%E6%8F%92%E4%BB%B6%EF%BC%9ATrapcode_Suite_2024.0.0.png"></p>
-<p>阿里云盘：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/z7y3aGorvKN">https://www.aliyundrive.com/s/z7y3aGorvKN</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/7/">7</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/blog/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1324,7 +1374,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
