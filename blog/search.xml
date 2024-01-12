@@ -1909,6 +1909,7 @@ myonload(8);
 
 <p>这一段比较简单，就是删除所有username值为admin的记录。</p>
 <p>项目源代码下载：<a href="https://pan.baidu.com/s/1zia7W7P0x8KKKHkFahEDJg?pwd=0000">https://pan.baidu.com/s/1zia7W7P0x8KKKHkFahEDJg?pwd=0000</a></p>
+<p>上一篇：SpringBoot使用Thymeleaf：<a href="https://laisc7301.github.io/blog/2024/01/04/202401040000SpringBoot%E4%BD%BF%E7%94%A8Thymeleaf/">https://laisc7301.github.io/blog/2024/01/04/202401040000SpringBoot%E4%BD%BF%E7%94%A8Thymeleaf/</a></p>
 ]]></content>
       <categories>
         <category>编程</category>
