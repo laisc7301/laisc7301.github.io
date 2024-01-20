@@ -54,7 +54,9 @@ var subtitle = [
 	
 	"反者道之动，弱者道之用——《道德经》",
 	
-	"保持热爱，奔赴山海，忠于自己，热爱生活。"
+	"保持热爱，奔赴山海，忠于自己，热爱生活。",
+	
+	"你吃土的时候，没有人会问你苦不苦，你吃肉的时候，总会有人问你香不香。"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
