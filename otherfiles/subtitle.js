@@ -56,7 +56,9 @@ var subtitle = [
 	
 	"保持热爱，奔赴山海，忠于自己，热爱生活。",
 	
-	"你吃土的时候，没有人会问你苦不苦，你吃肉的时候，总会有人问你香不香。"
+	"你吃土的时候，没有人会问你苦不苦，你吃肉的时候，总会有人问你香不香。",
+	
+	"少年恃险若平地，独倚长剑凌清秋。——《杂曲歌辞·行路难三首》"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
