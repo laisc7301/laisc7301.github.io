@@ -1645,7 +1645,7 @@ myonload(8);
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/test5&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test5</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    request.getRequestDispatcher(<span class="string">&quot;/test/test4?name=me&quot;</span>).forward(request, response);<span class="comment">//重定向到 /test/test4?name=me</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>访问<a href="http://localhost:8001/test/test5">http://localhost:8001/test/test5</a> ，访问的结果跟访问<a href="http://localhost:8001/test/test4?name=me">http://localhost:8001/test/test4?name=me</a> 一样。</p>
-<p>项目源代码下载：<a href="https://pan.baidu.com/s/19ZsLwW_AV8WSUPr_d5cG6w?pwd=0000">https://pan.baidu.com/s/19ZsLwW_AV8WSUPr_d5cG6w?pwd=0000</a></p>
+<p>项目源代码下载：<a href="https://pan.baidu.com/s/1XBbPVe14KjCAcvsSFGkGRQ?pwd=g09i">https://pan.baidu.com/s/1XBbPVe14KjCAcvsSFGkGRQ?pwd=g09i</a></p>
 <p>下一篇：SpringBoot使用Thymeleaf：<a href="https://laisc7301.github.io/blog/2024/01/04/202401040000SpringBoot%E4%BD%BF%E7%94%A8Thymeleaf/">https://laisc7301.github.io/blog/2024/01/04/202401040000SpringBoot%E4%BD%BF%E7%94%A8Thymeleaf/</a></p>
 ]]></content>
       <categories>
