@@ -58,7 +58,9 @@ var subtitle = [
 	
 	"你吃土的时候，没有人会问你苦不苦，你吃肉的时候，总会有人问你香不香。",
 	
-	"少年恃险若平地，独倚长剑凌清秋。——《杂曲歌辞·行路难三首》"
+	"少年恃险若平地，独倚长剑凌清秋。——《杂曲歌辞·行路难三首》",
+	
+	"世上何来常青树，心中不负便胜朝朝暮暮"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
