@@ -21,8 +21,8 @@
 
     <meta name="description" content="首先按照图示新建项目：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot使用MySQL">
-<meta property="og:url" content="https://laisc7301.github.io/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MySQL/index.html">
+<meta property="og:title" content="SpringBoot使用MyBatis连接MySQL">
+<meta property="og:url" content="https://laisc7301.github.io/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MyBatis%E8%BF%9E%E6%8E%A5MySQL/index.html">
 <meta property="og:site_name" content="睿虎的博客">
 <meta property="og:description" content="首先按照图示新建项目：">
 <meta property="og:locale" content="en_US">
@@ -36,18 +36,19 @@
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="SpringBoot">
 <meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="MyBatis">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://laisc7301.github.io/files/img/2024/202401070000SpringBoot%E4%BD%BF%E7%94%A8MySQL_1.png">
 
 
-<link rel="canonical" href="https://laisc7301.github.io/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MySQL/">
+<link rel="canonical" href="https://laisc7301.github.io/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MyBatis%E8%BF%9E%E6%8E%A5MySQL/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://laisc7301.github.io/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MySQL/","path":"2024/01/07/202401070000SpringBoot使用MySQL/","title":"SpringBoot使用MySQL"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://laisc7301.github.io/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MyBatis%E8%BF%9E%E6%8E%A5MySQL/","path":"2024/01/07/202401070000SpringBoot使用MyBatis连接MySQL/","title":"SpringBoot使用MyBatis连接MySQL"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>SpringBoot使用MySQL | 睿虎的博客</title>
+<title>SpringBoot使用MyBatis连接MySQL | 睿虎的博客</title>
   
 
 
@@ -181,7 +182,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -208,7 +209,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MySQL/">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MyBatis%E8%BF%9E%E6%8E%A5MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -221,12 +222,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="SpringBoot使用MySQL | 睿虎的博客">
+      <meta itemprop="name" content="SpringBoot使用MyBatis连接MySQL | 睿虎的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          SpringBoot使用MySQL
+          SpringBoot使用MyBatis连接MySQL
         </h1>
 
         <div class="post-meta-container">
@@ -270,8 +271,8 @@
     </span>
     <span class="post-meta-item-text">Waline: </span>
   
-    <a title="waline" href="/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MySQL/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MySQL/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MyBatis%E8%BF%9E%E6%8E%A5MySQL/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MyBatis%E8%BF%9E%E6%8E%A5MySQL/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -448,6 +449,7 @@
               <a href="/blog/tags/Java/" rel="tag"># Java</a>
               <a href="/blog/tags/SpringBoot/" rel="tag"># SpringBoot</a>
               <a href="/blog/tags/MySQL/" rel="tag"># MySQL</a>
+              <a href="/blog/tags/MyBatis/" rel="tag"># MyBatis</a>
           </div>
 
         
@@ -540,7 +542,7 @@
 
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"my-git-hub-blog-comment.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MySQL/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"my-git-hub-blog-comment.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MyBatis%E8%BF%9E%E6%8E%A5MySQL/"}</script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
