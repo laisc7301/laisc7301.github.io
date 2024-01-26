@@ -2078,6 +2078,29 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>SpringBoot使用热部署</title>
+    <url>/blog/2024/01/26/202401260000SpringBoot%E4%BD%BF%E7%94%A8%E7%83%AD%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p>找到项目的pom.xml文件，向里面添加下面内容：</p>
+<p>找到&lt;dependencies&gt;标签向里面添加内容：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-devtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>找到&lt;plugin&gt;标签向里面添加内容：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--没有该项配置，热部署不会起作用--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">fork</span>&gt;</span>true<span class="tag">&lt;/<span class="name">fork</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Java</category>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文章分类</title>
     <url>/blog/categories/index.html</url>
     <content><![CDATA[]]></content>
