@@ -2101,6 +2101,31 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Spring Cloud Alibaba安装NACOS</title>
+    <url>/blog/2024/01/26/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS/</url>
+    <content><![CDATA[<p>首先先去GitHub下载NACOS：<a href="https://github.com/alibaba/nacos/releases">https://github.com/alibaba/nacos/releases</a></p>
+<p>下载后解压，打开cmd并进入bin文件夹，运行命令：startup.cmd -m standalone</p>
+<p>然后打开 <a href="http://localhost:8848/nacos/index.html">http://localhost:8848/nacos/index.html</a> </p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS_1.png"></p>
+<p>默认账号：nacos<br>默认密码：nacos</p>
+<p>登录后看到下面页面：</p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS_2.png"></p>
+<p>搞定！</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Java</category>
+        <category>SpringBoot</category>
+        <category>SpringCloud</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+        <tag>SpringBoot</tag>
+        <tag>SpringCloud</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文章分类</title>
     <url>/blog/categories/index.html</url>
     <content><![CDATA[]]></content>
