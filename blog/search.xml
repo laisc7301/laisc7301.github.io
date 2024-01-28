@@ -2288,7 +2288,7 @@ myonload(8);
 
 <p>其它文件的源代码：</p>
 <p> ConsumerFeignApplication.java</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> org.laisc.consumer.feign;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.client.discovery.EnableDiscoveryClient;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.openfeign.EnableFeignClients;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@EnableFeignClients</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConsumerFeignApplication</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(ConsumerFeignApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> org.laisc.consumer.feign;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.client.discovery.EnableDiscoveryClient;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.openfeign.EnableFeignClients;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@EnableFeignClients</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConsumerFeignApplication</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(ConsumerFeignApplication.class, args);</span><br><span class="line">        System.out.println(<span class="string">&quot;ok!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
@@ -2306,6 +2306,18 @@ myonload(8);
 <p>打开 <a href="http://localhost:9092/test/hi">http://localhost:9092/test/hi</a> ，你会在浏览器上看到：</p>
 <blockquote>
 <p>当前服务收到消息： Hi Feign， 该服务由端口： 8081提供。</p>
+</blockquote>
+<h3 id="测试负载均衡"><a href="#测试负载均衡" class="headerlink" title="测试负载均衡"></a>测试负载均衡</h3><p>右击服务中的<code>ProviderApplication</code>，复制配置，按照图示配置好。</p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202401280000SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85Feign(%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)_3.png"></p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202401280000SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85Feign(%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)_4.png"></p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202401280000SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85Feign(%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)_5.png"></p>
+<p>依次启动<code>ProviderApplication</code>、<code>ConsumerFeignApplication</code>和新添加的服务<code>ProviderApplication (1)</code></p>
+<p>在浏览器上多次访问 <a href="http://localhost:9092/test/hi">http://localhost:9092/test/hi</a> ，浏览器交替显示：</p>
+<blockquote>
+<p>当前服务收到消息： Hi Feign， 该服务由端口： 8081提供。</p>
+</blockquote>
+<blockquote>
+<p>当前服务收到消息： Hi Feign， 该服务由端口： 8082提供。</p>
 </blockquote>
 ]]></content>
       <categories>
