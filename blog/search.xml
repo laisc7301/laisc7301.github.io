@@ -2383,6 +2383,23 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>SpringBoot系列教程</title>
+    <url>/blog/2024/01/29/202401290001SpringBoot%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Java</category>
+        <category>SpringBoot</category>
+        <category>SpringCloud</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+        <tag>SpringBoot</tag>
+        <tag>SpringCloud</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文章分类</title>
     <url>/blog/categories/index.html</url>
     <content><![CDATA[]]></content>
