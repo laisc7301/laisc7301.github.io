@@ -1538,7 +1538,7 @@ myonload(8);
       </tags>
   </entry>
   <entry>
-    <title>SpringBoot入门</title>
+    <title>SpringBoot快速入门</title>
     <url>/blog/2024/01/03/202401030000SpringBoot%E5%85%A5%E9%97%A81/</url>
     <content><![CDATA[<p>首先按照图示新建项目：</p>
 <p><img src="https://laisc7301.github.io/files/img/2024/202401030000SpringBoot%E5%85%A5%E9%97%A81_1.png"></p>
@@ -2336,8 +2336,7 @@ myonload(8);
   <entry>
     <title>Spring Cloud Alibaba添加熔断机制Sentinel</title>
     <url>/blog/2024/01/29/202401290000SpringCloudAlibaba%E6%B7%BB%E5%8A%A0%E7%86%94%E6%96%AD%E6%9C%BA%E5%88%B6Sentinel/</url>
-    <content><![CDATA[<p>aaa</p>
-<blockquote>
+    <content><![CDATA[<blockquote>
 <p>[!NOTE]</p>
 <p>本篇内容需要在上一篇的基础上进行。</p>
 <p>请找到上一篇的项目代码，本篇在上一篇的源代码上进行调整。</p>
@@ -2385,7 +2384,7 @@ myonload(8);
   <entry>
     <title>SpringBoot系列教程</title>
     <url>/blog/2024/01/29/202401290001SpringBoot%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="SpringBoot基础教程"><a href="#SpringBoot基础教程" class="headerlink" title="SpringBoot基础教程"></a>SpringBoot基础教程</h2><h4 id="1-SpringBoot快速入门"><a href="#1-SpringBoot快速入门" class="headerlink" title="1.SpringBoot快速入门"></a>1.<a href="https://laisc7301.github.io/blog/2024/01/03/202401030000SpringBoot%E5%85%A5%E9%97%A81/">SpringBoot快速入门</a></h4><h4 id="2-SpringBoot使用Thymeleaf"><a href="#2-SpringBoot使用Thymeleaf" class="headerlink" title="2.SpringBoot使用Thymeleaf"></a>2.<a href="https://laisc7301.github.io/blog/2024/01/04/202401040000SpringBoot%E4%BD%BF%E7%94%A8Thymeleaf/">SpringBoot使用Thymeleaf</a></h4><h4 id="3-SpringBoot使用MyBatis连接MySQL"><a href="#3-SpringBoot使用MyBatis连接MySQL" class="headerlink" title="3.SpringBoot使用MyBatis连接MySQL"></a>3.<a href="https://laisc7301.github.io/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MyBatis%E8%BF%9E%E6%8E%A5MySQL/">SpringBoot使用MyBatis连接MySQL</a></h4><h4 id="4-SpringBoot使用MongoDB"><a href="#4-SpringBoot使用MongoDB" class="headerlink" title="4.SpringBoot使用MongoDB"></a>4.<a href="https://laisc7301.github.io/blog/2024/01/12/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB/">SpringBoot使用MongoDB</a></h4>]]></content>
       <categories>
         <category>编程</category>
         <category>Java</category>
