@@ -290,7 +290,7 @@
 <p>添加以下依赖：</p>
 <p><img src="https://laisc7301.github.io/files/img/2024/202401040000SpringBoot%E4%BD%BF%E7%94%A8Thymeleaf_2.png"></p>
 <p>找到application.properties文件，并写入下面内容：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server.port</span>=<span class="number">8001</span></span><br><span class="line"><span class="attr">spring.thymeleaf.prefix</span>=classpath:/templates/</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">server.port=8001</span></span><br><span class="line"><span class="string">spring.thymeleaf.prefix=classpath:/templates/</span></span><br></pre></td></tr></table></figure>
 
 <p>如果不加spring.thymeleaf.prefix这一行，等一下会报404错误。</p>
 <p>整个项目的文件结构如下图所示：</p>
