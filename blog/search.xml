@@ -2111,6 +2111,7 @@ myonload(8);
 <p>登录后看到下面页面：</p>
 <p><img src="https://laisc7301.github.io/files/img/2024/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS_2.png"></p>
 <p>搞定！</p>
+<p>下一篇：Spring Cloud Alibaba项目创建： <a href="https://laisc7301.github.io/blog/2024/01/27/202401270000SpringCloudAlibaba%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/">https://laisc7301.github.io/blog/2024/01/27/202401270000SpringCloudAlibaba%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/</a></p>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -2141,6 +2142,9 @@ myonload(8);
 <p>最后整个项目的文件结构如下图所示：</p>
 <p><img src="https://laisc7301.github.io/files/img/2024/202401270000SpringCloudAlibaba%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA_2.png"></p>
 <p>完成！</p>
+<p>项目源代码下载：<a href="https://pan.baidu.com/s/1Wogcld2Pc6mTatuhnM5EUA?pwd=m5wp">https://pan.baidu.com/s/1Wogcld2Pc6mTatuhnM5EUA?pwd=m5wp</a></p>
+<p>上一篇：Spring Cloud Alibaba安装NACOS：<a href="https://laisc7301.github.io/blog/2024/01/26/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS/">https://laisc7301.github.io/blog/2024/01/26/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS/</a></p>
+<p>下一篇：Spring Cloud Alibaba创建服务提供者：<a href="https://laisc7301.github.io/blog/2024/01/27/202401270001SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85/">https://laisc7301.github.io/blog/2024/01/27/202401270001SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85/</a></p>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -2190,6 +2194,9 @@ myonload(8);
 <p>访问 <a href="http://localhost:8848/nacos/index.html">http://localhost:8848/nacos/index.html</a> ，打开【服务管理】-【服务列表】</p>
 <p>你将看到下面页面：</p>
 <p><img src="https://laisc7301.github.io/files/img/2024/202401270001SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85_3.png"></p>
+<p>项目源代码下载：<a href="https://pan.baidu.com/s/19P6K4dLO1QwYCYI93Btmvg?pwd=3agh">https://pan.baidu.com/s/19P6K4dLO1QwYCYI93Btmvg?pwd=3agh</a></p>
+<p>上一篇：Spring Cloud Alibaba项目创建： <a href="https://laisc7301.github.io/blog/2024/01/27/202401270000SpringCloudAlibaba%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/">https://laisc7301.github.io/blog/2024/01/27/202401270000SpringCloudAlibaba%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/</a></p>
+<p>下一篇：Spring Cloud Alibaba创建服务消费者：<a href="https://laisc7301.github.io/blog/2024/01/27/202401270002SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85/">https://laisc7301.github.io/blog/2024/01/27/202401270002SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85/</a></p>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -2250,6 +2257,9 @@ myonload(8);
 <p>访问 <a href="http://localhost:8848/nacos/index.html">http://localhost:8848/nacos/index.html</a> ，打开【服务管理】-【服务列表】</p>
 <p>你将看到下面页面：</p>
 <p><img src="https://laisc7301.github.io/files/img/2024/202401270002SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85_5.png"></p>
+<p>项目源代码下载：<a href="https://pan.baidu.com/s/14eAVgJBPC-M1oCBgyr3SFw?pwd=ry19">https://pan.baidu.com/s/14eAVgJBPC-M1oCBgyr3SFw?pwd=ry19</a></p>
+<p>上一篇：Spring Cloud Alibaba创建服务提供者：<a href="https://laisc7301.github.io/blog/2024/01/27/202401270001SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85/">https://laisc7301.github.io/blog/2024/01/27/202401270001SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85/</a></p>
+<p>下一篇：Spring Cloud Alibaba创建服务消费者Feign(负载均衡)：<a href="https://laisc7301.github.io/blog/2024/01/28/202401280000SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85Feign(%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)/">https://laisc7301.github.io/blog/2024/01/28/202401280000SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85Feign(%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)/</a></p>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -2319,6 +2329,9 @@ myonload(8);
 <blockquote>
 <p>当前服务收到消息： Hi Feign， 该服务由端口： 8082提供。</p>
 </blockquote>
+<p>项目源代码下载：<a href="https://pan.baidu.com/s/1-Ncvfk480DjVg-H2ULCtLg?pwd=mbuw">https://pan.baidu.com/s/1-Ncvfk480DjVg-H2ULCtLg?pwd=mbuw</a></p>
+<p>上一篇：Spring Cloud Alibaba创建服务消费者：<a href="https://laisc7301.github.io/blog/2024/01/27/202401270002SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85/">https://laisc7301.github.io/blog/2024/01/27/202401270002SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85/</a></p>
+<p>下一篇：Spring Cloud Alibaba添加熔断机制Sentinel：<a href="https://laisc7301.github.io/blog/2024/01/29/202401290000SpringCloudAlibaba%E6%B7%BB%E5%8A%A0%E7%86%94%E6%96%AD%E6%9C%BA%E5%88%B6Sentinel/">https://laisc7301.github.io/blog/2024/01/29/202401290000SpringCloudAlibaba%E6%B7%BB%E5%8A%A0%E7%86%94%E6%96%AD%E6%9C%BA%E5%88%B6Sentinel/</a></p>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -2343,6 +2356,10 @@ myonload(8);
 </blockquote>
 <p>整个项目的文件结构如下图所示：</p>
 <p><img src="https://laisc7301.github.io/files/img/2024/202401290000SpringCloudAlibaba%E6%B7%BB%E5%8A%A0%E7%86%94%E6%96%AD%E6%9C%BA%E5%88%B6Sentinel_1.png"></p>
+<span id="more"></span>
+
+
+
 <p>找到pom.xml文件，在&lt;dependencies&gt;标签里添加：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- sentinel 熔断 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-alibaba-sentinel<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -2363,10 +2380,12 @@ myonload(8);
 
 
 
-<p>现在，关闭所有服务，只打开<code>ConsumerFeignApplication</code>，你就会看到：</p>
+<p>现在，关闭所有服务，只打开<code>ConsumerFeignApplication</code>，访问 <a href="http://localhost:9092/test/hi">http://localhost:9092/test/hi</a> ，你就会看到：</p>
 <blockquote>
 <p>test fallback</p>
 </blockquote>
+<p>项目源代码下载：<a href="https://pan.baidu.com/s/1_g7WWmJCxtHVIW-UdGVqHQ?pwd=lnrk">https://pan.baidu.com/s/1_g7WWmJCxtHVIW-UdGVqHQ?pwd=lnrk</a></p>
+<p>上一篇：Spring Cloud Alibaba创建服务消费者Feign(负载均衡)：<a href="https://laisc7301.github.io/blog/2024/01/28/202401280000SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85Feign(%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)/">https://laisc7301.github.io/blog/2024/01/28/202401280000SpringCloudAlibaba%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85Feign(%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)/</a></p>
 ]]></content>
       <categories>
         <category>编程</category>
