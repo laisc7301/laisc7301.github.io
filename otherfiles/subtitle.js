@@ -62,7 +62,9 @@ var subtitle = [
 	
 	"世上何来常青树，心中不负便胜朝朝暮暮",
 	
-	"善攻者，敌不知其所守；善守者，敌不知其所攻。——《孙子兵法·虚实篇》"
+	"善攻者，敌不知其所守；善守者，敌不知其所攻。——《孙子兵法·虚实篇》",
+	
+	"我们何必仰慕山峰，感叹戈壁，我们的人生本身，何尝不是一曲壮丽的诗篇？"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
