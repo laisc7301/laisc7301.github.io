@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"laisc7301.github.io","root":"/blog/","images":"/blog/images","scheme":"Pisces","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqusjs","storage":true,"lazyload":false,"nav":{"disqusjs":{"text":"Disqus","order":1},"waline":{"text":"Waline","order":2}},"activeClass":"disqusjs"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="[!NOTE] 本教程是《SpringBoot系列基础教程》之一，教程目录：https:&#x2F;&#x2F;laisc7301.github.io&#x2F;blog&#x2F;2024&#x2F;01&#x2F;29&#x2F;202401290001SpringBoot%E7%B3%BB%E5%88%97%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B&#x2F;  首先按照图示新建项目：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot使用MongoDB">
+<meta property="og:url" content="https://laisc7301.github.io/blog/2024/01/12/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB/index.html">
+<meta property="og:site_name" content="睿虎的博客">
+<meta property="og:description" content="[!NOTE] 本教程是《SpringBoot系列基础教程》之一，教程目录：https:&#x2F;&#x2F;laisc7301.github.io&#x2F;blog&#x2F;2024&#x2F;01&#x2F;29&#x2F;202401290001SpringBoot%E7%B3%BB%E5%88%97%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B&#x2F;  首先按照图示新建项目：">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2024/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB_1.png">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2024/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB_2.png">
+<meta property="og:image" content="https://laisc7301.github.io/files/img/2024/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB_3.png">
+<meta property="article:published_time" content="2024-01-12T13:08:29.000Z">
+<meta property="article:modified_time" content="2024-01-12T13:08:29.000Z">
+<meta property="article:author" content="睿虎">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="SpringBoot">
+<meta property="article:tag" content="MongoDB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://laisc7301.github.io/files/img/2024/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB_1.png">
+
+
+<link rel="canonical" href="https://laisc7301.github.io/blog/2024/01/12/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://laisc7301.github.io/blog/2024/01/12/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB/","path":"2024/01/12/202401120000SpringBoot使用MongoDB/","title":"SpringBoot使用MongoDB"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>SpringBoot使用MongoDB | 睿虎的博客</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="smart-tiger-blog-comment-waline-7301.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">睿虎的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description"> </p>
+	  <script>
+		    var script = document.createElement('script');
+		    script.type = 'text/javascript';
+			
+			var timestamp = Date.parse(new Date());
+		
+		    // 传参一个回调函数名给后端，方便后端返回时执行这个在前端定义的回调函数
+		    script.src = 'https://laisc7301.github.io/otherfiles/subtitle.js?t='+timestamp;
+		    document.head.appendChild(script);
+		
+	  </script>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a></li><li class="menu-item menu-item-归档"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-分类"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-标签"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-关于"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-我的blogger"><a href="https://laisc7301.blogspot.com/" rel="section" target="_blank">我的Blogger</a></li><li class="menu-item menu-item-睿火正则工具"><a href="https://laisc7301.github.io/blog/wisefire-regular-tool/" rel="section">睿火正则工具</a></li><li class="menu-item menu-item-火狐音量增强器"><a href="https://laisc7301.github.io/blog/volume-controller/" rel="section">火狐音量增强器</a></li><li class="menu-item menu-item-油猴脚本：记住google搜索语言"><a href="https://laisc7301.github.io/blog/Tampermonkey-remember-Google-search-language-settings/" rel="section">油猴脚本：记住Google搜索语言</a></li><li class="menu-item menu-item-睿火打字练习"><a href="https://laisc7301.github.io/wisefire-typing-practice" rel="section">睿火打字练习</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">睿虎</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2024/01/12/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="睿虎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="SpringBoot使用MongoDB | 睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SpringBoot使用MongoDB
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-01-12 21:08:29" itemprop="dateCreated datePublished" datetime="2024-01-12T21:08:29+08:00">2024-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/MongoDB/" itemprop="url" rel="index"><span itemprop="name">MongoDB</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/blog/2024/01/12/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/01/12/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote>
+<p>[!NOTE]</p>
+<p>本教程是《SpringBoot系列基础教程》之一，教程目录：<a href="https://laisc7301.github.io/blog/2024/01/29/202401290001SpringBoot%E7%B3%BB%E5%88%97%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/">https://laisc7301.github.io/blog/2024/01/29/202401290001SpringBoot%E7%B3%BB%E5%88%97%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/</a></p>
+</blockquote>
+<p>首先按照图示新建项目：</p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB_1.png"></p>
+<span id="more"></span>
+
+
+
+<p>添加以下依赖：</p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB_2.png"></p>
+<p>找到application.properties文件，并写入下面内容：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">server.port=8001</span></span><br><span class="line"></span><br><span class="line"><span class="string">spring.data.mongodb.uri=mongodb://127.0.0.1:27017/mytest</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>整个项目的文件结构如下图所示：</p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB_3.png"></p>
+<p>把代码贴出来，因为代码里的注释写得比较详细，这里就不多说了。</p>
+<p>TestController.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc.example4.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.laisc.example4.entity.User;</span><br><span class="line"><span class="keyword">import</span> com.mongodb.client.ListIndexesIterable;</span><br><span class="line"><span class="keyword">import</span> com.mongodb.client.model.IndexOptions;</span><br><span class="line"><span class="keyword">import</span> com.mongodb.client.model.Indexes;</span><br><span class="line"><span class="keyword">import</span> com.mongodb.client.result.DeleteResult;</span><br><span class="line"><span class="keyword">import</span> com.mongodb.client.result.UpdateResult;</span><br><span class="line"><span class="keyword">import</span> jakarta.annotation.Resource;</span><br><span class="line"><span class="keyword">import</span> org.bson.Document;</span><br><span class="line"><span class="keyword">import</span> org.bson.conversions.Bson;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.Sort;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.mongodb.core.MongoTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.mongodb.core.query.Criteria;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.mongodb.core.query.Query;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.mongodb.core.query.Update;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/test&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> MongoTemplate mongoTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/create&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">createCollection</span><span class="params">()</span> &#123; <span class="comment">//创建集合</span></span><br><span class="line">        <span class="comment">// 设置集合名称</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">collectionName</span> <span class="operator">=</span> <span class="string">&quot;test1&quot;</span>;</span><br><span class="line">        <span class="comment">// 创建集合并返回集合信息</span></span><br><span class="line">        mongoTemplate.createCollection(collectionName);</span><br><span class="line">        <span class="comment">// 检测新的集合是否存在，返回创建结果</span></span><br><span class="line">        <span class="keyword">return</span> mongoTemplate.collectionExists(collectionName) ? <span class="string">&quot;创建视图成功&quot;</span> : <span class="string">&quot;创建视图失败&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/get1&quot;)</span><span class="comment">// 执行获取集合名称列表</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getCollectionNames</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> mongoTemplate.getCollectionNames().toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/get2&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">collectionExists</span><span class="params">()</span> &#123;<span class="comment">// 检测集合是否存在</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">collectionName</span> <span class="operator">=</span> <span class="string">&quot;test1&quot;</span>;<span class="comment">//集合名</span></span><br><span class="line">        <span class="keyword">return</span> mongoTemplate.collectionExists(collectionName) ? <span class="string">&quot;集合存在&quot;</span> : <span class="string">&quot;集合不存在&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/delall&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">dropCollection</span><span class="params">()</span> &#123; <span class="comment">//删除集合</span></span><br><span class="line">        <span class="comment">// 设置集合名称</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">collectionName</span> <span class="operator">=</span> <span class="string">&quot;test1&quot;</span>;</span><br><span class="line">        <span class="comment">// 执行删除集合</span></span><br><span class="line">        mongoTemplate.getCollection(collectionName).drop();</span><br><span class="line">        <span class="comment">// 检测集合是否存在，返回删除结果</span></span><br><span class="line">        <span class="keyword">return</span> !mongoTemplate.collectionExists(collectionName) ? <span class="string">&quot;删除集合成功&quot;</span> : <span class="string">&quot;删除集合失败&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/insert&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">insert</span><span class="params">()</span> &#123; <span class="comment">// 插入文档</span></span><br><span class="line">        <span class="comment">// 设置用户信息</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">u</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">        u.setId(<span class="number">100</span>);</span><br><span class="line">        u.setUsername(<span class="string">&quot;admin&quot;</span>);</span><br><span class="line">        u.setPassword(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">        <span class="comment">// 插入一条用户数据，如果文档信息已经存在就抛出异常</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">u2</span> <span class="operator">=</span> mongoTemplate.insert(u, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> u2; <span class="comment">// 输出存储结果</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/save&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">save</span><span class="params">()</span> &#123; <span class="comment">// 插入文档</span></span><br><span class="line">        <span class="comment">// 设置用户信息</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">u</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">        u.setId(<span class="number">100</span>);</span><br><span class="line">        u.setUsername(<span class="string">&quot;admin&quot;</span>);</span><br><span class="line">        u.setPassword(<span class="string">&quot;abcd&quot;</span>);</span><br><span class="line">        <span class="comment">// 存储用户信息,如果文档信息已经存在就执行更新</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">u2</span> <span class="operator">=</span> mongoTemplate.save(u, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line">        <span class="comment">// 输出存储结果</span></span><br><span class="line">        System.out.println(<span class="string">&quot;存储的用户信息为：&quot;</span> + u2);</span><br><span class="line">        <span class="comment">//log.info(&quot;存储的用户信息为：&#123;&#125;&quot;, newUser);</span></span><br><span class="line">        <span class="keyword">return</span> u2.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * insert和save的区别</span></span><br><span class="line"><span class="comment">     * 插入重复数据</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * 　　insert: 若新增数据的主键已经存在，则会抛 org.springframework.dao.DuplicateKeyException 异常提示主键重复，不保存当前数据。</span></span><br><span class="line"><span class="comment">     * 　　save: 若新增数据的主键已经存在，则会对当前已经存在的数据进行修改操作。</span></span><br><span class="line"><span class="comment">     * 批操作</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * 　　insert: 可以一次性插入一整个列表，而不用进行遍历操作，效率相对较高</span></span><br><span class="line"><span class="comment">     * 　　save: 需要遍历列表，进行一个个的插入</span></span><br><span class="line"><span class="comment">     **/</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/findall&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">findAll</span><span class="params">()</span> &#123; <span class="comment">// 执行查询集合中全部文档信息</span></span><br><span class="line">        <span class="comment">// 执行查询集合中全部文档信息</span></span><br><span class="line">        List&lt;User&gt; documentList = mongoTemplate.findAll(User.class, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line">        <span class="comment">// 输出结果</span></span><br><span class="line">        <span class="keyword">return</span> documentList.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/findbyid&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">findById</span><span class="params">()</span> &#123; <span class="comment">// 根据文档ID查询集合中文档数据</span></span><br><span class="line">        <span class="comment">// 设置查询的文档 ID</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">        <span class="comment">// 根据文档ID查询集合中文档数据，并转换为对应 Java 对象</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">u</span> <span class="operator">=</span> mongoTemplate.findById(id, User.class, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> u.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/findone&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">findOne</span><span class="params">()</span> &#123; <span class="comment">// 查询，但只输出第一条查询结果</span></span><br><span class="line">        <span class="comment">// 设置查询条件参数</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;admin&quot;</span>;</span><br><span class="line">        <span class="comment">// 创建条件对象</span></span><br><span class="line">        <span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> Criteria.where(<span class="string">&quot;username&quot;</span>).is(username);</span><br><span class="line">        <span class="comment">// 创建查询对象，然后将条件对象添加到其中</span></span><br><span class="line">        <span class="type">Query</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Query</span>(criteria);</span><br><span class="line">        <span class="comment">// 查询一条文档，如果查询结果中有多条文档，那么就取第一条</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> mongoTemplate.findOne(query, User.class, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> user.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/findmany&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">findByCondition</span><span class="params">()</span> &#123; <span class="comment">// 查询</span></span><br><span class="line">        <span class="comment">// 设置查询条件参数</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;admin&quot;</span>;</span><br><span class="line">        <span class="comment">// 创建条件对象</span></span><br><span class="line">        <span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> Criteria.where(<span class="string">&quot;username&quot;</span>).is(username);</span><br><span class="line">        <span class="comment">// 创建查询对象，然后将条件对象添加到其中</span></span><br><span class="line">        <span class="type">Query</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Query</span>(criteria);</span><br><span class="line">        <span class="comment">// 查询并返回结果</span></span><br><span class="line">        List&lt;User&gt; documentList = mongoTemplate.find(query, User.class, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> documentList.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/findmany2&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">findByCondition2</span><span class="params">()</span> &#123; <span class="comment">// 查询，并按照age字段的值升序排序</span></span><br><span class="line">        <span class="comment">// 设置查询条件参数</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;admin&quot;</span>;</span><br><span class="line">        <span class="comment">// 创建条件对象</span></span><br><span class="line">        <span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> Criteria.where(<span class="string">&quot;username&quot;</span>).is(username);</span><br><span class="line">        <span class="comment">// 创建查询对象，然后将条件对象添加到其中，并按照age字段的值升序排序。</span></span><br><span class="line">        <span class="type">Query</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Query</span>(criteria).with(Sort.by(<span class="string">&quot;age&quot;</span>).ascending());</span><br><span class="line">        <span class="comment">// 查询并返回结果</span></span><br><span class="line">        List&lt;User&gt; documentList = mongoTemplate.find(query, User.class, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> documentList.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/find2&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">findByExistsField</span><span class="params">()</span> &#123; <span class="comment">//查询存在指定字段的值的文档数据</span></span><br><span class="line">        <span class="comment">// 设置查询条件参数</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">field</span> <span class="operator">=</span> <span class="string">&quot;username&quot;</span>;</span><br><span class="line">        <span class="comment">// 创建条件</span></span><br><span class="line">        <span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> Criteria.where(field).exists(<span class="literal">true</span>);</span><br><span class="line">        <span class="comment">// 创建查询对象，然后将条件对象添加到其中</span></span><br><span class="line">        <span class="type">Query</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Query</span>(criteria);</span><br><span class="line">        <span class="comment">// 查询并返回结果</span></span><br><span class="line">        List&lt;User&gt; documentList = mongoTemplate.find(query, User.class, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> documentList.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/update1&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">update</span><span class="params">()</span> &#123; <span class="comment">//更新集合中【匹配】查询到的第一条文档数据，如果没有找到就【创建并插入一个新文档】</span></span><br><span class="line">        <span class="comment">// 创建条件对象</span></span><br><span class="line">        <span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> Criteria.where(<span class="string">&quot;username&quot;</span>).is(<span class="string">&quot;admin&quot;</span>);</span><br><span class="line">        <span class="comment">// 创建查询对象，然后将条件对象添加到其中</span></span><br><span class="line">        <span class="type">Query</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Query</span>(criteria);</span><br><span class="line">        <span class="comment">// 创建更新对象,并设置更新的内容</span></span><br><span class="line">        <span class="type">Update</span> <span class="variable">update</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Update</span>().set(<span class="string">&quot;username&quot;</span>, <span class="string">&quot;root&quot;</span>).set(<span class="string">&quot;password&quot;</span>, <span class="string">&quot;q123&quot;</span>);</span><br><span class="line">        <span class="comment">// 执行更新，如果没有找到匹配查询的文档，则创建并插入一个新文档</span></span><br><span class="line">        <span class="type">UpdateResult</span> <span class="variable">result</span> <span class="operator">=</span> mongoTemplate.upsert(query, update, User.class, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line">        <span class="comment">// 输出结果信息</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">resultInfo</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">if</span> (result.getMatchedCount() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            resultInfo = <span class="string">&quot;匹配到1条数据,对第一条数据进行了更改&quot;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            resultInfo = <span class="string">&quot;未匹配到数据,插入了一个新文档&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> resultInfo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/update2&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">updateFirst</span><span class="params">()</span> &#123;<span class="comment">// 更新集合中【匹配】查询到的【文档数据集合】中的【第一条数据】</span></span><br><span class="line">        <span class="comment">// 创建条件对象</span></span><br><span class="line">        <span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> Criteria.where(<span class="string">&quot;username&quot;</span>).is(<span class="string">&quot;admin&quot;</span>);</span><br><span class="line">        <span class="comment">// 创建查询对象，然后将条件对象添加到其中</span></span><br><span class="line">        <span class="type">Query</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Query</span>(criteria);</span><br><span class="line">        <span class="comment">// 创建更新对象,并设置更新的内容</span></span><br><span class="line">        <span class="type">Update</span> <span class="variable">update</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Update</span>().set(<span class="string">&quot;username&quot;</span>, <span class="string">&quot;a123&quot;</span>).set(<span class="string">&quot;password&quot;</span>, <span class="string">&quot;a456&quot;</span>);</span><br><span class="line">        <span class="comment">// 执行更新</span></span><br><span class="line">        <span class="type">UpdateResult</span> <span class="variable">result</span> <span class="operator">=</span> mongoTemplate.updateFirst(query, update, User.class, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">resultInfo</span> <span class="operator">=</span> <span class="string">&quot;共匹配到&quot;</span> + result.getMatchedCount() + <span class="string">&quot;条数据,修改了&quot;</span> + result.getModifiedCount() + <span class="string">&quot;条数据&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> resultInfo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/updatemany&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">updateMany</span><span class="params">()</span> &#123; <span class="comment">// 更新所有符合条件的文档</span></span><br><span class="line">        <span class="comment">// 创建条件对象</span></span><br><span class="line">        <span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> Criteria.where(<span class="string">&quot;username&quot;</span>).is(<span class="string">&quot;admin&quot;</span>);</span><br><span class="line">        <span class="comment">// 创建查询对象，然后将条件对象添加到其中</span></span><br><span class="line">        <span class="type">Query</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Query</span>(criteria);</span><br><span class="line">        <span class="comment">// 设置更新字段和更新的内容</span></span><br><span class="line">        <span class="type">Update</span> <span class="variable">update</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Update</span>().set(<span class="string">&quot;username&quot;</span>, <span class="string">&quot;root&quot;</span>).set(<span class="string">&quot;password&quot;</span>, <span class="string">&quot;b123&quot;</span>);</span><br><span class="line">        <span class="comment">// 执行更新</span></span><br><span class="line">        <span class="type">UpdateResult</span> <span class="variable">result</span> <span class="operator">=</span> mongoTemplate.updateMulti(query, update, User.class, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line">        <span class="comment">// 输出结果信息</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">resultInfo</span> <span class="operator">=</span> <span class="string">&quot;总共匹配到&quot;</span> + result.getMatchedCount() + <span class="string">&quot;条数据,修改了&quot;</span> + result.getModifiedCount() + <span class="string">&quot;条数据&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> resultInfo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/remove&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">remove</span><span class="params">()</span> &#123; <span class="comment">// 执行删除匹配的全部文档信息</span></span><br><span class="line">        <span class="comment">// 设置查询条件参数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">30</span>;</span><br><span class="line">        <span class="comment">// 创建条件对象</span></span><br><span class="line">        <span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> Criteria.where(<span class="string">&quot;username&quot;</span>).is(<span class="string">&quot;admin&quot;</span>).and(<span class="string">&quot;age&quot;</span>).is(<span class="number">8</span>);</span><br><span class="line">        <span class="comment">// 创建查询对象，然后将条件对象添加到其中</span></span><br><span class="line">        <span class="type">Query</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Query</span>(criteria);</span><br><span class="line">        <span class="comment">// 执行删除查找到的匹配的全部文档信息</span></span><br><span class="line">        <span class="type">DeleteResult</span> <span class="variable">result</span> <span class="operator">=</span> mongoTemplate.remove(query, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line">        <span class="comment">// 输出结果信息</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">resultInfo</span> <span class="operator">=</span> <span class="string">&quot;成功删除 &quot;</span> + result.getDeletedCount() + <span class="string">&quot; 条文档信息&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> resultInfo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/remove2&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">findAndRemove</span><span class="params">()</span> &#123; <span class="comment">// 执行删除查找到的匹配的第一条文档,并返回删除的文档信息</span></span><br><span class="line">        <span class="comment">// 创建条件对象</span></span><br><span class="line">        <span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> Criteria.where(<span class="string">&quot;username&quot;</span>).is(<span class="string">&quot;admin&quot;</span>);</span><br><span class="line">        <span class="comment">// 创建查询对象，然后将条件对象添加到其中</span></span><br><span class="line">        <span class="type">Query</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Query</span>(criteria);</span><br><span class="line">        <span class="comment">// 执行删除查找到的匹配的第一条文档,并返回删除的文档信息</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">result</span> <span class="operator">=</span> mongoTemplate.findAndRemove(query, User.class, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line">        <span class="comment">// 输出结果信息</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">resultInfo</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">if</span> (result != <span class="literal">null</span>) &#123;</span><br><span class="line">            resultInfo = <span class="string">&quot;成功删除文档信息，文档内容为：&quot;</span> + result.toString();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            resultInfo = <span class="string">&quot;找不到该文档。&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> resultInfo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/createindex&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">createAscendingIndex</span><span class="params">()</span> &#123; <span class="comment">// 创建索引</span></span><br><span class="line">        <span class="comment">// 设置字段名称</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">field</span> <span class="operator">=</span> <span class="string">&quot;username&quot;</span>;</span><br><span class="line">        <span class="comment">// 创建索引</span></span><br><span class="line">        <span class="keyword">return</span> mongoTemplate.getCollection(<span class="string">&quot;test2&quot;</span>).createIndex(Indexes.ascending(field));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/createindex2&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">createUniqueIndex</span><span class="params">()</span> &#123; <span class="comment">// 创建唯一索引</span></span><br><span class="line">        <span class="comment">// 设置字段名称</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">indexName</span> <span class="operator">=</span> <span class="string">&quot;password&quot;</span>;</span><br><span class="line">        <span class="comment">// 配置索引选项</span></span><br><span class="line">        <span class="type">IndexOptions</span> <span class="variable">options</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">IndexOptions</span>();</span><br><span class="line">        <span class="comment">// 设置为唯一索引</span></span><br><span class="line">        options.unique(<span class="literal">true</span>);</span><br><span class="line">        <span class="comment">// 创建索引</span></span><br><span class="line">        <span class="keyword">return</span> mongoTemplate.getCollection(<span class="string">&quot;test2&quot;</span>).createIndex(Indexes.ascending(indexName), options);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/getindex&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getIndexAll</span><span class="params">()</span> &#123; <span class="comment">// 获取集合中全部索引信息</span></span><br><span class="line">        <span class="comment">// 获取集合中所有列表</span></span><br><span class="line">        ListIndexesIterable&lt;Document&gt; indexList = mongoTemplate.getCollection(<span class="string">&quot;test2&quot;</span>).listIndexes();</span><br><span class="line">        <span class="comment">// 创建字符串集合</span></span><br><span class="line">        List&lt;org.bson.Document&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">// 获取集合中全部索引信息</span></span><br><span class="line">        <span class="keyword">for</span> (org.bson.Document document : indexList) &#123;</span><br><span class="line">            list.add(document);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/removeindex&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">removeIndex</span><span class="params">()</span> &#123; <span class="comment">// 删除集合中某个索引</span></span><br><span class="line">        <span class="comment">// 设置索引名称</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">indexName</span> <span class="operator">=</span> <span class="string">&quot;username_1&quot;</span>;</span><br><span class="line">        <span class="comment">// 删除集合中某个索引</span></span><br><span class="line">        mongoTemplate.getCollection(<span class="string">&quot;test2&quot;</span>).dropIndex(indexName);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;已删除。&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/removeindexall&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">removeIndexAll</span><span class="params">()</span> &#123; <span class="comment">// 删除集合中全部索引</span></span><br><span class="line">        <span class="comment">// 删除集合中全部索引</span></span><br><span class="line">        mongoTemplate.getCollection(<span class="string">&quot;test2&quot;</span>).dropIndexes();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;已删除全部索引。&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/createview&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">createView</span><span class="params">()</span> &#123; <span class="comment">// 创建视图</span></span><br><span class="line">        <span class="comment">// 设置视图名</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">newViewName</span> <span class="operator">=</span> <span class="string">&quot;userView&quot;</span>;</span><br><span class="line">        <span class="comment">// 设置获取数据的集合名称</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">collectionName</span> <span class="operator">=</span> <span class="string">&quot;test2&quot;</span>;</span><br><span class="line">        <span class="comment">// 定义视图的管道,可是设置视图显示的内容多个筛选条件</span></span><br><span class="line">        List&lt;Bson&gt; pipeline = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">// 设置条件，用于筛选集合中的文档数据，只有符合条件的才会映射到视图中</span></span><br><span class="line">        pipeline.add(Document.parse(<span class="string">&quot;&#123;$match:&#123;username:&#x27;admin&#x27;&#125;&#125;&quot;</span>));</span><br><span class="line">        <span class="comment">// 执行创建视图</span></span><br><span class="line">        mongoTemplate.getDb().createView(newViewName, collectionName, pipeline);</span><br><span class="line">        <span class="comment">// 检测新的集合是否存在，返回创建结果</span></span><br><span class="line">        <span class="keyword">return</span> mongoTemplate.collectionExists(newViewName) ? <span class="string">&quot;创建视图成功&quot;</span> : <span class="string">&quot;创建视图失败&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/delall2&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">dropCollection2</span><span class="params">()</span> &#123; <span class="comment">//之前的 dropCollection() 方法 删除【集合】，其实也可以删除【视图】</span></span><br><span class="line">        <span class="comment">// 设置集合名称</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">collectionName</span> <span class="operator">=</span> <span class="string">&quot;userView&quot;</span>;</span><br><span class="line">        <span class="comment">// 执行删除集合</span></span><br><span class="line">        mongoTemplate.getCollection(collectionName).drop();</span><br><span class="line">        <span class="comment">// 检测新的集合是否存在，返回删除结果</span></span><br><span class="line">        <span class="keyword">return</span> !mongoTemplate.collectionExists(collectionName) ? <span class="string">&quot;删除视图成功&quot;</span> : <span class="string">&quot;删除视图失败&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/dropview&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">dropView</span><span class="params">()</span> &#123; <span class="comment">//删除视图，也可以是集合</span></span><br><span class="line">        <span class="comment">// 设置待删除的视图名称</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">viewName</span> <span class="operator">=</span> <span class="string">&quot;test2&quot;</span>;</span><br><span class="line">        <span class="comment">// 检测视图是否存在</span></span><br><span class="line">        <span class="keyword">if</span> (mongoTemplate.collectionExists(viewName)) &#123;</span><br><span class="line">            <span class="comment">// 删除视图</span></span><br><span class="line">            mongoTemplate.getDb().getCollection(viewName).drop();</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;删除视图成功&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 检测新的集合是否存在，返回创建结果</span></span><br><span class="line">        <span class="keyword">return</span> !mongoTemplate.collectionExists(viewName) ? <span class="string">&quot;该视图不存在&quot;</span> : <span class="string">&quot;删除视图失败&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/find3&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">findByOperator</span><span class="params">()</span> &#123; <span class="comment">// 根据【逻辑运算符】查询集合中的文档数据</span></span><br><span class="line">        <span class="comment">// 设置查询条件参数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">min</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">8</span>;</span><br><span class="line">        <span class="comment">// 创建条件对象</span></span><br><span class="line">        <span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> Criteria.where(<span class="string">&quot;age&quot;</span>).gt(min).lte(max);<span class="comment">//大于4或小于等于8</span></span><br><span class="line">        <span class="comment">// 创建查询对象，然后将条件对象添加到其中</span></span><br><span class="line">        <span class="type">Query</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Query</span>(criteria);</span><br><span class="line">        <span class="comment">// 查询并返回结果</span></span><br><span class="line">        List&lt;User&gt; documentList = mongoTemplate.find(query, User.class, <span class="string">&quot;test2&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> documentList.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>User.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc.example4.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">Integer</span> <span class="variable">id</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">private</span> String username= <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> String password= <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">Integer</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> String role= <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">(Integer id, String username, String password, Integer age, String role)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">        <span class="built_in">this</span>.role = role;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(Integer id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUsername</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsername</span><span class="params">(String username)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getPassword</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPassword</span><span class="params">(String password)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(Integer age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getRole</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> role;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setRole</span><span class="params">(String role)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.role = role;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;User&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;id=&quot;</span> + id +</span><br><span class="line">                <span class="string">&quot;, username=&#x27;&quot;</span> + username + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, password=&#x27;&quot;</span> + password + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&quot;, role=&#x27;&quot;</span> + role + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>项目源代码下载：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/11rZQUp6MOjPhCHQEvyWCwg?pwd=63mi">https://pan.baidu.com/s/11rZQUp6MOjPhCHQEvyWCwg?pwd=63mi</a></p>
+<p>上一篇：SpringBoot使用MyBatis连接MySQL：<a href="https://laisc7301.github.io/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MyBatis%E8%BF%9E%E6%8E%A5MySQL/">https://laisc7301.github.io/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MyBatis%E8%BF%9E%E6%8E%A5MySQL/</a></p>
+<p>下一篇：SpringBoot使用Redis：<a href="https://laisc7301.github.io/blog/2024/01/21/202401210000SpringBoot%E4%BD%BF%E7%94%A8Redis/">https://laisc7301.github.io/blog/2024/01/21/202401210000SpringBoot%E4%BD%BF%E7%94%A8Redis/</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/blog/tags/Java/" rel="tag"># Java</a>
+              <a href="/blog/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+              <a href="/blog/tags/MongoDB/" rel="tag"># MongoDB</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2024/01/07/202401070000SpringBoot%E4%BD%BF%E7%94%A8MyBatis%E8%BF%9E%E6%8E%A5MySQL/" rel="prev" title="SpringBoot使用MyBatis连接MySQL">
+                  <i class="fa fa-angle-left"></i> SpringBoot使用MyBatis连接MySQL
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2024/01/21/202401210000SpringBoot%E4%BD%BF%E7%94%A8Redis/" rel="next" title="SpringBoot使用Redis">
+                  SpringBoot使用Redis <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-disqusjs">Disqus</a></li>
+            <li class="tab"><a href="#comment-waline">Waline</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane disqusjs" id="comment-disqusjs">
+              
+  <div class="comments disqusjs-container">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+            </div>
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">睿虎</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/sidebar.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"smart-tiger-blog-comment-waline-7301.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/2024/01/12/202401120000SpringBoot%E4%BD%BF%E7%94%A8MongoDB/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/disqusjs/3.0.2/styles/disqusjs.css" integrity="sha256-71XarXwNr1Td27HmZI9zjY+rMzRdush6/glo6VFXp7o=" crossorigin="anonymous">
+
+<script class="next-config" data-name="disqusjs" type="application/json">{"enable":true,"api":"https://disqus.skk.moe/disqus/","apikey":"ZFtddSBllKuOBDGNan39gWrxOw6V5eYB13mMpJc2nyYehZf51HPFyWQKAldGF7Oy","shortname":"smart-tiger-blog-7301","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/disqusjs/3.0.2/disqusjs.es2015.umd.min.js","integrity":"sha256-okP99ZQKVpIy7+NogAMpGlIQzJa9XKXhIJcFgdju5bU="}}</script>
+<script src="/blog/js/third-party/comments/disqusjs.js"></script>
+
+</body>
+</html>
