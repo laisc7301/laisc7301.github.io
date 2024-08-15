@@ -2543,6 +2543,41 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Hexo使用草稿</title>
+    <url>/blog/2024/08/15/202408150000Hexo%E4%BD%BF%E7%94%A8%E8%8D%89%E7%A8%BF/</url>
+    <content><![CDATA[<h2 id="建立文章草稿"><a href="#建立文章草稿" class="headerlink" title="建立文章草稿"></a>建立文章草稿</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ hexo n draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="本机预览草稿"><a href="#本机预览草稿" class="headerlink" title="本机预览草稿"></a>本机预览草稿</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ hexo S --draft</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="将草稿发布为正式文章"><a href="#将草稿发布为正式文章" class="headerlink" title="将草稿发布为正式文章"></a>将草稿发布为正式文章</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ hexo p &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称。它的原理只是将文章从 <code>source/_drafts</code> 移动到 <code>source/_posts</code> 而已。</p>
+<blockquote>
+<p>若日后想将正式文章转为为草稿，只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Node.js</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Node.js</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>油猴脚本：记住Google搜索语言设置</title>
     <url>/blog/Tampermonkey-remember-Google-search-language-settings/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305300000%E8%AE%B0%E4%BD%8FGoogle%E6%90%9C%E7%B4%A2%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE.png"></p>
