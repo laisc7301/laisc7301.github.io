@@ -2561,7 +2561,7 @@ myonload(8);
 <p>或者</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ hexo p &lt;filename&gt;</span><br></pre></td></tr></table></figure>
 
-<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称。它的原理只是将文章从 <code>source/_drafts</code> 移动到 <code>source/_posts</code> 而已。</p>
+<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称，包含会出错。它的原理只是将文章从 <code>source/_drafts</code> 移动到 <code>source/_posts</code> 而已。</p>
 <blockquote>
 <p>若日后想将正式文章转为为草稿，只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可。</p>
 </blockquote>
