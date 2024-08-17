@@ -2578,6 +2578,34 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Qt实现半透明窗体</title>
+    <url>/blog/2024/08/17/202408170000Qt%E5%AE%9E%E7%8E%B0%E5%8D%8A%E9%80%8F%E6%98%8E%E7%AA%97%E4%BD%93/</url>
+    <content><![CDATA[<p>半透明的函数长这样</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">setWindowOpacity</span><span class="params">(qreal level)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>比如要实现60%的不透明度，就这样写：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setWindowOpacity</span>(<span class="number">0.6</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注意：</p>
+<p>如果这样写：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setWindowOpacity</span>(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<p>窗体会变成全透明，这时窗体会被隐藏掉，而且无法点击窗体内的任何东西，且通过<code>show();</code>也无法显示出来。</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>C++</category>
+        <category>Qt</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>C++</tag>
+        <tag>Qt</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>油猴脚本：记住Google搜索语言设置</title>
     <url>/blog/Tampermonkey-remember-Google-search-language-settings/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305300000%E8%AE%B0%E4%BD%8FGoogle%E6%90%9C%E7%B4%A2%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE.png"></p>
