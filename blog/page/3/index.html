@@ -158,18 +158,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -186,6 +186,162 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2023/12/28/202312280000%E4%BD%BF%E7%94%A8GDB%E8%B0%83%E8%AF%95%E6%B1%87%E7%BC%96%E7%A8%8B%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="睿虎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/12/28/202312280000%E4%BD%BF%E7%94%A8GDB%E8%B0%83%E8%AF%95%E6%B1%87%E7%BC%96%E7%A8%8B%E5%BA%8F/" class="post-title-link" itemprop="url">使用GDB调试汇编程序(简单)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-28 18:47:01" itemprop="dateCreated datePublished" datetime="2023-12-28T18:47:01+08:00">2023-12-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/%E6%B1%87%E7%BC%96/" itemprop="url" rel="index"><span itemprop="name">汇编</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/GDB/" itemprop="url" rel="index"><span itemprop="name">GDB</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/blog/2023/12/28/202312280000%E4%BD%BF%E7%94%A8GDB%E8%B0%83%E8%AF%95%E6%B1%87%E7%BC%96%E7%A8%8B%E5%BA%8F/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2023/12/28/202312280000%E4%BD%BF%E7%94%A8GDB%E8%B0%83%E8%AF%95%E6%B1%87%E7%BC%96%E7%A8%8B%E5%BA%8F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="直接调试目标程序的第一条命令，假如程序文件名是test01："><a href="#直接调试目标程序的第一条命令，假如程序文件名是test01：" class="headerlink" title="直接调试目标程序的第一条命令，假如程序文件名是test01："></a>直接调试目标程序的第一条命令，假如程序文件名是test01：</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdb ./test01</span><br></pre></td></tr></table></figure>
+
+<p>这样就进入了gdb程序。</p>
+<h2 id="第二步，先run一下："><a href="#第二步，先run一下：" class="headerlink" title="第二步，先run一下："></a>第二步，先run一下：</h2><p>命令很简单，就是run：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run</span><br></pre></td></tr></table></figure>
+
+<p>或者也可以简写成r：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r</span><br></pre></td></tr></table></figure>
+
+<p>如果不运行run直接打断点调试的话，会遇到下面的错误：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Warning:</span><br><span class="line">Cannot insert breakpoint 1.</span><br><span class="line">Cannot access memory at address 0x1190</span><br></pre></td></tr></table></figure>
+
+<p>原因在于数据断点的设置有误。在没有用gdb运行（run）过可执行程序之前，使用disasemble指令反汇编出来的汇编语言的左边的地址偏移地址，不是逻辑地址。所以，即使break指令能够设置断点，当GDB运行时也不可能访问到这个地址。也就会出现上面的错误。<br>数据断点：给某个内存地址设置断点，改变该地址所装内容时会触发断点，运行到该地址时会触发断点。（从网上看的，参考）<br>而学过操作系统或者微机原理就该知道，程序给出来的只是逻辑地址，不可能直接给物理地址的，物理地址都是由系统将其映射成了逻辑地址。</p>
+<h2 id="将格式改为intel格式："><a href="#将格式改为intel格式：" class="headerlink" title="将格式改为intel格式："></a>将格式改为intel格式：</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> disassembly-flavor intel</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="反汇编main函数："><a href="#反汇编main函数：" class="headerlink" title="反汇编main函数："></a>反汇编main函数：</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disas main</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="开始打断点调试："><a href="#开始打断点调试：" class="headerlink" title="开始打断点调试："></a>开始打断点调试：</h1><p>比如输入<code>disas main</code>命令后看到了以下的内容：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(gdb) disas main</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> main:</span><br><span class="line">   0x56556190 &lt;+0&gt;:	mov    eax,ds:0x4008</span><br><span class="line">   0x56556195 &lt;+5&gt;:	mov    ebx,0x9b</span><br><span class="line">   0x5655619a &lt;+10&gt;:	sub    ebx,0xa</span><br><span class="line">   0x5655619d &lt;+13&gt;:	add    eax,ebx</span><br><span class="line">   0x5655619f &lt;+15&gt;:	ret</span><br><span class="line">End of assembler dump.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>如果我要把断点打在&lt;+5&gt;的位置上，就输入以下命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">break</span> *0x56556195</span><br></pre></td></tr></table></figure>
+
+<p>程序将在运行完&lt;+0&gt;，还未运行&lt;+5&gt;的时候停下来。</p>
+<p>该命令还可以简写成这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b *0x56556195</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后输入</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run</span><br></pre></td></tr></table></figure>
+
+<p>开始调试</p>
+<h2 id="查看寄存器的值"><a href="#查看寄存器的值" class="headerlink" title="查看寄存器的值"></a>查看寄存器的值</h2><p>比如查看eax的值：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info register eax</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="单步步进："><a href="#单步步进：" class="headerlink" title="单步步进："></a>单步步进：</h2><p>运行下面命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stepi</span><br></pre></td></tr></table></figure>
+
+<p>此时输入<code>disas</code>可以看到运行的位置：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(gdb) disas</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> main:</span><br><span class="line">   0x56556190 &lt;+0&gt;:	mov    eax,ds:0x56559008</span><br><span class="line">=&gt; 0x56556195 &lt;+5&gt;:	mov    ebx,0x9b</span><br><span class="line">   0x5655619a &lt;+10&gt;:	sub    ebx,0xa</span><br><span class="line">   0x5655619d &lt;+13&gt;:	add    eax,ebx</span><br><span class="line">   0x5655619f &lt;+15&gt;:	ret</span><br><span class="line">End of assembler dump.</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="继续运行："><a href="#继续运行：" class="headerlink" title="继续运行："></a>继续运行：</h2><p>运行下面命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">continue</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1116,126 +1272,6 @@
 <h2 id="3-安装open-vm-tools"><a href="#3-安装open-vm-tools" class="headerlink" title="3.安装open-vm-tools"></a>3.安装open-vm-tools</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install open-vm-tools open-vm-tools-desktop</span><br></pre></td></tr></table></figure>
 
 <h2 id="4-搞定"><a href="#4-搞定" class="headerlink" title="4.搞定"></a>4.搞定</h2>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2023/09/13/202309130000%E5%9C%A8VMware%E4%B8%8A%E7%9A%84Ubuntu%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="睿虎">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="睿虎的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 睿虎的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/09/13/202309130000%E5%9C%A8VMware%E4%B8%8A%E7%9A%84Ubuntu%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" class="post-title-link" itemprop="url">在VMware上的Ubuntu共享文件夹</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-09-13 15:52:59" itemprop="dateCreated datePublished" datetime="2023-09-13T15:52:59+08:00">2023-09-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/VMware/" itemprop="url" rel="index"><span itemprop="name">VMware</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/VMware/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E8%BD%AF%E4%BB%B6/VMware/" itemprop="url" rel="index"><span itemprop="name">VMware</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2023/09/13/202309130000%E5%9C%A8VMware%E4%B8%8A%E7%9A%84Ubuntu%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2023/09/13/202309130000%E5%9C%A8VMware%E4%B8%8A%E7%9A%84Ubuntu%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="1-先查看设置的文件夹有没有起效"><a href="#1-先查看设置的文件夹有没有起效" class="headerlink" title="1.先查看设置的文件夹有没有起效"></a>1.先查看设置的文件夹有没有起效</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmware-hgfsclient</span><br></pre></td></tr></table></figure>
-
-<p>如果出现有挂载对应的文件夹就起效</p>
-<h2 id="2-创建目录并挂载"><a href="#2-创建目录并挂载" class="headerlink" title="2.创建目录并挂载"></a>2.创建目录并挂载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> /mnt/hgfs</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-自动挂载"><a href="#3-自动挂载" class="headerlink" title="3.自动挂载"></a>3.自动挂载</h2><p>自动挂载方法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/fstab /etc/fstab.bak</span><br><span class="line"><span class="built_in">sudo</span> vim /etc/fstab</span><br></pre></td></tr></table></figure>
-
-<p>在最后一行插入这样一句</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.host:/shared  /mnt/hgfs/vmshared   fuse.vmhgfs-fuse     allow_other,defaults         0       0</span><br></pre></td></tr></table></figure>
-
-<p>shared是自己设置的文件夹名称，&#x2F;mnt&#x2F;hgfs&#x2F;vmshared是挂载点，fuse.vmhgfs-fuse挂载方法</p>
-<p><img src="https://laisc7301.github.io/files/img/2023/202309130000%E5%9C%A8VMware%E4%B8%8A%E7%9A%84Ubuntu%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9.png"></p>
-<h2 id="4-最后保存退出"><a href="#4-最后保存退出" class="headerlink" title="4.最后保存退出"></a>4.最后保存退出</h2>
       
     </div>
 

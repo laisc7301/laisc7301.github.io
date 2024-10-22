@@ -158,18 +158,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -186,6 +186,139 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2024/10/22/202410220000JavaScript_ES_Module/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="睿虎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2024/10/22/202410220000JavaScript_ES_Module/" class="post-title-link" itemprop="url">JavaScript ES Module</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-10-22 18:05:23" itemprop="dateCreated datePublished" datetime="2024-10-22T18:05:23+08:00">2024-10-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/blog/2024/10/22/202410220000JavaScript_ES_Module/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/10/22/202410220000JavaScript_ES_Module/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>首先，如果要使用ES Module，你需要这样写</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span> <span class="attr">src</span>=<span class="string">&quot;./js/main.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>或者这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">import</span> print1 <span class="keyword">from</span> <span class="string">&quot;./js/module.js&quot;</span>;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>记住一定要写<code>type=&quot;module&quot;</code>，还有路径一定要是相对路径。</p>
+<h3 id="import-的几种用法"><a href="#import-的几种用法" class="headerlink" title="import 的几种用法:"></a>import 的几种用法:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> defaultExport <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; export1 &#125; <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; export1 <span class="keyword">as</span> alias1 &#125; <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; export1 , export2 &#125; <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; export1 , export2 <span class="keyword">as</span> alias2 , [...] &#125; <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> defaultExport, &#123; export1 [ , [...] ] &#125; <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> defaultExport, * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;module-name&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> promise = <span class="keyword">import</span>(<span class="string">&quot;module-name&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="export的几种用法"><a href="#export的几种用法" class="headerlink" title="export的几种用法"></a>export的几种用法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123; name1, name2, …, nameN &#125;;</span><br><span class="line"><span class="keyword">export</span> &#123; variable1 <span class="keyword">as</span> name1, variable2 <span class="keyword">as</span> name2, …, nameN &#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> name1, name2, …, nameN; <span class="comment">// also var</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> name1 = …, name2 = …, …, nameN; <span class="comment">// also var, const</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">FunctionName</span>(<span class="params"></span>) &#123;...&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">ClassName</span> &#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> expression;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> (<span class="params">…</span>) &#123; … &#125; <span class="comment">// also class, function*</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">name1</span>(<span class="params">…</span>) &#123; … &#125; <span class="comment">// also class, function*</span></span><br><span class="line"><span class="keyword">export</span> &#123; name1 <span class="keyword">as</span> <span class="keyword">default</span>, … &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> * <span class="keyword">from</span> …;</span><br><span class="line"><span class="keyword">export</span> &#123; name1, name2, …, nameN &#125; <span class="keyword">from</span> …;</span><br><span class="line"><span class="keyword">export</span> &#123; import1 <span class="keyword">as</span> name1, import2 <span class="keyword">as</span> name2, …, nameN &#125; <span class="keyword">from</span> …;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="举一个例子："><a href="#举一个例子：" class="headerlink" title="举一个例子："></a>举一个例子：</h3><p>index.html：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">import</span> <span class="title class_">DefaultFun</span> <span class="keyword">from</span> <span class="string">&quot;./js/module.js&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">import</span> &#123;test1&#125; <span class="keyword">from</span> <span class="string">&quot;./js/module.js&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">			<span class="title class_">DefaultFun</span>();</span></span><br><span class="line"><span class="language-javascript">			<span class="title function_">test1</span>();</span></span><br><span class="line"><span class="language-javascript">			<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;end&quot;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>module.js：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;DefaultFunction&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">test1</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;test1&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="再举一个例子："><a href="#再举一个例子：" class="headerlink" title="再举一个例子："></a>再举一个例子：</h3><p>index.html：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span> <span class="attr">src</span>=<span class="string">&quot;./js/main.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>main.js：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">DefaultFun2</span> <span class="keyword">from</span> <span class="string">&quot;./module2.js&quot;</span>;</span><br><span class="line"><span class="title class_">DefaultFun2</span>();</span><br></pre></td></tr></table></figure>
+
+<p>module2.js：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;print2&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1208,122 +1341,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2024/01/26/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="睿虎">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="睿虎的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 睿虎的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2024/01/26/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS/" class="post-title-link" itemprop="url">Spring Cloud Alibaba安装NACOS</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-01-26 14:42:57" itemprop="dateCreated datePublished" datetime="2024-01-26T14:42:57+08:00">2024-01-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/SpringBoot/SpringCloud/" itemprop="url" rel="index"><span itemprop="name">SpringCloud</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2024/01/26/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/01/26/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>[!NOTE]</p>
-<p>本教程是《SpringBoot系列基础教程》之一，教程目录：<a href="https://laisc7301.github.io/blog/2024/01/29/202401290001SpringBoot%E7%B3%BB%E5%88%97%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/">https://laisc7301.github.io/blog/2024/01/29/202401290001SpringBoot%E7%B3%BB%E5%88%97%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/</a></p>
-</blockquote>
-<p>首先先去GitHub下载NACOS：<a target="_blank" rel="noopener" href="https://github.com/alibaba/nacos/releases">https://github.com/alibaba/nacos/releases</a></p>
-<p>下载后解压，打开cmd并进入bin文件夹，运行命令：startup.cmd -m standalone</p>
-<p>然后打开 <a target="_blank" rel="noopener" href="http://localhost:8848/nacos/index.html">http://localhost:8848/nacos/index.html</a> </p>
-<p><img src="https://laisc7301.github.io/files/img/2024/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS_1.png"></p>
-<p>默认账号：nacos<br>默认密码：nacos</p>
-<p>登录后看到下面页面：</p>
-<p><img src="https://laisc7301.github.io/files/img/2024/202401260001SpringCloudAlibaba%E5%AE%89%E8%A3%85NACOS_2.png"></p>
-<p>搞定！</p>
-<p>下一篇：Spring Cloud Alibaba项目创建： <a href="https://laisc7301.github.io/blog/2024/01/27/202401270000SpringCloudAlibaba%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/">https://laisc7301.github.io/blog/2024/01/27/202401270000SpringCloudAlibaba%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/</a></p>
-
       
     </div>
 
