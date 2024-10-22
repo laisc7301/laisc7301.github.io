@@ -2606,8 +2606,8 @@ myonload(8);
       </tags>
   </entry>
   <entry>
-    <title>JavaScript ES Module</title>
-    <url>/blog/2024/10/22/202410220000JavaScript_ES_Module/</url>
+    <title>JavaScript ES Module的使用</title>
+    <url>/blog/2024/10/22/202410220000JavaScript_ES_Module%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>首先，如果要使用ES Module，你需要这样写</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span> <span class="attr">src</span>=<span class="string">&quot;./js/main.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
