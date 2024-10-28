@@ -2662,7 +2662,7 @@ myonload(8);
     <title>Vue2精简教程</title>
     <url>/blog/2024/10/28/202410280000Vue2%E7%B2%BE%E7%AE%80%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="第一课"><a href="#第一课" class="headerlink" title="第一课"></a>第一课</h1><p>第一步：打开HBuilder X，新建项目。</p>
-<p><img src="/blog/./C:/%E5%B7%A5%E4%BD%9C%E5%8C%BA/Workspace/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE.png" alt="创建项目"></p>
+<p><img src="https://laisc7301.github.io/files/img/2024/202410280000Vue2%E7%B2%BE%E7%AE%80%E6%95%99%E7%A8%8B1.png" alt="创建项目"></p>
 <p>等文件下载完后，进入项目，这时如果直接运行<code>npm run serve</code>，会报错，别急。</p>
 <p>打开package.json文件，找到下面的代码：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;serve&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vue-cli-service serve&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vue-cli-service build&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
@@ -2835,7 +2835,7 @@ myonload(8);
 
 
 <p>现在所有事情都做完了，我们可以访问目录的最后一项了，好了，教程到此结束。</p>
-<p>如果需要工程文件的，请发邮件获取：<a href="mailto:&#x6c;&#97;&#105;&#115;&#99;&#55;&#x33;&#48;&#x31;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x6c;&#97;&#105;&#115;&#99;&#55;&#x33;&#48;&#x31;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<p>如果需要工程文件的，请发邮件获取：<a href="mailto:&#x6c;&#x61;&#105;&#115;&#99;&#x37;&#51;&#x30;&#x31;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#x6c;&#x61;&#105;&#115;&#99;&#x37;&#51;&#x30;&#x31;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></p>
 ]]></content>
       <categories>
         <category>编程</category>
