@@ -64,7 +64,9 @@ var subtitle = [
 	
 	"那不是黑历史，那是我的来时路。",
 	
-	"最容易的道路往往会越走越艰难，而艰难的道路往往会越走越轻松。——《富爸爸，穷爸爸》"
+	"最容易的道路往往会越走越艰难，而艰难的道路往往会越走越轻松。——《富爸爸，穷爸爸》",
+	
+	"这短短的一生，我们最终都会失去。你不妨大胆一些，爱一个人，攀一座山，追一个梦。——《大鱼海棠》"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
