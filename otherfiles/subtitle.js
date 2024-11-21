@@ -68,7 +68,9 @@ var subtitle = [
 	
 	"这短短的一生，我们最终都会失去。你不妨大胆一些，爱一个人，攀一座山，追一个梦。——《大鱼海棠》",
 	
-	"以心为眼，以意为体"
+	"以心为眼，以意为体",
+	
+	"在心里种花，人生才不会荒芜"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
