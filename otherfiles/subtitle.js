@@ -70,7 +70,9 @@ var subtitle = [
 	
 	"以心为眼，以意为体",
 	
-	"在心里种花，人生才不会荒芜"
+	"在心里种花，人生才不会荒芜",
+	
+	"心向往之，行必能至"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
