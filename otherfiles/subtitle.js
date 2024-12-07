@@ -72,7 +72,11 @@ var subtitle = [
 	
 	"在心里种花，人生才不会荒芜",
 	
-	"心向往之，行必能至"
+	"心向往之，行必能至",
+	
+	"记忆逐渐模糊 时间依旧赶路",
+	
+	"愿他们前行路上 历经沧桑 归来时仍然还是最初的模样——《写给辛夷的歌 (校园版)》"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
