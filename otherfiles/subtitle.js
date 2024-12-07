@@ -76,7 +76,9 @@ var subtitle = [
 	
 	"记忆逐渐模糊 时间依旧赶路",
 	
-	"愿他们前行路上 历经沧桑 归来时仍然还是最初的模样——《写给辛夷的歌 (校园版)》"
+	"愿他们前行路上 历经沧桑 归来时仍然还是最初的模样——《写给辛夷的歌 (校园版)》",
+	
+	"天地与我并生 而万物与我为一"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
