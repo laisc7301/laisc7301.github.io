@@ -1,138 +1,161 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>随机字符串生成器</title>
+    <title>随机字符生成器</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: white;
-            border-radius: 8px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
+            margin: 0;
         }
+
         h1 {
             text-align: center;
-            font-size: 24px;
+            color: #4CAF50;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
             margin-bottom: 20px;
-            color: #333;
         }
-        label {
+
+        .form-item {
+            margin-bottom: 15px;
+        }
+
+        .form-item label {
+            display: block;
             font-size: 14px;
-            color: #555;
+            margin-bottom: 5px;
         }
-        .input-field, .textarea {
+
+        .form-item input, .form-item textarea {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
+            font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            font-size: 14px;
         }
+
+        .form-item textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
         .button {
             background-color: #4CAF50;
             color: white;
-            border: none;
             padding: 10px 20px;
-            text-align: center;
-            font-size: 16px;
+            border: none;
             border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-size: 16px;
+            margin-top: 10px;
+            display: inline-block;
         }
+
         .button:hover {
             background-color: #45a049;
         }
+
         .copy-status {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .copy-status.success {
             color: green;
+            margin-top: 10px;
         }
-        .copy-status.error {
+
+        .error {
             color: red;
         }
-        .times-span {
-            color: blue;
+
+        .timesSpan {
+            font-size: 14px;
+            color: #4CAF50;
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>随机字符串生成器</h1>
-    
-    <label for="length">字符长度：</label>
-    <input type="number" id="length" class="input-field randomStringLengthInput" value="10" />
+    <div class="container">
+        <a href="https://laisc7301.github.io/">返回首页</a>
 
-    <label for="charset">随机字符集：</label>
-    <textarea id="charset" class="textarea charset" rows="5" cols="30">
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</textarea>
+        <h1>随机字符生成器</h1>
 
-    <button class="button generate" onclick="generateClick()">生成</button>
+        <div class="form-item">
+            <label for="stringLength">字符长度：</label>
+            <input type="number" id="stringLength" class="randomStringLengthInput" value="10" />
+        </div>
 
-    <br />
-    
-    <input class="input-field randomStringInput" readonly />
-    
-    <br />
-    
-    <button class="button copyRandomStringButton" onclick="copyRandomString()">复制结果</button>
-    
-    <span class="copy-status"></span><span class="times-span"></span>
-</div>
+        <div class="form-item">
+            <label for="charset">随机字符集：</label>
+            <textarea id="charset" class="charset">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</textarea>
+        </div>
 
-<script>
-    var numberOfTimes = 0;
+        <button class="button" onclick="generateClick()">生成</button>
 
-    function generateClick() {
-        let stringLength = document.getElementsByClassName("randomStringLengthInput")[0].value;
-        let mycharset0 = document.getElementsByClassName("charset")[0].value;
-        let outInput = document.getElementsByClassName("randomStringInput")[0];
-        let mycharset = mycharset0.replace(/[\r\n]+/g, "");
-        outInput.value = generateRandomString(mycharset, stringLength);
-    }
+        <div class="form-item">
+            <input class="randomStringInput" readonly />
+        </div>
 
-    function generateRandomString(charset, length) {
-        let result = '';
-        for (let i = 0; i < length; i++) {
-            result += charset.charAt(Math.floor(Math.random() * charset.length));
+        <button class="button" onclick="copyRandomString()">复制结果</button>
+
+        <span class="copy-status"></span>
+        <span class="timesSpan"></span>
+    </div>
+
+    <script>
+        var numberOfTimes = 0;
+
+        function generateClick() {
+            let stringLength = document.getElementsByClassName("randomStringLengthInput")[0].value;
+            let mycharset0 = document.getElementsByClassName("charset")[0].value;
+            let outInput = document.getElementsByClassName("randomStringInput")[0];
+            let mycharset = mycharset0.replace(/[\r\n]+/g, "");
+            outInput.value = generateRandomString(mycharset, stringLength);
         }
-        return result;
-    }
 
-    function copyRandomString() {
-        let outInputString = document.getElementsByClassName("randomStringInput")[0].value;
-        navigator.clipboard.writeText(outInputString).then(function() {
-            showCopyStatus('文本已复制', 'success');
-        }).catch(function(err) {
-            showCopyStatus('复制失败', 'error');
-        });
-    }
+        function generateRandomString(charset, length) {
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += charset.charAt(Math.floor(Math.random() * charset.length));
+            }
+            return result;
+        }
 
-    function showCopyStatus(msg, status) {
-        let outSpan = document.getElementsByClassName("copy-status")[0];
-        outSpan.innerHTML = msg;
-        outSpan.className = "copy-status " + status;
-        numberOfTimes++;
-        let timesSpan = document.getElementsByClassName("times-span")[0];
-        timesSpan.innerHTML = "(" + numberOfTimes + ")";
-    }
-</script>
+        function copyRandomString() {
+            let outInputString = document.getElementsByClassName("randomStringInput")[0].value;
+            navigator.clipboard.writeText(outInputString).then(function() {
+                showCopyStatus('文本已复制');
+                console.log('文本已复制到剪贴板');
+            }).catch(function(err) {
+                showCopyStatus('<span class="error">复制失败</span>');
+                console.error('复制失败: ', err);
+            });
+        }
 
+        function showCopyStatus(msg){
+            let outSpan = document.getElementsByClassName("copy-status")[0];
+            outSpan.innerHTML = msg;
+            numberOfTimes++;
+            let timesSpan = document.getElementsByClassName("timesSpan")[0];
+            timesSpan.innerHTML = "(" + numberOfTimes + ")";
+        }
+    </script>
 </body>
 </html>
