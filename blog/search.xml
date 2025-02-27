@@ -3170,4 +3170,76 @@ myonload(8);
 <p>源代码：<a href="https://github.com/laisc7301/Firefox-Ruihuo-VolumeBooster">https://github.com/laisc7301/Firefox-Ruihuo-VolumeBooster</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>mytest</title>
+    <url>/blog/mytest/index.html</url>
+    <content><![CDATA[<p><button></button></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>random-string</title>
+    <url>/blog/random-string/index.html</url>
+    <content><![CDATA[<p>123</p>
+<div class="container">
+    <h1>随机字符串生成器</h1>
+    
+<pre><code>&lt;label for=&quot;length&quot;&gt;字符长度：&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;length&quot; class=&quot;input-field randomStringLengthInput&quot; value=&quot;10&quot; /&gt;
+
+&lt;label for=&quot;charset&quot;&gt;随机字符集：&lt;/label&gt;
+&lt;textarea id=&quot;charset&quot; class=&quot;textarea charset&quot; rows=&quot;5&quot; cols=&quot;30&quot;&gt;
+</code></pre>
+<p>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</textarea></p>
+<pre><code>&lt;button class=&quot;button generate&quot; onclick=&quot;generateClick()&quot;&gt;生成&lt;/button&gt;
+
+&lt;br /&gt;
+
+&lt;input class=&quot;input-field randomStringInput&quot; readonly /&gt;
+
+&lt;br /&gt;
+
+&lt;button class=&quot;button copyRandomStringButton&quot; onclick=&quot;copyRandomString()&quot;&gt;复制结果&lt;/button&gt;
+
+&lt;span class=&quot;copy-status&quot;&gt;&lt;/span&gt;&lt;span class=&quot;times-span&quot;&gt;&lt;/span&gt;
+</code></pre>
+</div>
+
+<script>
+    var numberOfTimes = 0;
+
+    function generateClick() {
+        let stringLength = document.getElementsByClassName("randomStringLengthInput")[0].value;
+        let mycharset0 = document.getElementsByClassName("charset")[0].value;
+        let outInput = document.getElementsByClassName("randomStringInput")[0];
+        let mycharset = mycharset0.replace(/[\r\n]+/g, "");
+        outInput.value = generateRandomString(mycharset, stringLength);
+    }
+
+    function generateRandomString(charset, length) {
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
+        return result;
+    }
+
+    function copyRandomString() {
+        let outInputString = document.getElementsByClassName("randomStringInput")[0].value;
+        navigator.clipboard.writeText(outInputString).then(function() {
+            showCopyStatus('文本已复制', 'success');
+        }).catch(function(err) {
+            showCopyStatus('复制失败', 'error');
+        });
+    }
+
+    function showCopyStatus(msg, status) {
+        let outSpan = document.getElementsByClassName("copy-status")[0];
+        outSpan.innerHTML = msg;
+        outSpan.className = "copy-status " + status;
+        numberOfTimes++;
+        let timesSpan = document.getElementsByClassName("times-span")[0];
+        timesSpan.innerHTML = "(" + numberOfTimes + ")";
+    }
+</script>]]></content>
+  </entry>
 </search>
