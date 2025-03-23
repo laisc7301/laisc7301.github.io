@@ -80,7 +80,9 @@ var subtitle = [
 	
 	"天地与我并生 而万物与我为一",
 	
-	"身在乌云之下，也要开一朵花"
+	"身在乌云之下，也要开一朵花",
+	
+	"这短短的一生，我们最终都会失去。你不妨大胆一些，爱一个人，攀一座山，追一个梦。——《大鱼海棠》"
 ];
 var titleindex = getRandomIntInclusive(0, subtitle.length - 1);
 if (subtitleobjblogger1 != undefined) {
