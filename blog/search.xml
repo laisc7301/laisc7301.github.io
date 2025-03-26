@@ -3115,6 +3115,24 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Windows上打开.jar文件的方法</title>
+    <url>/blog/2025/03/27/202503270000Windows%E4%B8%8A%E6%89%93%E5%BC%80.jar%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="方法-1：双击运行（适用于-GUI-应用）"><a href="#方法-1：双击运行（适用于-GUI-应用）" class="headerlink" title="方法 1：双击运行（适用于 GUI 应用）"></a>方法 1：双击运行（适用于 GUI 应用）</h1><h1 id="方法-2：使用命令提示符（cmd）运行"><a href="#方法-2：使用命令提示符（cmd）运行" class="headerlink" title="方法 2：使用命令提示符（cmd）运行"></a>方法 2：使用命令提示符（cmd）运行</h1><p>使用以下命令运行：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">java -jar yourfile.jar</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>油猴脚本：记住Google搜索语言设置</title>
     <url>/blog/Tampermonkey-remember-Google-search-language-settings/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305300000%E8%AE%B0%E4%BD%8FGoogle%E6%90%9C%E7%B4%A2%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE.png"></p>
