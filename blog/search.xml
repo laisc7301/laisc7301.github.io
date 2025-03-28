@@ -3326,7 +3326,7 @@ myonload(8);
 <td>设置环境变量</td>
 </tr>
 </tbody></table>
-<h2 id="编写一个简单的-Dockerfile"><a href="#编写一个简单的-Dockerfile" class="headerlink" title="编写一个简单的 Dockerfile"></a><strong>编写一个简单的 Dockerfile</strong></h2><p>假设你想创建一个基于 <strong>Nginx</strong> 的自定义镜像，并添加一个 <code>index.html</code> 文件。</p>
+<h2 id="1-编写一个简单的-Dockerfile"><a href="#1-编写一个简单的-Dockerfile" class="headerlink" title="1. 编写一个简单的 Dockerfile"></a>1. <strong>编写一个简单的 Dockerfile</strong></h2><p>假设你想创建一个基于 <strong>Nginx</strong> 的自定义镜像，并添加一个 <code>index.html</code> 文件。</p>
 <h3 id="1-创建-index-html"><a href="#1-创建-index-html" class="headerlink" title="1. 创建 index.html"></a><strong>1. 创建 <code>index.html</code></strong></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Docker Nginx<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, Docker!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="2-创建-Dockerfile"><a href="#2-创建-Dockerfile" class="headerlink" title="2. 创建 Dockerfile"></a>2. 创建 <code>Dockerfile</code></h3><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用官方 Nginx 作为基础镜像</span></span><br><span class="line"><span class="keyword">FROM</span> nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制 index.html 到 Nginx 的默认目录</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> index.html /usr/share/nginx/html/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 公开 80 端口</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行 Nginx</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;nginx&quot;</span>, <span class="string">&quot;-g&quot;</span>, <span class="string">&quot;daemon off;&quot;</span>]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -3337,6 +3337,65 @@ myonload(8);
 <li><code>-t my-nginx</code>：指定镜像名称 <code>my-nginx</code></li>
 <li><code>.</code>：表示 <code>Dockerfile</code> 在当前目录</li>
 </ul>
+<h3 id="4-运行容器"><a href="#4-运行容器" class="headerlink" title="4. 运行容器"></a>4. 运行容器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -d -p 8080:80 my-nginx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-p 8080:80</code>：将宿主机的 <code>8080</code> 端口映射到容器 <code>80</code> 端口</li>
+<li>访问 <code>http://localhost:8080</code>，你会看到 <code>Hello, Docker!</code></li>
+</ul>
+<h2 id="2-使用-ENTRYPOINT-和-CMD"><a href="#2-使用-ENTRYPOINT-和-CMD" class="headerlink" title="2. 使用 ENTRYPOINT 和 CMD"></a>2. 使用 <code>ENTRYPOINT</code> 和 <code>CMD</code></h2><p>区别</p>
+<p><code>CMD</code> <strong>提供默认命令</strong>，可以被 <code>docker run</code> 覆盖：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;echo&quot;</span>, <span class="string">&quot;Hello Docker!&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p><code>ENTRYPOINT</code> <strong>强制执行命令</strong>，不会被 <code>docker run</code> 覆盖：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">&quot;echo&quot;</span>, <span class="string">&quot;Hello Docker!&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>例子：</p>
+<p>Dockerfile</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu</span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;echo&quot;</span>, <span class="string">&quot;默认 CMD&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>运行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker build -t my-ubuntu1 .</span><br></pre></td></tr></table></figure>
+
+<p>然后运行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run my-ubuntu1</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">默认 CMD</span><br></pre></td></tr></table></figure>
+
+<p>运行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run my-ubuntu1 <span class="built_in">echo</span> <span class="string">&quot;覆盖 CMD&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">覆盖 CMD</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>例子2：</p>
+<p>Dockerfile</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu</span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">&quot;echo&quot;</span>, <span class="string">&quot;强制执行&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>运行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker build -t my-ubuntu2 .</span><br></pre></td></tr></table></figure>
+
+<p>然后运行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run my-ubuntu2</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">强制执行</span><br></pre></td></tr></table></figure>
+
+<p>运行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run my-ubuntu2 <span class="built_in">echo</span> <span class="string">&quot;不会覆盖&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">强制执行 <span class="built_in">echo</span> 不会覆盖</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>编程</category>
