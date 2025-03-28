@@ -3276,6 +3276,67 @@ myonload(8);
 <p>添加 <code>--rm</code> 参数让容器停止时自动删除（适合临时测试）：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -d --<span class="built_in">rm</span> -p 8011:80 -v my_volume:/app/data --name my_container nginx</span><br></pre></td></tr></table></figure>
 
+
+
+
+
+
+<h1 id="6-Dockerfile（构建自定义镜像）"><a href="#6-Dockerfile（构建自定义镜像）" class="headerlink" title="6. Dockerfile（构建自定义镜像）"></a>6. Dockerfile（构建自定义镜像）</h1><p>一个 <code>Dockerfile</code> 由多条指令组成，常见的指令如下：</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>FROM</code></td>
+<td>指定基础镜像（如 <code>ubuntu</code>、<code>alpine</code>）</td>
+</tr>
+<tr>
+<td><code>RUN</code></td>
+<td>运行命令（如安装软件）</td>
+</tr>
+<tr>
+<td><code>COPY</code></td>
+<td>复制文件到容器</td>
+</tr>
+<tr>
+<td><code>ADD</code></td>
+<td>复制文件或解压 <code>.tar</code> 文件</td>
+</tr>
+<tr>
+<td><code>WORKDIR</code></td>
+<td>设置工作目录</td>
+</tr>
+<tr>
+<td><code>CMD</code></td>
+<td>容器启动时执行的命令</td>
+</tr>
+<tr>
+<td><code>ENTRYPOINT</code></td>
+<td>指定容器的主进程</td>
+</tr>
+<tr>
+<td><code>EXPOSE</code></td>
+<td>声明容器监听的端口</td>
+</tr>
+<tr>
+<td><code>ENV</code></td>
+<td>设置环境变量</td>
+</tr>
+</tbody></table>
+<h2 id="编写一个简单的-Dockerfile"><a href="#编写一个简单的-Dockerfile" class="headerlink" title="编写一个简单的 Dockerfile"></a><strong>编写一个简单的 Dockerfile</strong></h2><p>假设你想创建一个基于 <strong>Nginx</strong> 的自定义镜像，并添加一个 <code>index.html</code> 文件。</p>
+<h3 id="1-创建-index-html"><a href="#1-创建-index-html" class="headerlink" title="1. 创建 index.html"></a><strong>1. 创建 <code>index.html</code></strong></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Docker Nginx<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, Docker!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-创建-Dockerfile"><a href="#2-创建-Dockerfile" class="headerlink" title="2. 创建 Dockerfile"></a>2. 创建 <code>Dockerfile</code></h3><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用官方 Nginx 作为基础镜像</span></span><br><span class="line"><span class="keyword">FROM</span> nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制 index.html 到 Nginx 的默认目录</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> index.html /usr/share/nginx/html/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 公开 80 端口</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行 Nginx</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;nginx&quot;</span>, <span class="string">&quot;-g&quot;</span>, <span class="string">&quot;daemon off;&quot;</span>]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-构建镜像"><a href="#3-构建镜像" class="headerlink" title="3. 构建镜像"></a><strong>3. 构建镜像</strong></h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker build -t my-nginx .</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-t my-nginx</code>：指定镜像名称 <code>my-nginx</code></li>
+<li><code>.</code>：表示 <code>Dockerfile</code> 在当前目录</li>
+</ul>
 ]]></content>
       <categories>
         <category>编程</category>
