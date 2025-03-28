@@ -3134,6 +3134,159 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Docker入门教程</title>
+    <url>/blog/2025/03/28/202503280000Docker%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="1-Docker-的基本概念"><a href="#1-Docker-的基本概念" class="headerlink" title="1. Docker 的基本概念"></a>1. Docker 的基本概念</h1><ol>
+<li><strong>镜像（Image）</strong>：<ul>
+<li>Docker 镜像是运行容器的基础，比如 <code>ubuntu</code>、<code>nginx</code>、<code>mysql</code> 等。</li>
+</ul>
+</li>
+<li><strong>容器（Container）</strong>：<ul>
+<li>运行中的镜像就是容器，容器是一个独立的环境，类似于虚拟机，但比虚拟机更轻量。</li>
+</ul>
+</li>
+<li><strong>仓库（Registry）</strong>：<ul>
+<li>存放 Docker 镜像的地方，比如 Docker Hub（官方公共仓库），你也可以搭建私有仓库。</li>
+</ul>
+</li>
+</ol>
+<span id="more"></span>
+
+
+<h1 id="2-基本使用"><a href="#2-基本使用" class="headerlink" title="2. 基本使用"></a>2. 基本使用</h1><h3 id="1-运行第一个容器"><a href="#1-运行第一个容器" class="headerlink" title="1.运行第一个容器"></a>1.运行第一个容器</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载并运行一个测试镜像</span></span><br><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>（可选）</strong> 让当前用户无需 <code>sudo</code> 即可使用 Docker：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-常用命令"><a href="#2-常用命令" class="headerlink" title="2.常用命令"></a>2.常用命令</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拉取镜像（以 Ubuntu 为例）</span></span><br><span class="line">docker pull ubuntu:20.04</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行交互式容器</span></span><br><span class="line">docker run -it ubuntu:20.04 /bin/bash</span><br><span class="line"><span class="comment"># （在容器内输入 exit 退出）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看运行中的容器</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有容器（包括已停止的）</span></span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止容器</span></span><br><span class="line">docker stop &lt;容器ID&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除容器</span></span><br><span class="line">docker <span class="built_in">rm</span> &lt;容器ID&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除镜像</span></span><br><span class="line">docker rmi &lt;镜像名&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="详解docker-run-it-ubuntu-20-04-bin-bash："><a href="#详解docker-run-it-ubuntu-20-04-bin-bash：" class="headerlink" title="详解docker run -it ubuntu:20.04 /bin/bash："></a>详解<code>docker run -it ubuntu:20.04 /bin/bash</code>：</h4><table>
+<thead>
+<tr>
+<th>部分</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>docker</code></td>
+<td>Docker 命令行工具</td>
+</tr>
+<tr>
+<td><code>run</code></td>
+<td>创建并启动一个新容器</td>
+</tr>
+<tr>
+<td><code>-i</code></td>
+<td><code>--interactive</code> 的缩写，保持标准输入流（STDIN）打开，允许与容器交互</td>
+</tr>
+<tr>
+<td><code>-t</code></td>
+<td><code>--tty</code> 的缩写，为容器分配一个伪终端（pseudo-TTY）</td>
+</tr>
+<tr>
+<td><code>ubuntu:20.04</code></td>
+<td>指定使用的镜像名称和标签（这里是 Ubuntu 20.04 版本）</td>
+</tr>
+<tr>
+<td><code>/bin/bash</code></td>
+<td>容器启动后要执行的命令（这里是启动 Bash shell）</td>
+</tr>
+</tbody></table>
+<h1 id="3-Docker-数据管理（Volumes-Bind-Mounts）"><a href="#3-Docker-数据管理（Volumes-Bind-Mounts）" class="headerlink" title="3. Docker 数据管理（Volumes &amp; Bind Mounts）"></a>3. Docker 数据管理（Volumes &amp; Bind Mounts）</h1><h3 id="1-数据卷（Volumes）（推荐方式）"><a href="#1-数据卷（Volumes）（推荐方式）" class="headerlink" title="1. 数据卷（Volumes）（推荐方式）"></a>1. <strong>数据卷（Volumes）</strong>（推荐方式）</h3><p>Docker 管理的持久化存储，最适合生产环境。</p>
+<h4 id="1-创建和使用数据卷"><a href="#1-创建和使用数据卷" class="headerlink" title="1. 创建和使用数据卷"></a>1. 创建和使用数据卷</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建数据卷</span></span><br><span class="line">docker volume create my_volume</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用数据卷（将数据卷挂载到容器内的 /mydata 目录）</span></span><br><span class="line">docker run -it -v my_volume:/mydata ubuntu:20.04 /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看数据卷详情</span></span><br><span class="line">docker volume inspect my_volume</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><ul>
+<li>数据存储在 Docker 管理的区域（Linux 默认在 <code>/var/lib/docker/volumes/</code>）</li>
+<li>即使容器被删除，数据依然保留</li>
+<li>支持跨容器共享</li>
+<li>适合数据库等需要持久化的场景</li>
+</ul>
+<h3 id="2-Bind-Mounts（绑定挂载）"><a href="#2-Bind-Mounts（绑定挂载）" class="headerlink" title="2. Bind Mounts（绑定挂载）"></a>2. Bind Mounts（绑定挂载）</h3><p><strong>Bind Mounts 直接将宿主机的目录挂载到容器</strong>，适用于：</p>
+<ul>
+<li><p><strong>开发环境</strong>：修改宿主机代码后，容器可立即生效。</p>
+</li>
+<li><p><strong>访问宿主机文件</strong>，如 <code>logs</code> 目录。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 挂载主机目录到容器（注意使用绝对路径）</span></span><br><span class="line">docker run -it -v /host/path:/container/path ubuntu:20.04 /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例：挂载当前目录到容器的 /mydata</span></span><br><span class="line">docker run -it -v $(<span class="built_in">pwd</span>):/mydata ubuntu:20.04 /bin/bash</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-临时数据存储（匿名-Volume）"><a href="#3-临时数据存储（匿名-Volume）" class="headerlink" title="3. 临时数据存储（匿名 Volume）"></a>3. 临时数据存储（匿名 Volume）</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -it -v /tmpdata ubuntu:20.04 /bin/bash</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>实例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -d -v my_volume:/app/data --name my_container nginx</span><br></pre></td></tr></table></figure>
+
+
+
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>docker run</code></td>
+<td>创建并启动一个新容器</td>
+</tr>
+<tr>
+<td><code>-d</code></td>
+<td><code>--detach</code> 的缩写，让容器在后台运行</td>
+</tr>
+<tr>
+<td><code>-v my_volume:/app/data</code></td>
+<td>挂载数据卷（数据卷<code>my_volume</code> 挂载到容器内的 <code>/app/data</code> 路径，如果该数据卷不存在，Docker 会自动创建它）</td>
+</tr>
+<tr>
+<td><code>--name my_container</code></td>
+<td>为容器指定名称（而不是使用随机生成的 ID）</td>
+</tr>
+<tr>
+<td><code>nginx</code></td>
+<td>使用的镜像名称（默认从 Docker Hub 下载最新版 nginx）</td>
+</tr>
+</tbody></table>
+<h1 id="4-Docker-网络（Networking）"><a href="#4-Docker-网络（Networking）" class="headerlink" title="4. Docker 网络（Networking）"></a>4. Docker 网络（Networking）</h1><h2 id="端口映射"><a href="#端口映射" class="headerlink" title="端口映射"></a>端口映射</h2><p>将容器端口暴露给主机：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将容器80端口映射到主机8080端口</span></span><br><span class="line">docker run -p 8080:80 nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 随机映射</span></span><br><span class="line">docker run -p 80 nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定主机IP</span></span><br><span class="line">docker run -p 192.168.1.100:8080:80 nginx</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="5-小技巧"><a href="#5-小技巧" class="headerlink" title="5. 小技巧"></a>5. 小技巧</h1><p>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d -p 8011:80 -v my_volume:/app/data --name my_container nginx</span><br></pre></td></tr></table></figure>
+
+<p>这条 Docker 命令的作用是<strong>在后台运行一个基于 Nginx 镜像的容器</strong>，并配置了端口映射、数据卷挂载和容器名称。</p>
+<p>以后就可以直接用容器名称对容器进行操作了：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 停止容器</span><br><span class="line">docker stop my_container</span><br><span class="line"></span><br><span class="line"># 删除容器</span><br><span class="line">docker rm my_container</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>添加 <code>--rm</code> 参数让容器停止时自动删除（适合临时测试）：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -d --<span class="built_in">rm</span> -p 8011:80 -v my_volume:/app/data --name my_container nginx</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>油猴脚本：记住Google搜索语言设置</title>
     <url>/blog/Tampermonkey-remember-Google-search-language-settings/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305300000%E8%AE%B0%E4%BD%8FGoogle%E6%90%9C%E7%B4%A2%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE.png"></p>
