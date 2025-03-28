@@ -3267,7 +3267,7 @@ myonload(8);
 
 <p>这条 Docker 命令的作用是<strong>在后台运行一个基于 Nginx 镜像的容器</strong>，并配置了端口映射、数据卷挂载和容器名称。</p>
 <p>以后就可以直接用容器名称对容器进行操作了：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 停止容器</span><br><span class="line">docker stop my_container</span><br><span class="line"></span><br><span class="line"># 删除容器</span><br><span class="line">docker rm my_container</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 停止容器</span></span><br><span class="line">docker stop my_container</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动已停止的容器</span></span><br><span class="line">docker start my_container</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除容器</span></span><br><span class="line">docker <span class="built_in">rm</span> my_container</span><br></pre></td></tr></table></figure>
 
 
 
