@@ -21,8 +21,8 @@
 
     <meta name="description" content="Docker 自定义网络实战这里我们通过一个实际案例，演示如何创建 Docker 自定义网络，让多个容器在同一网络中通信。 1. 需求分析我们要搭建一个包含 Nginx（Web 服务器） 和 Alpine（测试工具） 的小型网络环境，实现：  让 nginx 作为 Web 服务器运行。 让 alpine 作为测试容器，能够访问 nginx。 使用自定义网络，让容器通过名称而不是 IP 地址通信。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用实例讲解 Docker 自定义网络">
-<meta property="og:url" content="https://laisc7301.github.io/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:title" content="实例讲解 Docker 自定义网络">
+<meta property="og:url" content="https://laisc7301.github.io/blog/2025/03/31/202503310000%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/index.html">
 <meta property="og:site_name" content="睿虎的博客">
 <meta property="og:description" content="Docker 自定义网络实战这里我们通过一个实际案例，演示如何创建 Docker 自定义网络，让多个容器在同一网络中通信。 1. 需求分析我们要搭建一个包含 Nginx（Web 服务器） 和 Alpine（测试工具） 的小型网络环境，实现：  让 nginx 作为 Web 服务器运行。 让 alpine 作为测试容器，能够访问 nginx。 使用自定义网络，让容器通过名称而不是 IP 地址通信。">
 <meta property="og:locale" content="en_US">
@@ -34,13 +34,13 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://laisc7301.github.io/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/">
+<link rel="canonical" href="https://laisc7301.github.io/blog/2025/03/31/202503310000%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://laisc7301.github.io/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/","path":"2025/03/31/202503310000用实例讲解Docker自定义网络/","title":"用实例讲解 Docker 自定义网络"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://laisc7301.github.io/blog/2025/03/31/202503310000%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/","path":"2025/03/31/202503310000实例讲解Docker自定义网络/","title":"实例讲解 Docker 自定义网络"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>用实例讲解 Docker 自定义网络 | 睿虎的博客</title>
+<title>实例讲解 Docker 自定义网络 | 睿虎的博客</title>
   
 
 
@@ -204,7 +204,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2025/03/31/202503310000%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -217,12 +217,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="用实例讲解 Docker 自定义网络 | 睿虎的博客">
+      <meta itemprop="name" content="实例讲解 Docker 自定义网络 | 睿虎的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          用实例讲解 Docker 自定义网络
+          实例讲解 Docker 自定义网络
         </h1>
 
         <div class="post-meta-container">
@@ -258,8 +258,8 @@
     </span>
     <span class="post-meta-item-text">Waline: </span>
   
-    <a title="waline" href="/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/2025/03/31/202503310000%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2025/03/31/202503310000%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -490,7 +490,7 @@
 
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"smart-tiger-blog-comment-waline-7301.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"smart-tiger-blog-comment-waline-7301.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/2025/03/31/202503310000%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/"}</script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
