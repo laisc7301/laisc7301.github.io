@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"laisc7301.github.io","root":"/blog/","images":"/blog/images","scheme":"Pisces","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqusjs","storage":true,"lazyload":false,"nav":{"disqusjs":{"text":"Disqus","order":1},"waline":{"text":"Waline","order":2}},"activeClass":"disqusjs"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="Docker 自定义网络实战这里我们通过一个实际案例，演示如何创建 Docker 自定义网络，让多个容器在同一网络中通信。 1. 需求分析我们要搭建一个包含 Nginx（Web 服务器） 和 Alpine（测试工具） 的小型网络环境，实现：  让 nginx 作为 Web 服务器运行。 让 alpine 作为测试容器，能够访问 nginx。 使用自定义网络，让容器通过名称而不是 IP 地址通信。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用实例讲解 Docker 自定义网络">
+<meta property="og:url" content="https://laisc7301.github.io/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:site_name" content="睿虎的博客">
+<meta property="og:description" content="Docker 自定义网络实战这里我们通过一个实际案例，演示如何创建 Docker 自定义网络，让多个容器在同一网络中通信。 1. 需求分析我们要搭建一个包含 Nginx（Web 服务器） 和 Alpine（测试工具） 的小型网络环境，实现：  让 nginx 作为 Web 服务器运行。 让 alpine 作为测试容器，能够访问 nginx。 使用自定义网络，让容器通过名称而不是 IP 地址通信。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-31T01:50:14.000Z">
+<meta property="article:modified_time" content="2025-03-31T01:50:14.000Z">
+<meta property="article:author" content="睿虎">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="Docker">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://laisc7301.github.io/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://laisc7301.github.io/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/","path":"2025/03/31/202503310000用实例讲解Docker自定义网络/","title":"用实例讲解 Docker 自定义网络"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>用实例讲解 Docker 自定义网络 | 睿虎的博客</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="smart-tiger-blog-comment-waline-7301.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">睿虎的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description"> </p>
+	  
+	  
+	  <script>
+		    var script = document.createElement('script');
+		    script.type = 'text/javascript';
+			
+			var timestamp = Date.parse(new Date());
+		
+		    // 传参一个回调函数名给后端，方便后端返回时执行这个在前端定义的回调函数
+		    script.src = 'https://laisc7301.github.io/otherfiles/subtitle.js?t='+timestamp;
+		    document.head.appendChild(script);
+		
+	  </script>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a></li><li class="menu-item menu-item-归档"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-分类"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-标签"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-关于"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-我的blogger"><a href="https://laisc7301.blogspot.com/" rel="section" target="_blank">我的Blogger</a></li><li class="menu-item menu-item-睿火正则工具"><a href="https://laisc7301.github.io/blog/wisefire-regular-tool/" rel="section">睿火正则工具</a></li><li class="menu-item menu-item-火狐音量增益工具"><a href="https://laisc7301.github.io/blog/Firefox-Ruihuo-VolumeBooster/" rel="section">火狐音量增益工具</a></li><li class="menu-item menu-item-油猴脚本：记住google搜索语言"><a href="https://laisc7301.github.io/blog/Tampermonkey-remember-Google-search-language-settings/" rel="section">油猴脚本：记住Google搜索语言</a></li><li class="menu-item menu-item-睿火打字练习"><a href="https://laisc7301.github.io/wisefire-typing-practice" rel="section">睿火打字练习</a></li><li class="menu-item menu-item-睿火文件对比工具"><a href="https://laisc7301.github.io/blog/ruihuo-file-comparison/" rel="section">睿火文件对比工具</a></li><li class="menu-item menu-item-随机字符串生成器"><a href="https://laisc7301.github.io/random-string-generator/" rel="section">随机字符串生成器</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C%E5%AE%9E%E6%88%98"><span class="nav-number">1.</span> <span class="nav-text">Docker 自定义网络实战</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="nav-number"></span> <span class="nav-text">1. 需求分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C"><span class="nav-number"></span> <span class="nav-text">2. 创建自定义网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%BF%90%E8%A1%8C-Nginx-%E5%AE%B9%E5%99%A8"><span class="nav-number"></span> <span class="nav-text">3. 运行 Nginx 容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%BF%90%E8%A1%8C-Alpine-%E6%B5%8B%E8%AF%95%E5%AE%B9%E5%99%A8"><span class="nav-number"></span> <span class="nav-text">4. 运行 Alpine 测试容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%AE%B9%E5%99%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1"><span class="nav-number"></span> <span class="nav-text">5. 容器之间的通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E9%80%9A%E8%BF%87-Ping-%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C"><span class="nav-number"></span> <span class="nav-text">6. 通过 Ping 测试网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E8%AF%A6%E6%83%85"><span class="nav-number"></span> <span class="nav-text">7. 查看网络详情</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%96%AD%E5%BC%80%E5%92%8C%E5%88%A0%E9%99%A4%E7%BD%91%E7%BB%9C"><span class="nav-number"></span> <span class="nav-text">8. 断开和删除网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">睿虎</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">89</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="睿虎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="用实例讲解 Docker 自定义网络 | 睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用实例讲解 Docker 自定义网络
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-03-31 09:50:14" itemprop="dateCreated datePublished" datetime="2025-03-31T09:50:14+08:00">2025-03-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="Docker-自定义网络实战"><a href="#Docker-自定义网络实战" class="headerlink" title="Docker 自定义网络实战"></a><strong>Docker 自定义网络实战</strong></h3><p>这里我们通过一个实际案例，演示如何创建 Docker <strong>自定义网络</strong>，让多个容器在同一网络中通信。</p>
+<h2 id="1-需求分析"><a href="#1-需求分析" class="headerlink" title="1. 需求分析"></a><strong>1. 需求分析</strong></h2><p>我们要搭建一个包含 <strong>Nginx（Web 服务器）</strong> 和 <strong>Alpine（测试工具）</strong> 的小型网络环境，实现：</p>
+<ol>
+<li>让 <code>nginx</code> 作为 Web 服务器运行。</li>
+<li>让 <code>alpine</code> 作为测试容器，能够访问 <code>nginx</code>。</li>
+<li>使用<strong>自定义网络</strong>，让容器通过<strong>名称</strong>而不是 IP 地址通信。</li>
+</ol>
+<h2 id="2-创建自定义网络"><a href="#2-创建自定义网络" class="headerlink" title="2. 创建自定义网络"></a><strong>2. 创建自定义网络</strong></h2><p>首先，创建一个 <strong>自定义桥接网络</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create my_bridge_network</span><br></pre></td></tr></table></figure>
+
+<p>🔹 <strong><code>docker network ls</code></strong> 查看网络：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>你会看到类似输出：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NETWORK ID     NAME                DRIVER    SCOPE</span><br><span class="line">0ef2a1336002   bridge              bridge    <span class="built_in">local</span></span><br><span class="line">b85d4bee2b71   host                host      <span class="built_in">local</span></span><br><span class="line">1f0b89155059   my_bridge_network   bridge    <span class="built_in">local</span></span><br><span class="line">8632a9a59d62   none                null      <span class="built_in">local</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>✅ 说明 <code>my_bridge_network</code> 已成功创建。</p>
+<h2 id="3-运行-Nginx-容器"><a href="#3-运行-Nginx-容器" class="headerlink" title="3. 运行 Nginx 容器"></a>3. 运行 Nginx 容器</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name my_nginx --network my_bridge_network nginx</span><br></pre></td></tr></table></figure>
+
+<p>🔹 解释：</p>
+<ul>
+<li><code>-d</code>：后台运行。</li>
+<li><code>--name my_nginx</code>：容器名称 <code>my_nginx</code>。</li>
+<li><code>--network my_bridge_network</code>：加入 <code>my_bridge_network</code> 网络。</li>
+<li><code>nginx</code>：使用 Nginx 官方镜像。</li>
+</ul>
+<h2 id="4-运行-Alpine-测试容器"><a href="#4-运行-Alpine-测试容器" class="headerlink" title="4. 运行 Alpine 测试容器"></a>4. 运行 Alpine 测试容器</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --name my_alpine --network my_bridge_network alpine sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p>🔹 解释：</p>
+<ul>
+<li><code>-it</code>：交互模式，进入 <code>sh</code> 终端。</li>
+<li><code>--name my_alpine</code>：容器名称 <code>my_alpine</code>。</li>
+<li><code>--network my_bridge_network</code>：加入 <code>my_bridge_network</code> 网络。</li>
+<li><code>alpine sh</code>：使用 <code>alpine</code> 镜像并进入 <code>sh</code> 终端。</li>
+</ul>
+<h2 id="5-容器之间的通信"><a href="#5-容器之间的通信" class="headerlink" title="5. 容器之间的通信"></a>5. 容器之间的通信</h2><p>在 <code>my_alpine</code> 容器的终端中，执行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- http://my_nginx</span><br></pre></td></tr></table></figure>
+
+<p>如果成功，你会看到 Nginx 默认的 HTML 页面内容。</p>
+<h2 id="6-通过-Ping-测试网络"><a href="#6-通过-Ping-测试网络" class="headerlink" title="6. 通过 Ping 测试网络"></a>6. 通过 Ping 测试网络</h2><p>仍然在 <code>my_alpine</code> 容器的终端中：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping my_nginx</span><br></pre></td></tr></table></figure>
+
+
+
+<p>你应该能看到类似：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PING my_nginx (172.18.0.2): 56 data bytes</span><br><span class="line">64 bytes from 172.18.0.2: <span class="built_in">seq</span>=0 ttl=64 time=0.495 ms</span><br><span class="line">64 bytes from 172.18.0.2: <span class="built_in">seq</span>=1 ttl=64 time=0.084 ms</span><br><span class="line">64 bytes from 172.18.0.2: <span class="built_in">seq</span>=2 ttl=64 time=0.114 ms</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>✅ 说明 <code>my_alpine</code> 成功解析 <code>my_nginx</code> 并与其通信！</p>
+<h2 id="7-查看网络详情"><a href="#7-查看网络详情" class="headerlink" title="7. 查看网络详情"></a>7. 查看网络详情</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network inspect my_bridge_network</span><br></pre></td></tr></table></figure>
+
+<p>你会看到 <code>Containers</code> 列表，显示 <code>my_nginx</code> 和 <code>my_alpine</code> 都已连接到该网络。</p>
+<h2 id="8-断开和删除网络"><a href="#8-断开和删除网络" class="headerlink" title="8. 断开和删除网络"></a>8. 断开和删除网络</h2><p><strong>断开某个容器的网络</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network disconnect my_bridge_network my_alpine</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除网络（必须先停止所有容器）</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker stop my_nginx my_alpine</span><br><span class="line">docker <span class="built_in">rm</span> my_nginx my_alpine</span><br><span class="line">docker network <span class="built_in">rm</span> my_bridge_network</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>创建自定义网络</td>
+<td><code>docker network create my_bridge_network</code></td>
+</tr>
+<tr>
+<td>运行 Nginx 容器</td>
+<td><code>docker run -d --name my_nginx --network my_bridge_network nginx</code></td>
+</tr>
+<tr>
+<td>运行 Alpine 测试容器</td>
+<td><code>docker run -it --name my_alpine --network my_bridge_network alpine sh</code></td>
+</tr>
+<tr>
+<td>在 Alpine 容器中测试</td>
+<td><code>wget -qO- http://my_nginx</code></td>
+</tr>
+<tr>
+<td>Ping 其他容器</td>
+<td><code>ping my_nginx</code></td>
+</tr>
+<tr>
+<td>查看网络详情</td>
+<td><code>docker network inspect my_bridge_network</code></td>
+</tr>
+<tr>
+<td>断开容器与网络</td>
+<td><code>docker network disconnect my_bridge_network my_alpine</code></td>
+</tr>
+<tr>
+<td>删除网络</td>
+<td><code>docker network rm my_bridge_network</code></td>
+</tr>
+</tbody></table>
+<p>这样，我们就完成了一个 Docker <strong>自定义网络</strong> 的完整实战！🚀</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/blog/tags/Docker/" rel="tag"># Docker</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2025/03/28/202503280000Docker%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" rel="prev" title="Docker入门教程">
+                  <i class="fa fa-angle-left"></i> Docker入门教程
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-disqusjs">Disqus</a></li>
+            <li class="tab"><a href="#comment-waline">Waline</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane disqusjs" id="comment-disqusjs">
+              
+  <div class="comments disqusjs-container">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+            </div>
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">睿虎</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/sidebar.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"smart-tiger-blog-comment-waline-7301.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/disqusjs/3.0.2/styles/disqusjs.css" integrity="sha256-71XarXwNr1Td27HmZI9zjY+rMzRdush6/glo6VFXp7o=" crossorigin="anonymous">
+
+<script class="next-config" data-name="disqusjs" type="application/json">{"enable":true,"api":"https://disqus.skk.moe/disqus/","apikey":"ZFtddSBllKuOBDGNan39gWrxOw6V5eYB13mMpJc2nyYehZf51HPFyWQKAldGF7Oy","shortname":"smart-tiger-blog-7301","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/disqusjs/3.0.2/disqusjs.es2015.umd.min.js","integrity":"sha256-okP99ZQKVpIy7+NogAMpGlIQzJa9XKXhIJcFgdju5bU="}}</script>
+<script src="/blog/js/third-party/comments/disqusjs.js"></script>
+
+</body>
+</html>

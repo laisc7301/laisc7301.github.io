@@ -3407,6 +3407,129 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>用实例讲解 Docker 自定义网络</title>
+    <url>/blog/2025/03/31/202503310000%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3Docker%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h3 id="Docker-自定义网络实战"><a href="#Docker-自定义网络实战" class="headerlink" title="Docker 自定义网络实战"></a><strong>Docker 自定义网络实战</strong></h3><p>这里我们通过一个实际案例，演示如何创建 Docker <strong>自定义网络</strong>，让多个容器在同一网络中通信。</p>
+<h2 id="1-需求分析"><a href="#1-需求分析" class="headerlink" title="1. 需求分析"></a><strong>1. 需求分析</strong></h2><p>我们要搭建一个包含 <strong>Nginx（Web 服务器）</strong> 和 <strong>Alpine（测试工具）</strong> 的小型网络环境，实现：</p>
+<ol>
+<li>让 <code>nginx</code> 作为 Web 服务器运行。</li>
+<li>让 <code>alpine</code> 作为测试容器，能够访问 <code>nginx</code>。</li>
+<li>使用<strong>自定义网络</strong>，让容器通过<strong>名称</strong>而不是 IP 地址通信。</li>
+</ol>
+<h2 id="2-创建自定义网络"><a href="#2-创建自定义网络" class="headerlink" title="2. 创建自定义网络"></a><strong>2. 创建自定义网络</strong></h2><p>首先，创建一个 <strong>自定义桥接网络</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker network create my_bridge_network</span><br></pre></td></tr></table></figure>
+
+<p>🔹 <strong><code>docker network ls</code></strong> 查看网络：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker network <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>你会看到类似输出：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">NETWORK ID     NAME                DRIVER    SCOPE</span><br><span class="line">0ef2a1336002   bridge              bridge    <span class="built_in">local</span></span><br><span class="line">b85d4bee2b71   host                host      <span class="built_in">local</span></span><br><span class="line">1f0b89155059   my_bridge_network   bridge    <span class="built_in">local</span></span><br><span class="line">8632a9a59d62   none                null      <span class="built_in">local</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>✅ 说明 <code>my_bridge_network</code> 已成功创建。</p>
+<h2 id="3-运行-Nginx-容器"><a href="#3-运行-Nginx-容器" class="headerlink" title="3. 运行 Nginx 容器"></a>3. 运行 Nginx 容器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -d --name my_nginx --network my_bridge_network nginx</span><br></pre></td></tr></table></figure>
+
+<p>🔹 解释：</p>
+<ul>
+<li><code>-d</code>：后台运行。</li>
+<li><code>--name my_nginx</code>：容器名称 <code>my_nginx</code>。</li>
+<li><code>--network my_bridge_network</code>：加入 <code>my_bridge_network</code> 网络。</li>
+<li><code>nginx</code>：使用 Nginx 官方镜像。</li>
+</ul>
+<h2 id="4-运行-Alpine-测试容器"><a href="#4-运行-Alpine-测试容器" class="headerlink" title="4. 运行 Alpine 测试容器"></a>4. 运行 Alpine 测试容器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -it --name my_alpine --network my_bridge_network alpine sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p>🔹 解释：</p>
+<ul>
+<li><code>-it</code>：交互模式，进入 <code>sh</code> 终端。</li>
+<li><code>--name my_alpine</code>：容器名称 <code>my_alpine</code>。</li>
+<li><code>--network my_bridge_network</code>：加入 <code>my_bridge_network</code> 网络。</li>
+<li><code>alpine sh</code>：使用 <code>alpine</code> 镜像并进入 <code>sh</code> 终端。</li>
+</ul>
+<h2 id="5-容器之间的通信"><a href="#5-容器之间的通信" class="headerlink" title="5. 容器之间的通信"></a>5. 容器之间的通信</h2><p>在 <code>my_alpine</code> 容器的终端中，执行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">wget -qO- http://my_nginx</span><br></pre></td></tr></table></figure>
+
+<p>如果成功，你会看到 Nginx 默认的 HTML 页面内容。</p>
+<h2 id="6-通过-Ping-测试网络"><a href="#6-通过-Ping-测试网络" class="headerlink" title="6. 通过 Ping 测试网络"></a>6. 通过 Ping 测试网络</h2><p>仍然在 <code>my_alpine</code> 容器的终端中：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ping my_nginx</span><br></pre></td></tr></table></figure>
+
+
+
+<p>你应该能看到类似：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">PING my_nginx (172.18.0.2): 56 data bytes</span><br><span class="line">64 bytes from 172.18.0.2: <span class="built_in">seq</span>=0 ttl=64 time=0.495 ms</span><br><span class="line">64 bytes from 172.18.0.2: <span class="built_in">seq</span>=1 ttl=64 time=0.084 ms</span><br><span class="line">64 bytes from 172.18.0.2: <span class="built_in">seq</span>=2 ttl=64 time=0.114 ms</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>✅ 说明 <code>my_alpine</code> 成功解析 <code>my_nginx</code> 并与其通信！</p>
+<h2 id="7-查看网络详情"><a href="#7-查看网络详情" class="headerlink" title="7. 查看网络详情"></a>7. 查看网络详情</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker network inspect my_bridge_network</span><br></pre></td></tr></table></figure>
+
+<p>你会看到 <code>Containers</code> 列表，显示 <code>my_nginx</code> 和 <code>my_alpine</code> 都已连接到该网络。</p>
+<h2 id="8-断开和删除网络"><a href="#8-断开和删除网络" class="headerlink" title="8. 断开和删除网络"></a>8. 断开和删除网络</h2><p><strong>断开某个容器的网络</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker network disconnect my_bridge_network my_alpine</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除网络（必须先停止所有容器）</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker stop my_nginx my_alpine</span><br><span class="line">docker <span class="built_in">rm</span> my_nginx my_alpine</span><br><span class="line">docker network <span class="built_in">rm</span> my_bridge_network</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>创建自定义网络</td>
+<td><code>docker network create my_bridge_network</code></td>
+</tr>
+<tr>
+<td>运行 Nginx 容器</td>
+<td><code>docker run -d --name my_nginx --network my_bridge_network nginx</code></td>
+</tr>
+<tr>
+<td>运行 Alpine 测试容器</td>
+<td><code>docker run -it --name my_alpine --network my_bridge_network alpine sh</code></td>
+</tr>
+<tr>
+<td>在 Alpine 容器中测试</td>
+<td><code>wget -qO- http://my_nginx</code></td>
+</tr>
+<tr>
+<td>Ping 其他容器</td>
+<td><code>ping my_nginx</code></td>
+</tr>
+<tr>
+<td>查看网络详情</td>
+<td><code>docker network inspect my_bridge_network</code></td>
+</tr>
+<tr>
+<td>断开容器与网络</td>
+<td><code>docker network disconnect my_bridge_network my_alpine</code></td>
+</tr>
+<tr>
+<td>删除网络</td>
+<td><code>docker network rm my_bridge_network</code></td>
+</tr>
+</tbody></table>
+<p>这样，我们就完成了一个 Docker <strong>自定义网络</strong> 的完整实战！🚀</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>油猴脚本：记住Google搜索语言设置</title>
     <url>/blog/Tampermonkey-remember-Google-search-language-settings/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2023/202305300000%E8%AE%B0%E4%BD%8FGoogle%E6%90%9C%E7%B4%A2%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE.png"></p>
