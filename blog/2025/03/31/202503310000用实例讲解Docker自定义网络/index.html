@@ -279,6 +279,8 @@
 <li>让 <code>alpine</code> 作为测试容器，能够访问 <code>nginx</code>。</li>
 <li>使用<strong>自定义网络</strong>，让容器通过<strong>名称</strong>而不是 IP 地址通信。</li>
 </ol>
+<span id="more"></span>
+
 <h2 id="2-创建自定义网络"><a href="#2-创建自定义网络" class="headerlink" title="2. 创建自定义网络"></a><strong>2. 创建自定义网络</strong></h2><p>首先，创建一个 <strong>自定义桥接网络</strong>：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create my_bridge_network</span><br></pre></td></tr></table></figure>
 
