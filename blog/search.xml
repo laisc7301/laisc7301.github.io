@@ -3532,6 +3532,73 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Docker Compose 教程</title>
+    <url>/blog/2025/04/02/202504020000DockerCompose%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="Docker-Compose-教程"><a href="#Docker-Compose-教程" class="headerlink" title="Docker Compose 教程"></a><strong>Docker Compose 教程</strong></h2><p><code>docker-compose</code> 是一个用于定义和管理多个 Docker 容器的工具。它使用 <code>docker-compose.yml</code> 文件来描述服务、网络和存储卷，让你可以用一条命令启动所有容器。</p>
+<span id="more"></span>
+
+<h2 id="第一步：安装-Docker-Compose"><a href="#第一步：安装-Docker-Compose" class="headerlink" title="第一步：安装 Docker Compose"></a><strong>第一步：安装 Docker Compose</strong></h2><p><strong>1.1 Windows &#x2F; Mac</strong><br> 如果你安装了 <strong>Docker Desktop</strong>，那么 <code>docker-compose</code> 已经内置了，你可以直接使用。</p>
+<p><strong>1.2 Linux</strong><br> 在 Linux 上，你可以使用以下命令安装：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install -y docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="第二步：创建-Docker-Compose-项目"><a href="#第二步：创建-Docker-Compose-项目" class="headerlink" title="第二步：创建 Docker Compose 项目"></a><strong>第二步：创建 Docker Compose 项目</strong></h2><p>我们来创建一个包含 <strong>Nginx</strong> 和 <strong>Redis</strong> 的简单项目。</p>
+<h3 id="2-1-创建项目目录"><a href="#2-1-创建项目目录" class="headerlink" title="2.1 创建项目目录"></a><strong>2.1 创建项目目录</strong></h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> my-project &amp;&amp; <span class="built_in">cd</span> my-project</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-创建-docker-compose-yml-文件"><a href="#2-2-创建-docker-compose-yml-文件" class="headerlink" title="2.2 创建 docker-compose.yml 文件"></a><strong>2.2 创建 <code>docker-compose.yml</code> 文件</strong></h3><p>在 <code>my-project</code> 目录下，创建一个名为 <code>docker-compose.yml</code> 的文件：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span>  <span class="comment"># 指定 Docker Compose 版本</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">nginx:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx:latest</span>  <span class="comment"># 使用官方 Nginx 镜像</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8080:80&quot;</span>  <span class="comment"># 映射宿主机的 8080 端口到容器的 80 端口</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">redis</span>  <span class="comment"># 先启动 redis 再启动 nginx</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">redis:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">redis:latest</span>  <span class="comment"># 使用 Redis 官方镜像</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;6379:6379&quot;</span>  <span class="comment"># 映射 Redis 端口</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="第三步：启动服务"><a href="#第三步：启动服务" class="headerlink" title="第三步：启动服务"></a>第三步：启动服务</h2><p>在 <code>docker-compose.yml</code> 所在的目录执行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p><strong>解释：</strong></p>
+<ul>
+<li><p><code>-d</code> 让容器在后台运行</p>
+</li>
+<li><p>这条命令会自动拉取 <code>nginx</code> 和 <code>redis</code> 镜像，并启动它们</p>
+</li>
+</ul>
+<h2 id="第四步：管理容器"><a href="#第四步：管理容器" class="headerlink" title="第四步：管理容器"></a><strong>第四步：管理容器</strong></h2><h3 id="4-1-查看运行中的容器"><a href="#4-1-查看运行中的容器" class="headerlink" title="4.1 查看运行中的容器"></a><strong>4.1 查看运行中的容器</strong></h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose ps</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-查看日志"><a href="#4-2-查看日志" class="headerlink" title="4.2 查看日志"></a>4.2 查看日志</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose logs</span><br></pre></td></tr></table></figure>
+
+<p>如果想查看某个服务的日志，比如 <code>nginx</code>：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose logs nginx</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-进入某个容器"><a href="#4-3-进入某个容器" class="headerlink" title="4.3 进入某个容器"></a><strong>4.3 进入某个容器</strong></h3><p>如果你想进入 <code>nginx</code> 容器：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose <span class="built_in">exec</span> nginx /bin/sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-停止和删除所有容器"><a href="#4-4-停止和删除所有容器" class="headerlink" title="4.4 停止和删除所有容器"></a>4.4 停止和删除所有容器</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose down</span><br></pre></td></tr></table></figure>
+
+<p>如果还想删除所有数据卷：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose down -v</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="第五步：使用数据库"><a href="#第五步：使用数据库" class="headerlink" title="第五步：使用数据库"></a><strong>第五步：使用数据库</strong></h2><p>假设我们要添加一个 <strong>MySQL</strong> 服务，修改 <code>docker-compose.yml</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">nginx:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx:latest</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8080:80&quot;</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">redis</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mysql</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">redis:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">redis:latest</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;6379:6379&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">mysql:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:5.7</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">root</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">testdb</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">user</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">password</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;3306:3306&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后执行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>现在 <code>MySQL</code> 也会作为一个服务启动。</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>火狐扩展：音量增益工具</title>
     <url>/blog/Firefox-Ruihuo-VolumeBooster/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/blog/Firefox-Ruihuo-VolumeBooster/%E9%9F%B3%E9%87%8F%E5%A2%9E%E7%9B%8A%E5%B7%A5%E5%85%B7v2.1.png"></p>
