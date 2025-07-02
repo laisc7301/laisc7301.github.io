@@ -3620,6 +3620,92 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Java中的Lambda表达式</title>
+    <url>/blog/2025/06/27/202506270000Java%E4%B8%AD%E7%9A%84Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="1-基本使用"><a href="#1-基本使用" class="headerlink" title="1.基本使用"></a>1.基本使用</h1><p>代码：</p>
+<p>Main.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">MyFunction</span> <span class="variable">f</span> <span class="operator">=</span> s -&gt; System.out.println(<span class="string">&quot;输入的是：&quot;</span> + s);</span><br><span class="line">        f.doSomething(<span class="string">&quot;你好&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">MyFunction2</span> <span class="variable">f2</span> <span class="operator">=</span> v1 -&gt; v1+<span class="number">1</span>;</span><br><span class="line">        System.out.println(f2.doSomething(<span class="number">9</span>));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<span id="more"></span>
+
+
+<p>MyFunction.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@FunctionalInterface</span> <span class="comment">//非必须</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">MyFunction</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">doSomething</span><span class="params">(String str)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>MyFunction2.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">MyFunction2</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">doSomething</span><span class="params">(<span class="type">int</span> v)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>运行后终端显示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入的是：你好</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="2-结合常见函数式接口使用"><a href="#2-结合常见函数式接口使用" class="headerlink" title="2.结合常见函数式接口使用"></a>2.结合常见函数式接口使用</h1><p>Java 提供了许多内置的函数式接口，如：</p>
+<table>
+<thead>
+<tr>
+<th>接口名</th>
+<th>参数类型</th>
+<th>返回值类型</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Consumer&lt;T&gt;</code></td>
+<td>T</td>
+<td>void</td>
+<td>消费一个值</td>
+</tr>
+<tr>
+<td><code>Supplier&lt;T&gt;</code></td>
+<td>无</td>
+<td>T</td>
+<td>提供一个值</td>
+</tr>
+<tr>
+<td><code>Function&lt;T,R&gt;</code></td>
+<td>T</td>
+<td>R</td>
+<td>将T转换成R</td>
+</tr>
+<tr>
+<td><code>Predicate&lt;T&gt;</code></td>
+<td>T</td>
+<td>boolean</td>
+<td>判断条件是否成立</td>
+</tr>
+</tbody></table>
+<p>修改之前的代码：<br>Main.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.function.Consumer;</span><br><span class="line"><span class="keyword">import</span> java.util.function.Predicate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">MyFunction</span> <span class="variable">f</span> <span class="operator">=</span> s -&gt; System.out.println(<span class="string">&quot;输入的是：&quot;</span> + s);</span><br><span class="line">        f.doSomething(<span class="string">&quot;你好&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">MyFunction2</span> <span class="variable">f2</span> <span class="operator">=</span> v1 -&gt; v1+<span class="number">1</span>;</span><br><span class="line">        System.out.println(f2.doSomething(<span class="number">9</span>));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// Consumer 示例</span></span><br><span class="line">        Consumer&lt;String&gt; c = s -&gt; System.out.println(<span class="string">&quot;Hello &quot;</span> + s);</span><br><span class="line">        c.accept(<span class="string">&quot;世界&quot;</span>);  <span class="comment">// 输出：Hello 世界</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// Predicate 示例</span></span><br><span class="line">        Predicate&lt;String&gt; p = s -&gt; s.length() &gt; <span class="number">3</span>;</span><br><span class="line">        System.out.println(p.test(<span class="string">&quot;abc&quot;</span>));  <span class="comment">// 输出：false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行后终端显示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入的是：你好</span><br><span class="line">10</span><br><span class="line">Hello 世界</span><br><span class="line">false</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>火狐扩展：音量增益工具</title>
     <url>/blog/Firefox-Ruihuo-VolumeBooster/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2025/202505060000%E9%9F%B3%E9%87%8F%E5%A2%9E%E7%9B%8A%E5%B7%A5%E5%85%B7v2.1.png"></p>
