@@ -3706,6 +3706,117 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Java中的Stream</title>
+    <url>/blog/2025/07/03/202507030000Java%E4%B8%AD%E7%9A%84Stream/</url>
+    <content><![CDATA[<p>Java 中的 <code>Stream</code> 是 Java 8 引入的一种处理集合（如 List、Set）数据的强大工具，它允许你以<strong>声明式</strong>（声明“做什么”而不是“怎么做”）的方式处理数据。<code>Stream</code> 不是数据结构，而是一种对数据源（集合、数组等）进行操作的抽象。</p>
+<h2 id="1-Stream-的核心特点"><a href="#1-Stream-的核心特点" class="headerlink" title="1. Stream 的核心特点"></a>1. Stream 的核心特点</h2><ul>
+<li><strong>不是数据结构</strong>：它不会存储数据。</li>
+<li><strong>一次性使用</strong>：Stream 一旦被消费就不能再使用。</li>
+<li><strong>惰性执行</strong>：只有调用终止操作（如 <code>collect()</code>、<code>forEach()</code>）时才会执行。</li>
+<li><strong>链式操作</strong>：支持链式调用多个操作（filter、map、sorted…）。</li>
+<li><strong>支持并行处理</strong>：通过 <code>parallelStream()</code> 轻松实现并行处理。</li>
+</ul>
+<span id="more"></span>
+
+
+<h2 id="2-Stream-的使用流程"><a href="#2-Stream-的使用流程" class="headerlink" title="2. Stream 的使用流程"></a>2. Stream 的使用流程</h2><p>通常包含三步：</p>
+<ol>
+<li><strong>创建流</strong>（Create a Stream）</li>
+<li><strong>中间操作</strong>（Intermediate Operations）</li>
+<li><strong>终止操作</strong>（Terminal Operation）</li>
+</ol>
+<h2 id="3-举个例子"><a href="#3-举个例子" class="headerlink" title="3. 举个例子"></a>3. 举个例子</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StreamExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;String&gt; names = Arrays.asList(<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Charlie&quot;</span>, <span class="string">&quot;David&quot;</span>, <span class="string">&quot;Amanda&quot;</span>);</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; filteredNames = names.stream()                <span class="comment">// 创建流</span></span><br><span class="line">            .filter(name -&gt; name.startsWith(<span class="string">&quot;A&quot;</span>))                 <span class="comment">// 中间操作：筛选以A开头的</span></span><br><span class="line">            .map(String::toUpperCase)                             <span class="comment">// 中间操作：转为大写</span></span><br><span class="line">            .sorted()                                             <span class="comment">// 中间操作：排序</span></span><br><span class="line">            .collect(Collectors.toList());                        <span class="comment">// 终止操作：收集为List</span></span><br><span class="line"></span><br><span class="line">        System.out.println(filteredNames); <span class="comment">// 输出: [ALICE, AMANDA]</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-常见的中间操作（返回-Stream）"><a href="#4-常见的中间操作（返回-Stream）" class="headerlink" title="4. 常见的中间操作（返回 Stream）"></a>4. 常见的中间操作（返回 Stream）</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>filter()</code></td>
+<td>过滤元素</td>
+</tr>
+<tr>
+<td><code>map()</code></td>
+<td>映射&#x2F;转换元素</td>
+</tr>
+<tr>
+<td><code>flatMap()</code></td>
+<td>扁平化处理嵌套结构</td>
+</tr>
+<tr>
+<td><code>sorted()</code></td>
+<td>排序</td>
+</tr>
+<tr>
+<td><code>distinct()</code></td>
+<td>去重</td>
+</tr>
+<tr>
+<td><code>limit(n)</code></td>
+<td>限制前 n 个元素</td>
+</tr>
+<tr>
+<td><code>skip(n)</code></td>
+<td>跳过前 n 个元素</td>
+</tr>
+<tr>
+<td><code>peek()</code></td>
+<td>查看元素（通常用于调试）</td>
+</tr>
+</tbody></table>
+<h2 id="5-常见的终止操作（触发流执行）"><a href="#5-常见的终止操作（触发流执行）" class="headerlink" title="5. 常见的终止操作（触发流执行）"></a>5. 常见的终止操作（触发流执行）</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>forEach()</code></td>
+<td>遍历每个元素</td>
+</tr>
+<tr>
+<td><code>collect()</code></td>
+<td>收集结果到 List、Set、Map 等集合</td>
+</tr>
+<tr>
+<td><code>count()</code></td>
+<td>统计数量</td>
+</tr>
+<tr>
+<td><code>anyMatch()</code>&#x2F;<code>allMatch()</code></td>
+<td>是否匹配某些条件</td>
+</tr>
+<tr>
+<td><code>findFirst()</code>&#x2F;<code>findAny()</code></td>
+<td>找到第一个&#x2F;任意一个元素</td>
+</tr>
+<tr>
+<td><code>reduce()</code></td>
+<td>归约（如求和、求乘积等）</td>
+</tr>
+</tbody></table>
+<h2 id="6-Stream-与-Optional、Lambda-的关系"><a href="#6-Stream-与-Optional、Lambda-的关系" class="headerlink" title="6. Stream 与 Optional、Lambda 的关系"></a>6. Stream 与 Optional、Lambda 的关系</h2><ul>
+<li><code>Stream</code> 依赖于 <strong>Lambda 表达式</strong>（如 <code>n -&gt; n.startsWith(&quot;A&quot;)</code>）来实现函数式处理。</li>
+<li>和 <code>Optional</code> 类似，<code>Stream</code> 也体现了函数式编程风格。</li>
+<li><code>Optional</code> 也有类似 <code>map</code>、<code>filter</code>、<code>flatMap</code> 的方法。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>火狐扩展：音量增益工具</title>
     <url>/blog/Firefox-Ruihuo-VolumeBooster/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2025/202505060000%E9%9F%B3%E9%87%8F%E5%A2%9E%E7%9B%8A%E5%B7%A5%E5%85%B7v2.1.png"></p>

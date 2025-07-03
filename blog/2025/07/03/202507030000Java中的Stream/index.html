@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"laisc7301.github.io","root":"/blog/","images":"/blog/images","scheme":"Pisces","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqusjs","storage":true,"lazyload":false,"nav":{"disqusjs":{"text":"Disqus","order":1},"waline":{"text":"Waline","order":2}},"activeClass":"disqusjs"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="Java 中的 Stream 是 Java 8 引入的一种处理集合（如 List、Set）数据的强大工具，它允许你以声明式（声明“做什么”而不是“怎么做”）的方式处理数据。Stream 不是数据结构，而是一种对数据源（集合、数组等）进行操作的抽象。 1. Stream 的核心特点 不是数据结构：它不会存储数据。 一次性使用：Stream 一旦被消费就不能再使用。 惰性执行：只有调用终止操作（如 c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中的Stream">
+<meta property="og:url" content="https://laisc7301.github.io/blog/2025/07/03/202507030000Java%E4%B8%AD%E7%9A%84Stream/index.html">
+<meta property="og:site_name" content="睿虎的博客">
+<meta property="og:description" content="Java 中的 Stream 是 Java 8 引入的一种处理集合（如 List、Set）数据的强大工具，它允许你以声明式（声明“做什么”而不是“怎么做”）的方式处理数据。Stream 不是数据结构，而是一种对数据源（集合、数组等）进行操作的抽象。 1. Stream 的核心特点 不是数据结构：它不会存储数据。 一次性使用：Stream 一旦被消费就不能再使用。 惰性执行：只有调用终止操作（如 c">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-03T03:55:07.000Z">
+<meta property="article:modified_time" content="2025-07-03T03:55:07.000Z">
+<meta property="article:author" content="睿虎">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://laisc7301.github.io/blog/2025/07/03/202507030000Java%E4%B8%AD%E7%9A%84Stream/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://laisc7301.github.io/blog/2025/07/03/202507030000Java%E4%B8%AD%E7%9A%84Stream/","path":"2025/07/03/202507030000Java中的Stream/","title":"Java中的Stream"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Java中的Stream | 睿虎的博客</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="smart-tiger-blog-comment-waline-7301.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">睿虎的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description"> </p>
+	  
+	  
+	  <script>
+		    var script = document.createElement('script');
+		    script.type = 'text/javascript';
+			
+			var timestamp = Date.parse(new Date());
+		
+		    // 传参一个回调函数名给后端，方便后端返回时执行这个在前端定义的回调函数
+		    script.src = 'https://laisc7301.github.io/otherfiles/subtitle.js?t='+timestamp;
+		    document.head.appendChild(script);
+		
+	  </script>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a></li><li class="menu-item menu-item-归档"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-分类"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-标签"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-关于"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-我的blogger"><a href="https://laisc7301.blogspot.com/" rel="section" target="_blank">我的Blogger</a></li><li class="menu-item menu-item-睿火正则工具"><a href="https://laisc7301.github.io/blog/wisefire-regular-tool/" rel="section">睿火正则工具</a></li><li class="menu-item menu-item-keyaction"><a href="https://laisc7301.github.io/blog/KeyAction/" rel="section">KeyAction</a></li><li class="menu-item menu-item-火狐音量增益工具"><a href="https://laisc7301.github.io/blog/Firefox-Ruihuo-VolumeBooster/" rel="section">火狐音量增益工具</a></li><li class="menu-item menu-item-油猴脚本：记住google搜索语言"><a href="https://laisc7301.github.io/blog/Tampermonkey-remember-Google-search-language-settings/" rel="section">油猴脚本：记住Google搜索语言</a></li><li class="menu-item menu-item-睿火打字练习"><a href="https://laisc7301.github.io/wisefire-typing-practice" rel="section">睿火打字练习</a></li><li class="menu-item menu-item-睿火文件对比工具"><a href="https://laisc7301.github.io/blog/ruihuo-file-comparison/" rel="section">睿火文件对比工具</a></li><li class="menu-item menu-item-随机字符串生成器"><a href="https://laisc7301.github.io/random-string-generator/" rel="section">随机字符串生成器</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Stream-%E7%9A%84%E6%A0%B8%E5%BF%83%E7%89%B9%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">1. Stream 的核心特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Stream-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">2. Stream 的使用流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90"><span class="nav-number">3.</span> <span class="nav-text">3. 举个例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%AD%E9%97%B4%E6%93%8D%E4%BD%9C%EF%BC%88%E8%BF%94%E5%9B%9E-Stream%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">4. 常见的中间操作（返回 Stream）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BB%88%E6%AD%A2%E6%93%8D%E4%BD%9C%EF%BC%88%E8%A7%A6%E5%8F%91%E6%B5%81%E6%89%A7%E8%A1%8C%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">5. 常见的终止操作（触发流执行）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Stream-%E4%B8%8E-Optional%E3%80%81Lambda-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">6.</span> <span class="nav-text">6. Stream 与 Optional、Lambda 的关系</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">睿虎</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">92</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2025/07/03/202507030000Java%E4%B8%AD%E7%9A%84Stream/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="睿虎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Java中的Stream | 睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java中的Stream
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-07-03 11:55:07" itemprop="dateCreated datePublished" datetime="2025-07-03T11:55:07+08:00">2025-07-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/blog/2025/07/03/202507030000Java%E4%B8%AD%E7%9A%84Stream/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2025/07/03/202507030000Java%E4%B8%AD%E7%9A%84Stream/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Java 中的 <code>Stream</code> 是 Java 8 引入的一种处理集合（如 List、Set）数据的强大工具，它允许你以<strong>声明式</strong>（声明“做什么”而不是“怎么做”）的方式处理数据。<code>Stream</code> 不是数据结构，而是一种对数据源（集合、数组等）进行操作的抽象。</p>
+<h2 id="1-Stream-的核心特点"><a href="#1-Stream-的核心特点" class="headerlink" title="1. Stream 的核心特点"></a>1. Stream 的核心特点</h2><ul>
+<li><strong>不是数据结构</strong>：它不会存储数据。</li>
+<li><strong>一次性使用</strong>：Stream 一旦被消费就不能再使用。</li>
+<li><strong>惰性执行</strong>：只有调用终止操作（如 <code>collect()</code>、<code>forEach()</code>）时才会执行。</li>
+<li><strong>链式操作</strong>：支持链式调用多个操作（filter、map、sorted…）。</li>
+<li><strong>支持并行处理</strong>：通过 <code>parallelStream()</code> 轻松实现并行处理。</li>
+</ul>
+<span id="more"></span>
+
+
+<h2 id="2-Stream-的使用流程"><a href="#2-Stream-的使用流程" class="headerlink" title="2. Stream 的使用流程"></a>2. Stream 的使用流程</h2><p>通常包含三步：</p>
+<ol>
+<li><strong>创建流</strong>（Create a Stream）</li>
+<li><strong>中间操作</strong>（Intermediate Operations）</li>
+<li><strong>终止操作</strong>（Terminal Operation）</li>
+</ol>
+<h2 id="3-举个例子"><a href="#3-举个例子" class="headerlink" title="3. 举个例子"></a>3. 举个例子</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StreamExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;String&gt; names = Arrays.asList(<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Charlie&quot;</span>, <span class="string">&quot;David&quot;</span>, <span class="string">&quot;Amanda&quot;</span>);</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; filteredNames = names.stream()                <span class="comment">// 创建流</span></span><br><span class="line">            .filter(name -&gt; name.startsWith(<span class="string">&quot;A&quot;</span>))                 <span class="comment">// 中间操作：筛选以A开头的</span></span><br><span class="line">            .map(String::toUpperCase)                             <span class="comment">// 中间操作：转为大写</span></span><br><span class="line">            .sorted()                                             <span class="comment">// 中间操作：排序</span></span><br><span class="line">            .collect(Collectors.toList());                        <span class="comment">// 终止操作：收集为List</span></span><br><span class="line"></span><br><span class="line">        System.out.println(filteredNames); <span class="comment">// 输出: [ALICE, AMANDA]</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-常见的中间操作（返回-Stream）"><a href="#4-常见的中间操作（返回-Stream）" class="headerlink" title="4. 常见的中间操作（返回 Stream）"></a>4. 常见的中间操作（返回 Stream）</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>filter()</code></td>
+<td>过滤元素</td>
+</tr>
+<tr>
+<td><code>map()</code></td>
+<td>映射&#x2F;转换元素</td>
+</tr>
+<tr>
+<td><code>flatMap()</code></td>
+<td>扁平化处理嵌套结构</td>
+</tr>
+<tr>
+<td><code>sorted()</code></td>
+<td>排序</td>
+</tr>
+<tr>
+<td><code>distinct()</code></td>
+<td>去重</td>
+</tr>
+<tr>
+<td><code>limit(n)</code></td>
+<td>限制前 n 个元素</td>
+</tr>
+<tr>
+<td><code>skip(n)</code></td>
+<td>跳过前 n 个元素</td>
+</tr>
+<tr>
+<td><code>peek()</code></td>
+<td>查看元素（通常用于调试）</td>
+</tr>
+</tbody></table>
+<h2 id="5-常见的终止操作（触发流执行）"><a href="#5-常见的终止操作（触发流执行）" class="headerlink" title="5. 常见的终止操作（触发流执行）"></a>5. 常见的终止操作（触发流执行）</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>forEach()</code></td>
+<td>遍历每个元素</td>
+</tr>
+<tr>
+<td><code>collect()</code></td>
+<td>收集结果到 List、Set、Map 等集合</td>
+</tr>
+<tr>
+<td><code>count()</code></td>
+<td>统计数量</td>
+</tr>
+<tr>
+<td><code>anyMatch()</code>&#x2F;<code>allMatch()</code></td>
+<td>是否匹配某些条件</td>
+</tr>
+<tr>
+<td><code>findFirst()</code>&#x2F;<code>findAny()</code></td>
+<td>找到第一个&#x2F;任意一个元素</td>
+</tr>
+<tr>
+<td><code>reduce()</code></td>
+<td>归约（如求和、求乘积等）</td>
+</tr>
+</tbody></table>
+<h2 id="6-Stream-与-Optional、Lambda-的关系"><a href="#6-Stream-与-Optional、Lambda-的关系" class="headerlink" title="6. Stream 与 Optional、Lambda 的关系"></a>6. Stream 与 Optional、Lambda 的关系</h2><ul>
+<li><code>Stream</code> 依赖于 <strong>Lambda 表达式</strong>（如 <code>n -&gt; n.startsWith(&quot;A&quot;)</code>）来实现函数式处理。</li>
+<li>和 <code>Optional</code> 类似，<code>Stream</code> 也体现了函数式编程风格。</li>
+<li><code>Optional</code> 也有类似 <code>map</code>、<code>filter</code>、<code>flatMap</code> 的方法。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/blog/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2025/06/27/202506270000Java%E4%B8%AD%E7%9A%84Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="Java中的Lambda表达式">
+                  <i class="fa fa-angle-left"></i> Java中的Lambda表达式
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-disqusjs">Disqus</a></li>
+            <li class="tab"><a href="#comment-waline">Waline</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane disqusjs" id="comment-disqusjs">
+              
+  <div class="comments disqusjs-container">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+            </div>
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">睿虎</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/laisc7301" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/sidebar.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"smart-tiger-blog-comment-waline-7301.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/2025/07/03/202507030000Java%E4%B8%AD%E7%9A%84Stream/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/disqusjs/3.0.2/styles/disqusjs.css" integrity="sha256-71XarXwNr1Td27HmZI9zjY+rMzRdush6/glo6VFXp7o=" crossorigin="anonymous">
+
+<script class="next-config" data-name="disqusjs" type="application/json">{"enable":true,"api":"https://disqus.skk.moe/disqus/","apikey":"ZFtddSBllKuOBDGNan39gWrxOw6V5eYB13mMpJc2nyYehZf51HPFyWQKAldGF7Oy","shortname":"smart-tiger-blog-7301","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/disqusjs/3.0.2/disqusjs.es2015.umd.min.js","integrity":"sha256-okP99ZQKVpIy7+NogAMpGlIQzJa9XKXhIJcFgdju5bU="}}</script>
+<script src="/blog/js/third-party/comments/disqusjs.js"></script>
+
+</body>
+</html>
