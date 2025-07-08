@@ -159,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-count">94</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -187,6 +187,180 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2023/06/07/202306070001Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="睿虎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 睿虎的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2023/06/07/202306070001Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/" class="post-title-link" itemprop="url">Git常用命令小结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-06-07 17:40:02" itemprop="dateCreated datePublished" datetime="2023-06-07T17:40:02+08:00">2023-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/blog/2023/06/07/202306070001Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/blog/2023/06/07/202306070001Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <style>
+            .f1{
+                font-size:40px;
+                position: relative;
+                top:-18px;
+            }
+            .redcolor{
+                color:red;
+            }
+            .focus0{
+                display: flex;
+                align-items: center;/*垂直居中*/
+                height:50px;
+            }
+            .focus1{
+                font-size:30px;
+                color:black;
+            }
+            .focus2{
+                font-size:30px;
+                color:red;
+            }
+
+</style>
+<script>
+            function myonopen(id){
+                var myopen = document.getElementsByClassName("myopen"+id)[0];
+                var myclose = document.getElementsByClassName("myclose"+id)[0];
+                var myc = document.getElementsByClassName("myc"+id)[0];
+                myopen.style.display="none";
+                myclose.style.display="block";
+                myc.style.display="block";
+            };
+            function myonclose(id){
+                var myopen = document.getElementsByClassName("myopen"+id)[0];
+                var myclose = document.getElementsByClassName("myclose"+id)[0];
+                var myc = document.getElementsByClassName("myc"+id)[0];
+                myopen.style.display="block";
+                myclose.style.display="none";
+                myc.style.display="none";
+            };
+            function myonload(id){
+
+                for(let i=0;i<id;i++){
+                    var myclose = document.getElementsByClassName("myclose"+i)[0];
+                    var myc = document.getElementsByClassName("myc"+i)[0];
+                    myclose.style.display="none";
+                    myc.style.display="none";
+                }
+                
+            };
+
+</script>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;John Doe&quot;</span></span><br><span class="line">git config --global user.email johndoe@example.com</span><br></pre></td></tr></table></figure>
+
+<p>设置用户名称与邮件地址</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.editor <span class="string">&quot;&#x27;C:\Program Files\Notepad++\notepad++.exe&#x27; -multiInst -notabbar -nosession -noPlugin&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>设置默认文本编辑器</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+
+<p>列出所有 Git 当时能找到的配置</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+
+<p>在现有目录中初始化仓库</p>
+<p><img src="https://laisc7301.github.io/files/img/2023/202306070000收藏_red.svg" alt="" width="50" height="50" align=left><div class="focus0"><span class="focus1">重点</span><span class="focus2">↓</span></div><br/></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add *.c</span><br><span class="line">git add LICENSE</span><br></pre></td></tr></table></figure>
+
+<p> 开始对指定文件的跟踪<br> 或 更新文件到暂存区</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2023/06/07/202306070001Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1057,108 +1231,6 @@
     <div class="post-body" itemprop="articleBody">
           <p><img src="https://laisc7301.github.io/files/img/2023/202305011920%E5%91%B3%E9%81%93%E4%B8%AD%E5%B1%B1%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%AD%A3%EF%BC%891_2.png"></p>
 <h2 id="阿里云盘：https-www-aliyundrive-com-s-Vz2QZcznMrt"><a href="#阿里云盘：https-www-aliyundrive-com-s-Vz2QZcznMrt" class="headerlink" title="阿里云盘：https://www.aliyundrive.com/s/Vz2QZcznMrt"></a>阿里云盘：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/Vz2QZcznMrt">https://www.aliyundrive.com/s/Vz2QZcznMrt</a></h2>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://laisc7301.github.io/blog/2023/04/29/202304290000SpringBootShowPicture/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="睿虎">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="睿虎的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 睿虎的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2023/04/29/202304290000SpringBootShowPicture/" class="post-title-link" itemprop="url">SpringBoot显示图片</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-04-29 04:10:24" itemprop="dateCreated datePublished" datetime="2023-04-29T04:10:24+08:00">2023-04-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2023/04/29/202304290000SpringBootShowPicture/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2023/04/29/202304290000SpringBootShowPicture/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>SpringBoot显示图片其实很简单，代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/getimage&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">getimage</span><span class="params">(HttpServletResponse response)</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">    <span class="type">BufferedImage</span> <span class="variable">image</span> <span class="operator">=</span> ImageIO.read(Files.newInputStream(Paths.get(<span class="string">&quot;D:\\laiscdata\\1.png&quot;</span>)));</span><br><span class="line">    response.setHeader(<span class="string">&quot;Cache-Control&quot;</span>, <span class="string">&quot;no-store,no-cache&quot;</span>);</span><br><span class="line">    response.setContentType(<span class="string">&quot;image/jpeg&quot;</span>);</span><br><span class="line">    <span class="type">ServletOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> response.getOutputStream();</span><br><span class="line">    ImageIO.write(image,<span class="string">&quot;jpg&quot;</span>,out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
       
     </div>
 
