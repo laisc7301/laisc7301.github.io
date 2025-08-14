@@ -4067,6 +4067,43 @@ myonload(8);
       </tags>
   </entry>
   <entry>
+    <title>Hibernate中的一对多、多对一、多对多(MySQL)</title>
+    <url>/blog/2025/08/14/202508140000Hibernate%E4%B8%AD%E7%9A%84%E4%B8%80%E5%AF%B9%E5%A4%9A%E3%80%81%E5%A4%9A%E5%AF%B9%E4%B8%80%E3%80%81%E5%A4%9A%E5%AF%B9%E5%A4%9A(MySQL)/</url>
+    <content><![CDATA[<p>一对多 &#x2F; 多对一：</p>
+<p>Department.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc.hibernatetest002.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jakarta.persistence.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Department</span> &#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 一对多</span></span><br><span class="line">    <span class="meta">@OneToMany(mappedBy = &quot;department&quot;, cascade = CascadeType.ALL)</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Employee&gt; employees = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<span id="more"></span>
+
+
+<p>Employee.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc.hibernatetest002.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jakarta.persistence.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Employee</span> &#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 多对一</span></span><br><span class="line">    <span class="meta">@ManyToOne</span></span><br><span class="line">    <span class="meta">@JoinColumn(name = &quot;department_id&quot;, referencedColumnName = &quot;id&quot;)</span> <span class="comment">//字段名为id</span></span><br><span class="line">    <span class="keyword">private</span> Department department;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>多对多</p>
+<p>Student.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc.hibernatetest002.entity.ManyToMany;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jakarta.persistence.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ManyToMany</span></span><br><span class="line">    <span class="meta">@JoinTable(</span></span><br><span class="line"><span class="meta">            name = &quot;student_course&quot;,</span></span><br><span class="line"><span class="meta">            joinColumns = @JoinColumn(name = &quot;student_id&quot;,               // 中间表字段名</span></span><br><span class="line"><span class="meta">                    referencedColumnName = &quot;id&quot; // 对应 Student 表的 id 列</span></span><br><span class="line"><span class="meta">            ),</span></span><br><span class="line"><span class="meta">            inverseJoinColumns = @JoinColumn(name = &quot;course_id&quot;,                // 中间表字段名</span></span><br><span class="line"><span class="meta">                    referencedColumnName = &quot;id&quot;  // 对应 Course 表的 id 列</span></span><br><span class="line"><span class="meta">            )</span></span><br><span class="line"><span class="meta">    )</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Course&gt; courses = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Course.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.laisc.hibernatetest002.entity.ManyToMany;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jakarta.persistence.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Course</span> &#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ManyToMany(mappedBy = &quot;courses&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Student&gt; students = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Java</category>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>火狐扩展：音量增益工具</title>
     <url>/blog/Firefox-Ruihuo-VolumeBooster/index.html</url>
     <content><![CDATA[<p><img src="https://laisc7301.github.io/files/img/2025/202505060000%E9%9F%B3%E9%87%8F%E5%A2%9E%E7%9B%8A%E5%B7%A5%E5%85%B7v2.1.png"></p>
