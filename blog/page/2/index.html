@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.1">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
@@ -43,7 +43,7 @@
 
 
 
-<link rel="dns-prefetch" href="smart-tiger-blog-comment-waline-7301.vercel.app">
+
   <noscript>
     <link rel="stylesheet" href="/blog/css/noscript.css">
   </noscript>
@@ -246,20 +246,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2024/12/13/202412130000SpringSecurity%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/12/13/202412130000SpringSecurity%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 </div>
 
         </div>
@@ -354,20 +340,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2024/12/08/202412080000SpringBoot%E4%BD%BF%E7%94%A8Hibernate(%E5%9F%BA%E4%BA%8EMySQL)/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/12/08/202412080000SpringBoot%E4%BD%BF%E7%94%A8Hibernate(%E5%9F%BA%E4%BA%8EMySQL)/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 </div>
 
         </div>
@@ -458,20 +430,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2024/11/25/202411250000JavaScript%E4%B8%AD%E5%BC%82%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/11/25/202411250000JavaScript%E4%B8%AD%E5%BC%82%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 </div>
 
         </div>
@@ -481,7 +439,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>在 JavaScript 中，异步编程的主要方式包括 <strong>回调函数 (callback)<strong>、</strong>Promise</strong> 和 <strong>async&#x2F;await</strong>。以下是它们的用法和例子：</p>
+          <p>在 JavaScript 中，异步编程的主要方式包括 <strong>回调函数 (callback)</strong>、<strong>Promise</strong> 和 <strong>async&#x2F;await</strong>。以下是它们的用法和例子：</p>
 <h3 id="1-回调函数-Callback"><a href="#1-回调函数-Callback" class="headerlink" title="1. 回调函数 (Callback)"></a><strong>1. 回调函数 (Callback)</strong></h3><p>回调是最早的异步编程方式。通过将一个函数作为参数传递给另一个函数，来在计时完成后调用它。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">doSomethingAsync</span>(<span class="params">callback</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;计时完成&quot;</span>);</span><br><span class="line">        <span class="title function_">callback</span>(); <span class="comment">// 调用回调函数</span></span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">doSomethingAsync</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;回调函数执行&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
@@ -568,20 +526,6 @@
         </span>
     </span>
 
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2024/10/28/202410280000Vue2%E7%B2%BE%E7%AE%80%E6%95%99%E7%A8%8B/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/10/28/202410280000Vue2%E7%B2%BE%E7%AE%80%E6%95%99%E7%A8%8B/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
   
 </div>
 
@@ -680,20 +624,6 @@
         </span>
     </span>
 
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2024/10/22/202410220000JavaScript_ES_Module%E7%9A%84%E4%BD%BF%E7%94%A8/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/10/22/202410220000JavaScript_ES_Module%E7%9A%84%E4%BD%BF%E7%94%A8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
   
 </div>
 
@@ -796,20 +726,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2024/08/17/202408170000Qt%E5%AE%9E%E7%8E%B0%E5%8D%8A%E9%80%8F%E6%98%8E%E7%AA%97%E4%BD%93/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/08/17/202408170000Qt%E5%AE%9E%E7%8E%B0%E5%8D%8A%E9%80%8F%E6%98%8E%E7%AA%97%E4%BD%93/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 </div>
 
         </div>
@@ -907,20 +823,6 @@
         </span>
     </span>
 
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2024/08/15/202408150000Hexo%E4%BD%BF%E7%94%A8%E8%8D%89%E7%A8%BF/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/08/15/202408150000Hexo%E4%BD%BF%E7%94%A8%E8%8D%89%E7%A8%BF/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
   
 </div>
 
@@ -1027,20 +929,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2024/01/31/202401310000SpringBoot%E4%BD%BF%E7%94%A8Session/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/01/31/202401310000SpringBoot%E4%BD%BF%E7%94%A8Session/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 </div>
 
         </div>
@@ -1143,20 +1031,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2024/01/29/202401290001SpringBoot%E7%B3%BB%E5%88%97%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/01/29/202401290001SpringBoot%E7%B3%BB%E5%88%97%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 </div>
 
         </div>
@@ -1245,20 +1119,6 @@
         </span>
     </span>
 
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline: </span>
-  
-    <a title="waline" href="/blog/2024/01/29/202401290000SpringCloudAlibaba%E6%B7%BB%E5%8A%A0%E7%86%94%E6%96%AD%E6%9C%BA%E5%88%B6Sentinel/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/blog/2024/01/29/202401290000SpringCloudAlibaba%E6%B7%BB%E5%8A%A0%E7%86%94%E6%96%AD%E6%9C%BA%E5%88%B6Sentinel/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
   
 </div>
 
@@ -1364,17 +1224,6 @@
 
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"smart-tiger-blog-comment-waline-7301.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":null,"avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":false,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/blog/page/2/"}</script>
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => 
-    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
-  );
-});
-</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/disqusjs/3.0.2/styles/disqusjs.css" integrity="sha256-71XarXwNr1Td27HmZI9zjY+rMzRdush6/glo6VFXp7o=" crossorigin="anonymous">
 
 <script class="next-config" data-name="disqusjs" type="application/json">{"enable":true,"api":"https://disqus.skk.moe/disqus/","apikey":"ZFtddSBllKuOBDGNan39gWrxOw6V5eYB13mMpJc2nyYehZf51HPFyWQKAldGF7Oy","shortname":"smart-tiger-blog-7301","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/disqusjs/3.0.2/disqusjs.es2015.umd.min.js","integrity":"sha256-okP99ZQKVpIy7+NogAMpGlIQzJa9XKXhIJcFgdju5bU="}}</script>
