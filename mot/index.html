@@ -32,17 +32,26 @@
             color: black;
 
         }
-        .gamediv{
+
+        .gamediv {
+            position: relative;
             width: 700px;
             height: 500px;
             background: #868686;
         }
-        .gamediv2{
+
+        .gamediv2 {
             width: 30px;
             height: 30px;
             background: #2b2b2b;
             position: absolute;
+            left:0px;
+            top:0px;
+
+
+
             border-radius: 30px;
+            
         }
     </style>
 </head>
@@ -70,13 +79,21 @@
             12追4
         </div>
     </div>
-    <br/>
-    <br/>
+    <br />
+    <br />
+
+    <button onclick="start()">123</button>
 
 
 
     <div class="gamediv">
-        <div class="gamediv2"></div>
+        <div class="gamediv2 ball0"></div>
+        <div class="gamediv2 ball1"></div>
+        <div class="gamediv2 ball2"></div>
+        <div class="gamediv2 ball3"></div>
+        <div class="gamediv2 ball4"></div>
+        <div class="gamediv2 ball5"></div>
+
 
     </div>
 
@@ -84,6 +101,58 @@
 
 
     <script>
+
+        var hbk = 700;
+        var hbg = 500;
+
+        var b = [];
+        var bl = [];
+        var bt = [];
+        var bw = 30;
+        var blength = 6;
+
+        for (let i = 0; i < blength; i++) {
+            b[i] = document.getElementsByClassName("ball" + i)[0];
+        }
+
+
+
+
+        // b[0] = document.getElementsByClassName("b0")[0];
+        // b[1] = document.getElementsByClassName("b1")[0];
+        // b[2] = document.getElementsByClassName("b2")[0];
+        // b[3] = document.getElementsByClassName("b3")[0];
+        // b[4] = document.getElementsByClassName("b4")[0];
+        // b[5] = document.getElementsByClassName("b5")[0];
+
+        let n = Math.floor(Math.random() * 10);//0～9
+
+
+        function start() {
+
+            alert(b.length);
+
+            for (let i = 0; i < blength; i++) {
+                bl[i] = Math.floor(Math.random() * hbk - bw);
+                bt[i] = Math.floor(Math.random() * hbg - bw);
+                b[i].style.left = bl[i] + "px";
+                b[i].style.top = bt[i] + "px";
+
+
+            }
+
+
+
+
+
+
+
+        }
+
+
+        function move1() {
+
+        }
 
 
     </script>
