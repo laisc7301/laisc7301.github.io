@@ -23,7 +23,9 @@ var bdt = [];
 var bdlf = [];
 var bdtf = [];
 
-var okoknow="tj"; //提交按钮现在状态
+var okoknow = "tj"; //提交按钮现在状态
+
+var firstset = true; //第一次将球设置回灰色
 
 for (let i = 0; i < blength; i++) {
     bdtime[i] = 0;
@@ -51,6 +53,8 @@ for (let i = 0; i < blength; i++) {
 
 
 function move1() {
+
+
 
     // for (let i = 0; i < blength; i++) {
 
@@ -96,6 +100,14 @@ function move1() {
 
 
     for (let i = 0; i < blength; i++) {
+        if (firstset) {
+
+            b[i].style.background = "#2b2b2b";
+
+
+        }
+
+
 
         if (bdtime[i] <= 0) {
             bdtime[i] = Math.floor(Math.random() * 180) + 1;
@@ -149,6 +161,11 @@ function move1() {
 
 
 
+    firstset = false;
+
+
+
+
 
 
 
@@ -196,7 +213,7 @@ function jsmove() {
         b[i].style.background = "red";
     }
 
-
+    firstset = true;
 
 
 
@@ -244,7 +261,7 @@ function start() {
             } else {
                 bx[i] = false;
                 nowxsl--;
-                b[i].style.background = "green";
+                b[i].style.background = "#2b2b2b";
             }
 
             alert("点击了第 " + i + " 个球");
@@ -315,22 +332,25 @@ function getValue() {
 
 function okok() {
     console.log("hi");
+    if (okoknow == "tj") {
 
 
-    for (let i = 0; i < blength; i++) {
-        if (i < bzzqs) {
-            if (bx[i]) {
-                b[i].style.background = "green";
+        for (let i = 0; i < blength; i++) {
+            if (i < bzzqs) {
+                if (bx[i]) {
+                    b[i].style.background = "green";
+                } else {
+                    b[i].style.background = "yellow";
+                }
+
             } else {
-                b[i].style.background = "yellow";
-            }
-
-        }else{
-            if (bx[i]) {
-                b[i].style.background = "red";
-            } else {
-                b[i].style.background = "#2b2b2b";
+                if (bx[i]) {
+                    b[i].style.background = "red";
+                } else {
+                    b[i].style.background = "#2b2b2b";
+                }
             }
         }
+        okoknow == "jx";
     }
 }
