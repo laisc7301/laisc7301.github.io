@@ -148,17 +148,17 @@ function move1() {
 
         bt[i] += bdt[i] * bdtf[i];
 
-        if ((bl[i] + bw - bdl[i]/sd) > ckk) {
+        if ((bl[i] + bw - bdl[i]) > ckk) {
             bdlf[i] = -1;
         }
-        if ((bt[i] + bw - bdt[i]/sd) > ckg) {
+        if ((bt[i] + bw - bdt[i]) > ckg) {
             bdtf[i] = -1;
         }
 
-        if ((bl[i] + bdl[i]/sd) < 0) {
+        if ((bl[i] + bdl[i]) < 0) {
             bdlf[i] = 1;
         }
-        if ((bt[i] + bdt[i]/sd) < 0) {
+        if ((bt[i] + bdt[i]) < 0) {
             bdtf[i] = 1;
         }
 
