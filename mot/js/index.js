@@ -4,6 +4,11 @@ console.log(Math.floor(Math.random() * 2));
 var ckk = 700; //窗口宽
 var ckg = 500; //窗口高
 
+var gamediv = document.getElementsByClassName("gamediv")[0];
+
+gamediv.style.width=ckk+"px";
+gamediv.style.height=ckg+"px";
+
 var b = []; // 球
 var bx = []; // 球是否被选中
 var nowxsl = 0; // 选中数量
@@ -13,8 +18,10 @@ var bw = 30;
 var blength = 600;
 var bzzqs = 0; // 需要选中球的数量
 
-var time = 1000; //运动时间
+var time = 0; //运动时间(剩余)
+var timeset = 1000; //运动时间
 
+var sd = 20; //球运动速度，值越大越慢
 
 var bdtime = []; //球运动时间
 var bdl = [];
@@ -26,6 +33,8 @@ var bdtf = [];
 var okoknow = "tj"; //提交按钮现在状态
 
 var firstset = true; //第一次将球设置回灰色
+
+var yxcs = 0; //游戏次数
 
 for (let i = 0; i < blength; i++) {
     bdtime[i] = 0;
@@ -111,9 +120,9 @@ function move1() {
 
         if (bdtime[i] <= 0) {
             bdtime[i] = Math.floor(Math.random() * 180) + 1;
-            bdl[i] = (Math.floor(Math.random() * 15) + 1) / 20;//
+            bdl[i] = (Math.floor(Math.random() * 15) + 1) / sd;//
 
-            bdt[i] = (Math.floor(Math.random() * 15) + 1) / 20;//
+            bdt[i] = (Math.floor(Math.random() * 15) + 1) / sd;//
 
             if (Math.floor(Math.random() * 2) == 1) {
                 bdlf[i] = 1;
@@ -217,6 +226,7 @@ function jsmove() {
 
 
 
+    time = timeset;
 
 
     setTimeout(move1, 1000);
@@ -224,6 +234,16 @@ function jsmove() {
 
 function start() {
 
+
+    const radio = document.querySelector('input[name="sd"]:checked');
+
+    if(radio.value=="slow"){
+        sd=30;
+    }else if(radio.value=="medium"){
+        sd=20;
+    }else if(radio.value=="fast"){
+        sd=10;
+    }
 
 
     blength = document.getElementsByClassName("zqs")[0].value;
@@ -264,7 +284,7 @@ function start() {
                 b[i].style.background = "#2b2b2b";
             }
 
-            alert("点击了第 " + i + " 个球");
+            // alert("点击了第 " + i + " 个球");
 
 
         };
@@ -278,9 +298,12 @@ function start() {
         b[i].style.left = bl[i] + "px";
         b[i].style.top = bt[i] + "px";
 
+
         // b[i].style.top = "0px";
 
     }
+
+
 
 
     document.getElementsByClassName("startdiv")[0].style.display = "none";
@@ -288,6 +311,12 @@ function start() {
 
 
     jsmove();
+
+    yxcs = document.getElementsByClassName("yxcs")[0].value;
+
+    yxcs--;
+
+    document.getElementsByClassName("sycs")[0].innerHTML = "剩余" + yxcs + "次";
 
 
 
@@ -332,7 +361,7 @@ function getValue() {
 
 function okok() {
     console.log("hi");
-    if (okoknow == "tj") {
+    if (okoknow == "tj") { //提交
 
 
         for (let i = 0; i < blength; i++) {
@@ -350,7 +379,60 @@ function okok() {
                     b[i].style.background = "#2b2b2b";
                 }
             }
+
         }
-        okoknow == "jx";
+        document.getElementsByClassName("okok")[0].innerHTML = "继续";
+        okoknow = "jx";
+
+
+    } else if (okoknow == "jx") { //继续
+
+        if (yxcs > 0) {
+
+
+            document.getElementsByClassName("okok")[0].innerHTML = "提交";
+            okoknow = "tj";
+
+            yxcs--;
+
+            document.getElementsByClassName("sycs")[0].innerHTML = "剩余" + yxcs + "次";
+
+
+
+            for (let i = 0; i < blength; i++) {
+                bl[i] = Math.floor(Math.random() * (ckk - bw));
+                bt[i] = Math.floor(Math.random() * (ckg - bw));
+                b[i].style.left = bl[i] + "px";
+                b[i].style.top = bt[i] + "px";
+
+                b[i].style.background = "#2b2b2b";
+
+                // b[i].style.top = "0px";
+
+            }
+
+            for (let i = 0; i < blength; i++) {
+                bdtime[i] = 0;
+                bdl[i] = 0;
+                bdt[i] = 0;
+
+                // for (let i2 = 0; i2 < 600; i2++) {
+                //     bdtime[i]
+
+                // }
+                bdlf[i] = 1;
+                bdtf[i] = 1;
+
+
+                bx[i] = false;
+            }
+
+            jsmove();
+
+        }
+
+
+
     }
+
 }
