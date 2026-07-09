@@ -1,8 +1,8 @@
 Math.floor(Math.random() * 2) + 1;//
 console.log(Math.floor(Math.random() * 2));
 
-var ckk = 900; //窗口宽
-var ckg = 1000; //窗口高
+var ckk = 700; //窗口宽
+var ckg = 500; //窗口高
 
 var gamediv = document.getElementsByClassName("gamediv")[0];
 
@@ -14,7 +14,7 @@ var bx = []; // 球是否被选中
 var nowxsl = 0; // 选中数量
 var bl = [];
 var bt = [];
-var bw = 60; //球的大小
+var bw = 30; //球的大小
 var blength = 600;
 var bzzqs = 0; // 需要选中球的数量
 
@@ -240,11 +240,11 @@ function start() {
     const radio = document.querySelector('input[name="sd"]:checked');
 
     if (radio.value == "slow") {
-        sd = 15;
+        sd = 30;
     } else if (radio.value == "medium") {
-        sd = 10;
+        sd = 20;
     } else if (radio.value == "fast") {
-        sd = 5;
+        sd = 10;
     }
 
 
