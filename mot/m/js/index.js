@@ -273,19 +273,20 @@ function start() {
 
         b[i].onclick = function () {
             console.log(i);
+            if (okoknow == "tj") {
+                if (bx[i] == false) {
+                    bx[i] = true;
+                    nowxsl++;
 
-            if (bx[i] == false) {
-                bx[i] = true;
-                nowxsl++;
-
-                b[i].style.background = "red";
+                    b[i].style.background = "red";
 
 
 
-            } else {
-                bx[i] = false;
-                nowxsl--;
-                b[i].style.background = "#2b2b2b";
+                } else {
+                    bx[i] = false;
+                    nowxsl--;
+                    b[i].style.background = "#2b2b2b";
+                }
             }
 
             // alert("点击了第 " + i + " 个球");
