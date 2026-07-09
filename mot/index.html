@@ -39,8 +39,27 @@
             12追4
         </div>
     </div>
+
+    <form id="myForm">
+        速度：
+        
+    <label><input type="radio" name="sd" value="slow"> 慢</label>
+    <label><input type="radio" name="sd" value="medium" checked> 中</input></label>
+    <label><input type="radio" name="sd" value="fast"> 快</input></label>
+    <br/>
+    总球数：<input type="number" class="zqs" value="8">
+    <br/>
+    追踪球数：<input type="number" class="zzqs" value="3">
+
+    <br/>
+
+
+    <button type="button" onclick="getValue()">获取</button>
+</form>
     <br />
     <br />
+
+
 
     <button onclick="start()">123</button>
     </div>
@@ -48,12 +67,12 @@
 
 
     <div class="gamediv">
-        <div class="gamediv2 ball0"></div>
+        <!-- <div class="gamediv2 ball0"></div>
         <div class="gamediv2 ball1"></div>
         <div class="gamediv2 ball2"></div>
         <div class="gamediv2 ball3"></div>
         <div class="gamediv2 ball4"></div>
-        <div class="gamediv2 ball5"></div>
+        <div class="gamediv2 ball5"></div> -->
 
 
     </div>
