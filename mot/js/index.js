@@ -23,6 +23,8 @@ var bdt = [];
 var bdlf = [];
 var bdtf = [];
 
+var okoknow="tj"; //提交按钮现在状态
+
 for (let i = 0; i < blength; i++) {
     bdtime[i] = 0;
     bdl[i] = 0;
@@ -231,11 +233,20 @@ function start() {
         b[i].onclick = function () {
             console.log(i);
 
-            if (bx[i]==false){
-                bx[i]=true;
+            if (bx[i] == false) {
+                bx[i] = true;
+                nowxsl++;
 
+                b[i].style.background = "red";
+
+
+
+            } else {
+                bx[i] = false;
+                nowxsl--;
+                b[i].style.background = "green";
             }
-                
+
             alert("点击了第 " + i + " 个球");
 
 
@@ -298,5 +309,28 @@ function getValue() {
         alert(radio.value);
     } else {
         alert("没有选择");
+    }
+}
+
+
+function okok() {
+    console.log("hi");
+
+
+    for (let i = 0; i < blength; i++) {
+        if (i < bzzqs) {
+            if (bx[i]) {
+                b[i].style.background = "green";
+            } else {
+                b[i].style.background = "yellow";
+            }
+
+        }else{
+            if (bx[i]) {
+                b[i].style.background = "red";
+            } else {
+                b[i].style.background = "#2b2b2b";
+            }
+        }
     }
 }
