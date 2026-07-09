@@ -1,0 +1,63 @@
+.startdiv {
+    width: 300px;
+    height: 200px;
+    background: #4CAF50;
+    color: white;
+    display: flex;
+    position: fixed;
+    left: 0px;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+
+
+
+.t1 {}
+
+.b1 {
+    color: rgb(122, 122, 122);
+
+    background: #878787;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border-style: solid;
+    border-radius: 5px;
+
+
+}
+
+.b2 {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    color: black;
+
+}
+
+.gamediv {
+    position: relative;
+    width: 700px;
+    height: 500px;
+    background: #868686;
+}
+
+.gamediv2 {
+    width: 30px;
+    height: 30px;
+    background: #2b2b2b;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+
+
+    border-radius: 30px;
+
+}
