@@ -1,20 +1,20 @@
 Math.floor(Math.random() * 2) + 1;//
 console.log(Math.floor(Math.random() * 2));
 
-var ckk = 700; //窗口宽
-var ckg = 500; //窗口高
+var ckk = 900; //窗口宽
+var ckg = 1000; //窗口高
 
 var gamediv = document.getElementsByClassName("gamediv")[0];
 
-gamediv.style.width=ckk+"px";
-gamediv.style.height=ckg+"px";
+gamediv.style.width = ckk + "px";
+gamediv.style.height = ckg + "px";
 
 var b = []; // 球
 var bx = []; // 球是否被选中
 var nowxsl = 0; // 选中数量
 var bl = [];
 var bt = [];
-var bw = 30;
+var bw = 60; //球的大小
 var blength = 600;
 var bzzqs = 0; // 需要选中球的数量
 
@@ -35,6 +35,8 @@ var okoknow = "tj"; //提交按钮现在状态
 var firstset = true; //第一次将球设置回灰色
 
 var yxcs = 0; //游戏次数
+
+var yjyxcs = 0; //已进行游戏次数
 
 for (let i = 0; i < blength; i++) {
     bdtime[i] = 0;
@@ -237,12 +239,12 @@ function start() {
 
     const radio = document.querySelector('input[name="sd"]:checked');
 
-    if(radio.value=="slow"){
-        sd=30;
-    }else if(radio.value=="medium"){
-        sd=20;
-    }else if(radio.value=="fast"){
-        sd=10;
+    if (radio.value == "slow") {
+        sd = 15;
+    } else if (radio.value == "medium") {
+        sd = 10;
+    } else if (radio.value == "fast") {
+        sd = 5;
     }
 
 
@@ -261,6 +263,8 @@ function start() {
 
         // b[i] = gamediv.createElement("div");
         b[i].className = "gamediv2 ball" + i;
+        b[i].style.width = bw + "px";
+        b[i].style.height = bw + "px";
 
 
 
@@ -315,8 +319,9 @@ function start() {
     yxcs = document.getElementsByClassName("yxcs")[0].value;
 
     yxcs--;
+    yjyxcs++;
 
-    document.getElementsByClassName("sycs")[0].innerHTML = "剩余" + yxcs + "次";
+    document.getElementsByClassName("sycs")[0].innerHTML = "已进行" + yjyxcs + "次，剩余" + yxcs + "次";
 
 
 
@@ -394,8 +399,9 @@ function okok() {
             okoknow = "tj";
 
             yxcs--;
+            yjyxcs++;
 
-            document.getElementsByClassName("sycs")[0].innerHTML = "剩余" + yxcs + "次";
+            document.getElementsByClassName("sycs")[0].innerHTML = "已进行" + yjyxcs + "次，剩余" + yxcs + "次";
 
 
 

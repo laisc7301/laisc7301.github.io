@@ -12,12 +12,12 @@
 </head>
 
 <body>
-    
-    
+
+
 
     <div class="startdiv">
 
-        <p class="t1">难度：</p>
+        <!-- <p class="t1">难度：</p>
     <div class="b1">
         <div class="b2">
             简单
@@ -38,34 +38,34 @@
             <br />
             12追4
         </div>
-    </div>
+    </div> -->
 
-    <form id="myForm">
-        速度：
-        
-    <label><input type="radio" name="sd" value="slow"> 慢</label>
-    <label><input type="radio" name="sd" value="medium" checked> 中</input></label>
-    <label><input type="radio" name="sd" value="fast"> 快</input></label>
-    <br/>
-    总球数：<input type="number" class="zqs" value="8">
-    <br/>
-    追踪球数：<input type="number" class="zzqs" value="3">
+        <form id="myForm">
+            <span class="sspan">速度：
 
-    <br/>
-    游戏次数：<input type="number" class="yxcs" value="10">
+                <label><input type="radio" name="sd" value="slow"> 慢</label>
+                <label><input type="radio" name="sd" value="medium" checked> 中</input></label>
+                <label><input type="radio" name="sd" value="fast"> 快</input></label>
+                <br />
+                总球数：<input type="number" class="zqs" value="8">
+                <br />
+                追踪球数：<input type="number" class="zzqs" value="3">
 
-
-    <br/>
+                <br />
+                游戏次数：<input type="number" class="yxcs" value="10">
 
 
-    <!-- <button type="button" onclick="getValue()">获取</button> -->
-</form>
-    <br />
-    <br />
+                <br />
+            </span>
+
+            <!-- <button type="button" onclick="getValue()">获取</button> -->
+        </form>
+        <br />
+        <br />
 
 
 
-    <button class="ks" onclick="start()">开始</button>
+        <button class="ks" onclick="start()">开始</button>
     </div>
 
 
@@ -84,10 +84,10 @@
     <button class="okok" onclick="okok()">提交</button><span class="sycs"></span>
 
     <p>开始时：红色球为将要选择的球
-<br/>结束后：
-<br/>绿色的球为正确选中的球
-<br/>黄色的球为应该选中但未选中的球
-<br/>红色的球为选错的球
+        <br />结束后：
+        <br />绿色的球为正确选中的球
+        <br />黄色的球为应该选中但未选中的球
+        <br />红色的球为选错的球
     </p>
 
 

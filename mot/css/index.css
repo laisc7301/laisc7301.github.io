@@ -1,6 +1,6 @@
 .startdiv {
-    width: 400px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     background: #4CAF50;
 
     position: absolute;
@@ -17,19 +17,19 @@
 
 
 
-.t1 {
+/* .t1 {
 
     display:none;
     
-}
+} */
 
-.b1 {
+/* .b1 {
     color: rgb(122, 122, 122);
 
     background: #878787;
     width: 60px;
     height: 60px;
-    /* display: inline-block; */
+    /* display: inline-block; * /
     border-style: solid;
     border-radius: 5px;
 
@@ -42,12 +42,12 @@
     height: 60px;
     display: flex;
     justify-content: center;
-    /* 水平居中 */
+    /* 水平居中 * /
     align-items: center;
-    /* 垂直居中 */
+    /* 垂直居中 * /
     color: black;
 
-}
+} */
 
 .gamediv {
     position: relative;
@@ -66,7 +66,7 @@
 
 
 
-    border-radius: 30px;
+    border-radius: 300px;
 
 }
 
@@ -75,9 +75,18 @@
     width: 300px;
     height: 100px;
     /* background:yellow; */
+    font-size: 30px;
 }
 
 .ks{
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
+    font-size: 30px;
+}
+
+.sspan{
+    font-size: 25px;
+}
+input{
+    font-size: 25px;
 }
